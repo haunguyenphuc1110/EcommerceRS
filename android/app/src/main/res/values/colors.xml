@@ -1,0 +1,6 @@
+<resources>
+  <color name="colorPrimary">#DC3545</color>
+  <color name="colorPrimaryDark">#DC3545</color>
+  <color name="colorAccent">#D81B60</color>
+  <color name="colorBackToolBar">#000000</color>
+</resources>
