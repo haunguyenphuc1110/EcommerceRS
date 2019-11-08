@@ -1,90 +1,82 @@
-import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
-// import ProfileDetail from '../ProfileDetail';
+import React, {Component} from 'react';
+import { View, Dimensions, Image, Text, ScrollView } from 'react-native';
+import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+import ReactNativeParallaxHeader from 'react-native-parallax-header';
+import { IMAGES, COLORS } from '../../assets';
 import styles from './Profile.styles';
-// import { Colors } from '../../../constants';
-// import { getCustomerInfo } from '../../../mocks/configureMockApi';
-// import { logoutAccount, clearCart, clearInfo, saveInfo, saveHistoryOrder } from '../../store/actions';
-import { IMAGES } from '../../assets';
+import Form from '../../components/Form/Form.component';
+
+const FirstRoute = () => (
+  <Form type={'ĐĂNG NHẬP'}/>
+);
+
+const SecondRoute = () => (
+  <Form type={'ĐĂNG KÝ'} isSignupForm={true}/>
+);
+
 class Profile extends Component {
+  state = {
+    index: 0,
+    routes: [
+      { key: 'login', title: 'ĐĂNG NHẬP' },
+      { key: 'register', title: 'ĐĂNG KÝ' },
+    ],
+  };
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     loadedAllData: false,
-  //   };
-  // }
-
-  // async componentDidMount() {
-  //   const { token, customerId } = this.props;
-  //   await this.dispatchCustomerDataToStore(token, customerId);
-  // }
-
-  // async componentWillReceiveProps(nextProps) {
-  //   const { token, customerId, email } = nextProps;
-  //   if (token !== this.props.token || customerId !== this.props.token || email !== this.props.email){
-  //     await this.dispatchCustomerDataToStore(token, customerId);
-  //   }
-    
-  // }
-
-  // dispatchCustomerDataToStore = async (token, customerId) => {
-  //   try {
-  //     const { onSaveInfo, onSaveHistoryOrder } = this.props;
-  //     const result = await getCustomerInfo(token, customerId);
-  //     const jsonResponse = await result.json();
-  //     if (result.ok) {
-  //       this.setState({
-  //         loadedAllData: true
-  //       })
-  //       onSaveInfo(jsonResponse.name, jsonResponse.email, jsonResponse.phoneNumber);
-  //       onSaveHistoryOrder(jsonResponse.historyOrders);
-  //     }
-  //     else {
-  //       this.setState({
-  //         loadedAllData: true
-  //       });
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //     this.setState({
-  //       loadedAllData: true
-  //     });
-  //   }
-  // }
+  renderTabBar = props => (
+    <TabBar 
+      {...props}
+      style={{ backgroundColor: COLORS.appColor }} 
+    />
+  );
 
   render() {
-    const { navigation } = this.props;
-    // if ( !this.state.loadedAllData ) {
-    //   return (
-    //     <View style={styles.actiIndicator}>
-    //       <ActivityIndicator />
-    //       <TouchableOpacity style={styles.buttonRefresh} onPress={this.dispatchCustomerDataToStore}>
-    //         <Text style={{ color: Colors.white }}>Refresh</Text>
-    //       </TouchableOpacity>
-    //     </View>
-    //   )
-    // }
-
     return (
       <View style={{ flex: 1 }}>
-        {/* {
-          (token !== '') &&
-          <View style={{ flex: 1 }}>
-            <ProfileDetail navigation={navigation} {...this.props}/>
-          </View>
-        } */}
-        {
-          (true) &&
-          <View style={styles.container}>
-            <Image source={IMAGES.USER_ACCOUNT} />
-            <TouchableOpacity style={styles.button} onPress={() => {}}>
-              <Text style={styles.buttonText}>Login your account</Text>
-            </TouchableOpacity>
-          </View>
-        }
+        <ReactNativeParallaxHeader
+          headerMinHeight={50}
+          headerMaxHeight={150}
+          extraScrollHeight={50}
+          navbarColor={COLORS.appColor}
+          title="Đăng nhập / Đăng ký"
+          titleStyle={styles.titleStyle}
+          backgroundImage={IMAGES.BANNER}
+          renderContent={() => (
+            <TabView
+              bounces={true}
+              navigationState={this.state}
+              renderScene={SceneMap({
+                login: FirstRoute,
+                register: SecondRoute,
+              })}
+              onIndexChange={index => this.setState({ index })}
+              initialLayout={{ width: Dimensions.get('window').width }}
+              renderTabBar={this.renderTabBar}
+            />
+          )}
+          containerStyle={{ flex: 1 }}
+          contentContainerStyle={{ flexGrow: 1 }}
+          innerContainerStyle={{ flex: 1 }}
+          scrollViewProps={{
+            onScrollBeginDrag: () => console.log('onScrollBeginDrag'),
+            onScrollEndDrag: () => console.log('onScrollEndDrag'),
+          }}
+        />
       </View>
-
+      // <View style={{ flex: 1 }}>
+      //   <Image source={IMAGES.BANNER} style={styles.banner} resizeMode='stretch'/>
+        // <TabView
+        //   bounces={true}
+        //   navigationState={this.state}
+        //   renderScene={SceneMap({
+        //     login: FirstRoute,
+        //     register: SecondRoute,
+        //   })}
+        //   onIndexChange={index => this.setState({ index })}
+        //   initialLayout={{ width: Dimensions.get('window').width }}
+        //   renderTabBar={this.renderTabBar}
+        // />
+      // </View>  
     );
   }
 }

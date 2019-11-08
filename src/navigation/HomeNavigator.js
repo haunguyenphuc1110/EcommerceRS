@@ -66,19 +66,15 @@ const AppNavigator = createBottomTabNavigator(
         elevation: 5
       }
     },
-    navigationOptions: ({ navigation }) => {
-      return {
-        headerTitle: (
-          <Header navigation={navigation}/>
-        )
-      }
+    navigationOptions: {
+      header: null
     }
   }
 )
 
 const MyStackNavigator = createStackNavigator(
   {
-    [ScreenIds.HOME]: {
+    [ScreenIds.APP]: {
       screen: AppNavigator
     },
     // [Navigations.LOGIN]: {
@@ -122,7 +118,7 @@ const MyStackNavigator = createStackNavigator(
     // }
   },
   {
-    initialRouteName: ScreenIds.HOME,
+    initialRouteName: ScreenIds.APP,
     defaultNavigationOptions: {
       headerTintColor: COLORS.white,
       headerStyle: {

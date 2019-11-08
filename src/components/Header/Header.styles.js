@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 import { COLORS } from '../../assets';
 
 const styles = StyleSheet.create({
+  root: {
+    backgroundColor: COLORS.appColor
+  },
   container: {
     flex: 1,
     flexDirection: 'row',
@@ -9,8 +12,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: COLORS.white,
     height: 40,
-    paddingHorizontal: 10,
-    marginHorizontal: 10,
+    margin: 10,
+    padding: 10,
     borderRadius: 5
   },
   row: {

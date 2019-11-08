@@ -11,6 +11,7 @@ import { COLORS } from '../../assets';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './Home.styles';
 
+import Header from '../../components/Header/Header.component';
 import SwiperContainer from '../../components/SwiperContainer/SwiperContainer.component';
 import DealContainer from '../../components/DealContainer/DealContainer.component';
 import PopulaContainer from '../../components/PopularContainer/PopularContainer.component';
@@ -37,6 +38,7 @@ class Home extends Component {
     const { navigation } = this.props;
     return (
       <ScrollView showsVerticalScrollIndicator={false}>
+        <Header navigation={navigation}/>
         <SwiperContainer
           data={swiperData}
           navigation={navigation} 
@@ -83,4 +85,5 @@ class Home extends Component {
     )
   }
 }
+
 export default Home;
