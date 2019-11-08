@@ -11,6 +11,7 @@ import { COLORS } from '../assets';
 import Header from '../components/Header/Header.component';
 
 import HomeScreen from '../screens/HomeScreen';
+import ProfileScreen from '../screens/ProfileScreen';
 
 
 const AppNavigator = createBottomTabNavigator(
@@ -43,7 +44,7 @@ const AppNavigator = createBottomTabNavigator(
     //   }
     // },
     [ScreenIds.PROFILE]: {
-      screen: HomeScreen,
+      screen: ProfileScreen,
       navigationOptions: {
         tabBarLabel: 'Tài khoản',
         tabBarIcon: ({ tintColor }) => (
