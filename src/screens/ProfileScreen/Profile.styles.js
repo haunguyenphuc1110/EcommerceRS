@@ -1,38 +1,47 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { COLORS } from '../../assets';
+const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
+    width: width, 
+    height: height
+  },
+  scene: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: COLORS.lightGray,
+    height: 500
   },
-  button: {
-    width: 300,
-    backgroundColor: COLORS.appColor,
-    borderRadius: 25,
-    marginVertical: 10,
-    paddingVertical: 13
+  tabBar: {
+    backgroundColor: COLORS.headerTab, 
+    elevation: 0, 
+    borderColor: COLORS.black, 
+    borderBottomWidth: 1, 
+    height: 50
   },
-  buttonText: {
-    fontSize: 16,
-    fontWeight: '500',
-    color: COLORS.white,
-    textAlign: 'center'
+  label: {
+    color: COLORS.white, 
+    fontSize: 12, 
+    fontWeight: 'bold'
+  },
+  indicator: {
+    backgroundColor: COLORS.lightBlue, 
+    height: 2.5
   },
   actiIndicator: {
     flex: 1, 
     justifyContent: 'center', 
     alignItems: 'center'
   },
-  buttonRefresh: {
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    width: 100, 
-    height: 30, 
-    borderRadius: 20, 
-    backgroundColor: COLORS.lightBlue
-  }
+  banner: {
+    width: width,
+    height: 150
+  },
+  titleStyle: {
+    color: COLORS.white,
+    fontWeight: 'bold',
+    fontSize: 18
+  },
 });
 
 export default styles;
