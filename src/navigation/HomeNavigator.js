@@ -8,12 +8,12 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import ScreenIds from './screenIds';
 import { COLORS } from '../assets';
 
-import Header from '../components/Header/Header.component';
 
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ProductDetailsScreen from '../screens/ProductDetailsScreen';
 import CartScreen from '../screens/CartScreen';
+import SearchScreen from '../screens/SearchScreen';
 
 
 const AppNavigator = createBottomTabNavigator(
@@ -82,9 +82,12 @@ const MyStackNavigator = createStackNavigator(
     [ScreenIds.PRODUCT_DETAILS]: {
       screen: ProductDetailsScreen
     },
-    // [Navigations.SIGNUP]: {
-    //   screen: Signup
-    // },
+    [ScreenIds.SEARCH]: {
+      screen: SearchScreen
+    },
+    [ScreenIds.CART]: {
+      screen: CartScreen
+    },
     // [Navigations.SETTING]: {
     //   screen: Setting
     // },
@@ -103,9 +106,6 @@ const MyStackNavigator = createStackNavigator(
     // [Navigations.OTHER_DETAIL]: {
     //   screen: OtherDetail
     // },
-    [ScreenIds.CART]: {
-      screen: CartScreen
-    },
     // [Navigations.PAYMENT]: {
     //   screen: Payment
     // },

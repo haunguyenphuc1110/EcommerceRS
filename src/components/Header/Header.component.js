@@ -4,11 +4,11 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './Header.styles'; 
 
 const Header = (props) => {
-  const { onNavigateToCart } = props;
+  const { onNavigateToCart, onNavigateToCartSearch } = props;
   return (
     <View style={styles.root}>
       <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={() => alert('TextField')}>
+        <TouchableWithoutFeedback onPress={onNavigateToCartSearch}>
           <View style={styles.row}>
             <Icon name='search' color='gray' size={18} />
             <Text style={styles.text1}>Tìm kiếm trên </Text>
