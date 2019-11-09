@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './Header.styles'; 
 
 const Header = (props) => {
-  const { navigation } = props;
+  const { onNavigateToCart } = props;
   return (
     <View style={styles.root}>
       <View style={styles.container}>
@@ -19,7 +19,7 @@ const Header = (props) => {
           <View
             style={styles.seperator}
           />
-          <Icon name='shopping-cart' color='red' size={18} onPress={() => alert('Icon')}/>
+          <Icon name='shopping-cart' color='red' size={18} onPress={onNavigateToCart}/>
         </View>
     </View>
     </View>

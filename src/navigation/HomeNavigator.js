@@ -12,6 +12,8 @@ import Header from '../components/Header/Header.component';
 
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import ProductDetailsScreen from '../screens/ProductDetailsScreen';
+import CartScreen from '../screens/CartScreen';
 
 
 const AppNavigator = createBottomTabNavigator(
@@ -77,9 +79,9 @@ const MyStackNavigator = createStackNavigator(
     [ScreenIds.APP]: {
       screen: AppNavigator
     },
-    // [Navigations.LOGIN]: {
-    //   screen: Login,
-    // },
+    [ScreenIds.PRODUCT_DETAILS]: {
+      screen: ProductDetailsScreen
+    },
     // [Navigations.SIGNUP]: {
     //   screen: Signup
     // },
@@ -101,9 +103,9 @@ const MyStackNavigator = createStackNavigator(
     // [Navigations.OTHER_DETAIL]: {
     //   screen: OtherDetail
     // },
-    // [Navigations.CART]: {
-    //   screen: Cart
-    // },
+    [ScreenIds.CART]: {
+      screen: CartScreen
+    },
     // [Navigations.PAYMENT]: {
     //   screen: Payment
     // },

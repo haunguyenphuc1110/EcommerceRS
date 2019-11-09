@@ -10,7 +10,9 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import { COLORS } from '../../assets';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './Home.styles';
+import ScreenIds from '../../navigation/screenIds';
 
+import Loading from '../../components/Common/LoadingIndicator/Loading.conponent';
 import Header from '../../components/Header/Header.component';
 import SwiperContainer from '../../components/SwiperContainer/SwiperContainer.component';
 import DealContainer from '../../components/DealContainer/DealContainer.component';
@@ -25,7 +27,18 @@ class Home extends Component {
     super(props);
     this.state={
       category:[],
-      listItem: []
+      listItem: [],
+      isLoading: true
+    }
+  }
+
+  componentWillReceiveProps(nextProps){
+    const { pending: previousPending } = nextProps;
+    const { pending } = this.props;
+    if (!pending && pending !== previousPending) {
+      this.setState({
+        isLoading: false
+      })
     }
   }
 
@@ -34,11 +47,27 @@ class Home extends Component {
     this.props.getListItem();
   }
 
+  onNavigateToDetails = () => {
+    this.props.navigation.navigate(ScreenIds.PRODUCT_DETAILS);
+  }
+
+  onNavigateToCart = () => {
+    this.props.navigation.navigate(ScreenIds.CART);
+  }
+
   render() {
     const { navigation } = this.props;
+    const { isLoading } = this.state;
+
+    if (isLoading) {
+      return (
+        <Loading/>
+      )
+    }
+
     return (
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Header navigation={navigation}/>
+        <Header onNavigateToCart={this.onNavigateToCart}/>
         <SwiperContainer
           data={swiperData}
           navigation={navigation} 
@@ -79,7 +108,7 @@ class Home extends Component {
           <LinearGradient colors={[COLORS.red, COLORS.lightOrange]} style={styles.popularContainer}>
             <Text style={[styles.title, {color: COLORS.white}]}>Sản phẩm đề cử</Text>
           </LinearGradient> 
-          <ProposeContainer data={this.props.recommendationData}/>       
+          <ProposeContainer data={this.props.recommendationData} onNavigateToDetails={this.onNavigateToDetails}/>       
         </View>
       </ScrollView>
     )
