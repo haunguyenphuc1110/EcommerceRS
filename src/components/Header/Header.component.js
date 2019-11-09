@@ -1,11 +1,10 @@
 import React from 'react';
 import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import ScreenIds from '../../navigation/screenIds';
 import styles from './Header.styles'; 
 
 const Header = (props) => {
-  const { navigation } = props;
+  const { onNavigateToCart } = props;
   return (
     <View style={styles.root}>
       <View style={styles.container}>
@@ -20,7 +19,7 @@ const Header = (props) => {
           <View
             style={styles.seperator}
           />
-          <Icon name='shopping-cart' color='red' size={18} onPress={() => navigation.navigate(ScreenIds.PRODUCT_DETAILS)}/>
+          <Icon name='shopping-cart' color='red' size={18} onPress={onNavigateToCart}/>
         </View>
     </View>
     </View>

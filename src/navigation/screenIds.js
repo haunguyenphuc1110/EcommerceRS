@@ -4,7 +4,8 @@ const ScreenIds = {
 	EXCLUSIVE: 'Exclusive',
 	NOTIFICATION: 'Notification',
 	PROFILE: 'Profile',
-	PRODUCT_DETAILS: 'ProductDetails'
+	PRODUCT_DETAILS: 'ProductDetails',
+	CART: 'Cart'
 }
 
 export default ScreenIds;

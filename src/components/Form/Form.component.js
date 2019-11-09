@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import { Text, View, TextInput, TouchableOpacity, Image } from "react-native";
-import styles from "./Form.styles";
-import { COLORS, IMAGES } from "../../assets";
+import React, { Component } from 'react';
+import { Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
+import styles from './Form.styles';
+import { COLORS, IMAGES } from '../../assets';
 
 export default class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: ""
+      email: '',
+      password: ''
     };
   }
 
@@ -37,7 +37,7 @@ export default class Form extends Component {
     // if (this.state.password.length >= 8) {
     //   onLogin(this.state.email, this.state.password);
     // } else {
-    //   alert("Password must has at least 8 characters!");
+    //   alert('Password must has at least 8 characters!');
     // }
   };
 
@@ -47,10 +47,10 @@ export default class Form extends Component {
       <View style={styles.container}>
         {isSignupForm &&
           <TextInput style={styles.inputBox}
-            placeholder="FullName"
+            placeholder='FullName'
             placeholderTextColor={COLORS.black}
             selectionColor={COLORS.black}
-            keyboardType="email-address"
+            keyboardType='email-address'
             onChangeText={this.handleFullName}
             onSubmitEditing={() => this.phone.focus()}
 				  />
@@ -58,10 +58,10 @@ export default class Form extends Component {
   
         {isSignupForm &&
           <TextInput style={styles.inputBox}
-            placeholder="Phone Number"
+            placeholder='Phone Number'
             placeholderTextColor={COLORS.black}
             selectionColor={COLORS.black}
-            keyboardType="phone-pad"
+            keyboardType='phone-pad'
             onChangeText={this.handlePhoneNumber}
             onSubmitEditing={() => this.email.focus()}
             ref={(input) => this.phone = input}
@@ -70,20 +70,23 @@ export default class Form extends Component {
 
         <TextInput
           style={styles.inputBox}
-          placeholder="Email"
+          placeholder='Email'
           placeholderTextColor={COLORS.black}
           selectionColor={COLORS.black}
-          keyboardType="email-address"
+          keyboardType='email-address'
           onSubmitEditing={() => this.password.focus()}
           onChangeText={this.handleEmail}
+          ref={(input) => this.email = input}
+          autoCapitalize='none'
         />
         <TextInput
           style={styles.inputBox}
-          placeholder="Password"
+          placeholder='Password'
           secureTextEntry={true}
           placeholderTextColor={COLORS.black}
           onChangeText={this.handlePassword}
-          ref={input => (this.password = input)}
+          ref={input => this.password = input}
+          autoCapitalize='none'
         />
         <TouchableOpacity style={styles.button} onPress={onPress}>
           <Text style={styles.buttonText}>{this.props.type}</Text>
