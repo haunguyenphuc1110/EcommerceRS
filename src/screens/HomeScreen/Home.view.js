@@ -11,6 +11,7 @@ import { COLORS } from '../../assets';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './Home.styles';
 
+import Loading from '../../components/Common/LoadingIndicator/Loading.conponent';
 import Header from '../../components/Header/Header.component';
 import SwiperContainer from '../../components/SwiperContainer/SwiperContainer.component';
 import DealContainer from '../../components/DealContainer/DealContainer.component';
@@ -25,7 +26,18 @@ class Home extends Component {
     super(props);
     this.state={
       category:[],
-      listItem: []
+      listItem: [],
+      isLoading: true
+    }
+  }
+
+  componentWillReceiveProps(nextProps){
+    const { pending: previousPending } = nextProps;
+    const { pending } = this.props;
+    if (!pending && pending !== previousPending) {
+      this.setState({
+        isLoading: false
+      })
     }
   }
 
@@ -36,6 +48,14 @@ class Home extends Component {
 
   render() {
     const { navigation } = this.props;
+    const { isLoading } = this.state;
+
+    if (isLoading) {
+      return (
+        <Loading/>
+      )
+    }
+
     return (
       <ScrollView showsVerticalScrollIndicator={false}>
         <Header navigation={navigation}/>

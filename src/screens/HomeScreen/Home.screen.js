@@ -10,7 +10,7 @@ const mapStateToProps = state => {
   return {
     categoryData: state.homeReducer.listCategory,
     recommendationData: state.homeReducer.listProduct,
-    peding: state.homeReducer.pending,
+    pending: state.homeReducer.pending,
     error: state.homeReducer.error
   };
 };

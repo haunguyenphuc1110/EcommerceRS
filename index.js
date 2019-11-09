@@ -9,7 +9,6 @@ import { PersistGate } from 'redux-persist/lib/integration/react';
 const MyApp = () => (
   <Provider store={store}>
       <PersistGate 
-        loading={<ActivityIndicator />} 
         persistor={persistor}
       >
         <App/>

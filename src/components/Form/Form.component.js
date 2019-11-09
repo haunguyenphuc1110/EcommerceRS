@@ -42,7 +42,7 @@ export default class Form extends Component {
   };
 
   render() {
-    const { isSignupForm } = this.props;
+    const { isSignupForm, onPress } = this.props;
     return (
       <View style={styles.container}>
         {isSignupForm &&
@@ -85,7 +85,7 @@ export default class Form extends Component {
           onChangeText={this.handlePassword}
           ref={input => (this.password = input)}
         />
-        <TouchableOpacity style={styles.button} onPress={this._logIn}>
+        <TouchableOpacity style={styles.button} onPress={onPress}>
           <Text style={styles.buttonText}>{this.props.type}</Text>
         </TouchableOpacity>
 
@@ -93,14 +93,14 @@ export default class Form extends Component {
 
         {!isSignupForm && <Text>Hoặc đăng nhập với</Text>}
 
-        {!isSignupForm && <TouchableOpacity style={[styles.button, { backgroundColor: COLORS.facebook }]} onPress={this._logIn}>
+        {!isSignupForm && <TouchableOpacity style={[styles.button, { backgroundColor: COLORS.facebook }]} onPress={onPress}>
             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
               <Image source={IMAGES.FACEBOOK} style={styles.image}/>
               <Text style={styles.buttonText}>Facebook</Text>
             </View>
           </TouchableOpacity>
         }
-        {!isSignupForm && <TouchableOpacity style={[styles.button, { backgroundColor: COLORS.white }]} onPress={this._logIn}>
+        {!isSignupForm && <TouchableOpacity style={[styles.button, { backgroundColor: COLORS.white }]} onPress={onPress}>
             <View style={styles.group}>
               <Image source={IMAGES.GOOGLE} style={styles.image}/>
               <Text style={[styles.buttonText, { color: COLORS.black }]}>Google</Text>

@@ -12,6 +12,7 @@ import Header from '../components/Header/Header.component';
 
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import ProductDetailsScreen from '../screens/ProductDetailsScreen';
 
 
 const AppNavigator = createBottomTabNavigator(
@@ -77,9 +78,9 @@ const MyStackNavigator = createStackNavigator(
     [ScreenIds.APP]: {
       screen: AppNavigator
     },
-    // [Navigations.LOGIN]: {
-    //   screen: Login,
-    // },
+    [ScreenIds.PRODUCT_DETAILS]: {
+      screen: ProductDetailsScreen
+    },
     // [Navigations.SIGNUP]: {
     //   screen: Signup
     // },

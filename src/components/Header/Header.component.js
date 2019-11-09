@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import ScreenIds from '../../navigation/screenIds';
 import styles from './Header.styles'; 
 
 const Header = (props) => {
@@ -19,7 +20,7 @@ const Header = (props) => {
           <View
             style={styles.seperator}
           />
-          <Icon name='shopping-cart' color='red' size={18} onPress={() => alert('Icon')}/>
+          <Icon name='shopping-cart' color='red' size={18} onPress={() => navigation.navigate(ScreenIds.PRODUCT_DETAILS)}/>
         </View>
     </View>
     </View>
