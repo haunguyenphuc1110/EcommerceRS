@@ -55,6 +55,10 @@ class Home extends Component {
     this.props.navigation.navigate(ScreenIds.CART);
   }
 
+  onNavigateToCartSearch = () => {
+    this.props.navigation.navigate(ScreenIds.SEARCH);
+  }
+
   render() {
     const { navigation } = this.props;
     const { isLoading } = this.state;
@@ -67,7 +71,9 @@ class Home extends Component {
 
     return (
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Header onNavigateToCart={this.onNavigateToCart}/>
+        <Header 
+          onNavigateToCart={this.onNavigateToCart} 
+          onNavigateToCartSearch={this.onNavigateToCartSearch}/>
         <SwiperContainer
           data={swiperData}
           navigation={navigation} 
