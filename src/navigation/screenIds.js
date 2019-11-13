@@ -6,7 +6,8 @@ const ScreenIds = {
 	PROFILE: 'Profile',
 	PRODUCT_DETAILS: 'ProductDetails',
 	CART: 'Cart',
-	SEARCH: 'Search'
+	SEARCH: 'Search',
+	MESSAGE: 'Message'
 }
 
 export default ScreenIds;
