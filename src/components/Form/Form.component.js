@@ -1,7 +1,15 @@
+<<<<<<< Updated upstream
 import React, { Component } from "react";
 import { Text, View, TextInput, TouchableOpacity, Image } from "react-native";
 import styles from "./Form.styles";
 import { COLORS, IMAGES } from "../../assets";
+=======
+import React, { Component } from 'react';
+import { Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
+import styles from './Form.styles';
+import { COLORS, IMAGES } from '../../assets';
+import { LoginButton,LoginManager,AccessToken } from 'react-native-fbsdk';
+>>>>>>> Stashed changes
 
 export default class Form extends Component {
   constructor(props) {
@@ -40,7 +48,29 @@ export default class Form extends Component {
     //   alert("Password must has at least 8 characters!");
     // }
   };
-
+  onPressLogin = () => {
+    LoginManager.logInWithPermissions(["public_profile"]).then(
+      function(result) {
+        if (result.isCancelled) {
+          console.log("Login cancelled");
+        } else {
+          console.log(
+            "Login success with permissions: " +
+              result.grantedPermissions.toString()
+          );
+          AccessToken.getCurrentAccessToken().then(
+            (data) => {
+              console.log(data.accessToken.toString())
+            }
+          );
+        }
+      },
+      function(error) {
+        console.log("Login fail with error: " + error);
+      }
+    );
+  };
+  
   render() {
     const { isSignupForm } = this.props;
     return (
@@ -93,7 +123,11 @@ export default class Form extends Component {
 
         {!isSignupForm && <Text>Hoặc đăng nhập với</Text>}
 
+<<<<<<< Updated upstream
         {!isSignupForm && <TouchableOpacity style={[styles.button, { backgroundColor: COLORS.facebook }]} onPress={this._logIn}>
+=======
+        {!isSignupForm && <TouchableOpacity style={[styles.button, { backgroundColor: COLORS.facebook }]} onPress={this.onPressLogin}>
+>>>>>>> Stashed changes
             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
               <Image source={IMAGES.FACEBOOK} style={styles.image}/>
               <Text style={styles.buttonText}>Facebook</Text>
