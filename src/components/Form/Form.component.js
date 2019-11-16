@@ -123,11 +123,7 @@ export default class Form extends Component {
 
         {!isSignupForm && <Text>Hoặc đăng nhập với</Text>}
 
-<<<<<<< Updated upstream
-        {!isSignupForm && <TouchableOpacity style={[styles.button, { backgroundColor: COLORS.facebook }]} onPress={this._logIn}>
-=======
         {!isSignupForm && <TouchableOpacity style={[styles.button, { backgroundColor: COLORS.facebook }]} onPress={this.onPressLogin}>
->>>>>>> Stashed changes
             <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
               <Image source={IMAGES.FACEBOOK} style={styles.image}/>
               <Text style={styles.buttonText}>Facebook</Text>
