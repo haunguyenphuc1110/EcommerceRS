@@ -15,6 +15,7 @@ import ProductDetailsScreen from '../screens/ProductDetailsScreen';
 import CartScreen from '../screens/CartScreen';
 import SearchScreen from '../screens/SearchScreen';
 import MessageScreen from '../screens/MessageScreen';
+import ThreadScreen from '../screens/ThreadScreen';
 
 
 const AppNavigator = createBottomTabNavigator(
@@ -89,9 +90,9 @@ const MyStackNavigator = createStackNavigator(
     [ScreenIds.CART]: {
       screen: CartScreen
     },
-    // [Navigations.SETTING]: {
-    //   screen: Setting
-    // },
+    [ScreenIds.THREAD]: {
+      screen: ThreadScreen
+    },
     // [Navigations.CHANGE_PASSWORD]: {
     //   screen: ChangePassword
     // },

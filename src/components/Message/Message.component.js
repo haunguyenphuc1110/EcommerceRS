@@ -6,6 +6,7 @@ import styles from './Message.styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Avatar from './Avatar/Avatar.component';
 import { COLORS } from '../../assets';
+import ScreenIds from '../../navigation/screenIds';
 
 const Message = ({
   userAvatar,
@@ -18,7 +19,7 @@ const Message = ({
   preview,
   navigation
 }) => (
-  <TouchableWithoutFeedback onPress={() => navigation.navigate('Thread')}>
+  <TouchableWithoutFeedback onPress={() => navigation.navigate(ScreenIds.THREAD)}>
     <View style={styles.container}>
       <Avatar source={userAvatar} />
       <View>
