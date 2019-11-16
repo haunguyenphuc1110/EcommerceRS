@@ -32,14 +32,6 @@ export default class Form extends Component {
     });
   };
 
-  _logIn = () => {
-    // const { onLogin } = this.props;
-    // if (this.state.password.length >= 8) {
-    //   onLogin(this.state.email, this.state.password);
-    // } else {
-    //   alert('Password must has at least 8 characters!');
-    // }
-  };
 
   render() {
     const { isSignupForm, onPress } = this.props;

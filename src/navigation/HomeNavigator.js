@@ -14,6 +14,8 @@ import ProfileScreen from '../screens/ProfileScreen';
 import ProductDetailsScreen from '../screens/ProductDetailsScreen';
 import CartScreen from '../screens/CartScreen';
 import SearchScreen from '../screens/SearchScreen';
+import MessageScreen from '../screens/MessageScreen';
+import ThreadScreen from '../screens/ThreadScreen';
 
 
 const AppNavigator = createBottomTabNavigator(
@@ -27,15 +29,15 @@ const AppNavigator = createBottomTabNavigator(
         ),
       }
     },
-    // [ScreenIds.EXCLUSIVE]: {
-    //   screen: HomeScreen,
-    //   navigationOptions: {
-    //     tabBarLabel: 'Độc quyền',
-    //     tabBarIcon: ({ tintColor }) => (
-    //       <Icon name='award' color={tintColor} size={18} />
-    //     )
-    //   }
-    // },
+    [ScreenIds.MESSAGE]: {
+      screen: MessageScreen,
+      navigationOptions: {
+        tabBarLabel: 'Tin nhắn',
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name='comment' color={tintColor} size={18} />
+        )
+      }
+    },
     // [ScreenIds.NOTIFICATION]: {
     //   screen: HomeScreen,
     //   navigationOptions: {
@@ -88,9 +90,9 @@ const MyStackNavigator = createStackNavigator(
     [ScreenIds.CART]: {
       screen: CartScreen
     },
-    // [Navigations.SETTING]: {
-    //   screen: Setting
-    // },
+    [ScreenIds.THREAD]: {
+      screen: ThreadScreen
+    },
     // [Navigations.CHANGE_PASSWORD]: {
     //   screen: ChangePassword
     // },
