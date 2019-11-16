@@ -1,15 +1,8 @@
-<<<<<<< Updated upstream
 import React, { Component } from "react";
 import { Text, View, TextInput, TouchableOpacity, Image } from "react-native";
 import styles from "./Form.styles";
 import { COLORS, IMAGES } from "../../assets";
-=======
-import React, { Component } from 'react';
-import { Text, View, TextInput, TouchableOpacity, Image } from 'react-native';
-import styles from './Form.styles';
-import { COLORS, IMAGES } from '../../assets';
 import { LoginButton,LoginManager,AccessToken } from 'react-native-fbsdk';
->>>>>>> Stashed changes
 
 export default class Form extends Component {
   constructor(props) {
