@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    height: 500
+    height: '100%'
   },
   tabBar: {
     backgroundColor: COLORS.headerTab, 
@@ -36,6 +36,10 @@ const styles = StyleSheet.create({
   banner: {
     width: width,
     height: 150
+  },
+  headerTitleStyle: {
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   titleStyle: {
     color: COLORS.white,
