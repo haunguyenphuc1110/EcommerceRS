@@ -8,7 +8,8 @@ const ScreenIds = {
 	CART: 'Cart',
 	SEARCH: 'Search',
 	MESSAGE: 'Message',
-	THREAD: 'Thread'
+	THREAD: 'Thread',
+	SURVEY: 'Survey'
 }
 
 export default ScreenIds;
