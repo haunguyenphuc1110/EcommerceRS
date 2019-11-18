@@ -1,12 +1,14 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { COLORS } from '../../assets';
+
+const { height } = Dimensions.get('window');
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		justifyContent: 'flex-start',
     alignItems: 'center',
     paddingTop: 20,
-    height: 500
+    height: height - 170
 	},
 
 	inputBox: {

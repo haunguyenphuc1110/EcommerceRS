@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import { View, Dimensions, Image, Text, ScrollView } from 'react-native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
-import ReactNativeParallaxHeader from 'react-native-parallax-header';
 import { IMAGES, COLORS } from '../../assets';
 import styles from './Profile.styles';
+
+import ParallaxHeader from '../../components/Common/ParallaxHeader/ParallaxHeader.component';
+import { LoginManager, AccessToken, GraphRequest, GraphRequestManager } from "react-native-fbsdk";
 
 import Form from '../../components/Form/Form.component';
 import ProfileDetails from '../../components/ProfileDetails/ProfileDetails.component';
@@ -19,20 +21,53 @@ class Profile extends Component {
   };
 
   FirstRoute = () => (
-    <Form type={'ĐĂNG NHẬP'} onPress={this.onPress}/>
+    <Form type={'ĐĂNG NHẬP'} onPress={this.onLogin}/>
   );
   
   SecondRoute = () => (
-    <Form type={'ĐĂNG KÝ'} isSignupForm={true} onPress={this.onPress}/>
+    <Form type={'ĐĂNG KÝ'} isSignupForm={true} onPress={this.onLogin}/>
   );
 
-  onPress = () => {
-    this.setState({
-      isLoggedIn: true
-    });
+  onLogin = () => {
+    LoginManager.logInWithPermissions(["public_profile"]).then(
+      (result) => {
+        if (result.isCancelled) {
+          console.log("Login cancelled");
+        } else {
+          console.log(result);
+          // AccessToken.getCurrentAccessToken().then(
+          //   (data) => {
+          //     console.log(data.accessToken.toString())
+          //   }
+          // )
+          infoRequest = new GraphRequest(
+            '/me',
+            null,
+            this._responseInfoCallback,
+          );
+          new GraphRequestManager().addRequest(infoRequest).start();
+          this.setState({
+            isLoggedIn: true
+          })
+        }
+      },
+      (error) => {
+        console.log("Login fail with error: " + error);
+      }
+    );
   };
 
+  //Create response callback.
+  _responseInfoCallback(error, result) {
+    if (error) {
+      console.log('Error fetching data: ' + error.toString());
+    } else {
+      console.log('Success fetching data: ' + JSON.stringify(result));
+    }
+  }
+
   logOut = () => {
+    LoginManager.logOut();
     this.setState({
       isLoggedIn: false
     })
@@ -50,11 +85,11 @@ class Profile extends Component {
     if ( !isLoggedIn ) {
       return (
         <View style={{ flex: 1 }}>
-          <ReactNativeParallaxHeader
-            headerMinHeight={50}
-            headerMaxHeight={150}
-            extraScrollHeight={50}
+          <ParallaxHeader
+            headerMinHeight={30}
+            headerMaxHeight={170}
             navbarColor={COLORS.appColor}
+            headerTitleStyle={styles.headerTitleStyle}
             title="Đăng nhập / Đăng ký"
             titleStyle={styles.titleStyle}
             backgroundImage={IMAGES.BANNER}
@@ -74,10 +109,6 @@ class Profile extends Component {
             containerStyle={{ flex: 1 }}
             contentContainerStyle={{ flexGrow: 1 }}
             innerContainerStyle={{ flex: 1 }}
-            scrollViewProps={{
-              onScrollBeginDrag: () => console.log('onScrollBeginDrag'),
-              onScrollEndDrag: () => console.log('onScrollEndDrag'),
-            }}
           />
         </View>
       );
