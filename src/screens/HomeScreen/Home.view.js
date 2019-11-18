@@ -18,6 +18,7 @@ import SwiperContainer from '../../components/SwiperContainer/SwiperContainer.co
 import DealContainer from '../../components/DealContainer/DealContainer.component';
 import PopulaContainer from '../../components/PopularContainer/PopularContainer.component';
 import CategoryContainer from '../../components/CategoryContainer/CategoryContainer.component';
+import ViewedContainer from '../../components/ViewedContainer/ViewedContainer.component';
 import RecommendContainer from '../../components/RecommendContainer/RecommendContainer.component';
 import ProposeContainer from '../../components/ProposeContainer/ProposeContainer.component';
 
@@ -85,14 +86,14 @@ class Home extends Component {
         <View style={styles.main}>
           <Image
             source={{
-              uri: 'https://shoppinglist.vn/wp-content/uploads/2019/01/4.-ma-giam-gia-sendo-5-779x373.png'
+              uri: 'http://media3.scdn.vn/img3/2019/11_4/0mLRBX.png'
             }}
             style={styles.banner}
             resizeMode='stretch'
           />
 
           <View style={styles.popularContainer}>
-            <Text style={styles.title}>Xu hướng tìm kiếm</Text>
+            <Text style={styles.title}>Tìm kiếm phổ biến</Text>
             <PopulaContainer data={populariryData}/>
           </View>
 
@@ -102,13 +103,13 @@ class Home extends Component {
           </View>
 
           <View style={[styles.popularContainer, { padding: 0 }]}>
-            <Text style={[styles.title, {margin: 10}]}>Đề cử cho bạn</Text>
+            <Text style={[styles.title, {margin: 10}]}>Bộ sưu tập yêu thích</Text>
             <RecommendContainer data={this.props.categoryData}/>
           </View>
 
           <View style={styles.popularContainer}>
             <Text style={styles.title}>Sản phẩm vừa xem</Text>
-            <PopulaContainer data={populariryData}/>
+            <ViewedContainer data={populariryData}/>
           </View>
 
           <LinearGradient colors={[COLORS.red, COLORS.lightOrange]} style={styles.popularContainer}>

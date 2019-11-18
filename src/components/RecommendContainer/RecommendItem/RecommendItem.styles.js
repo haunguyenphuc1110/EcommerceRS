@@ -6,23 +6,30 @@ const styles = StyleSheet.create({
   main: { 
     justifyContent: 'space-evenly', 
     alignItems: 'center', 
-    margin: 1,
+    margin: 10,
     borderRadius: 5, 
     padding: 10,
     backgroundColor: COLORS.white,
-    width: width/3 - 9
+    elevation: 10
   },
   image: {
-    width: 50, 
-    height: 50, 
-    borderRadius: 25
+    width: 200, 
+    height: 200, 
+    borderRadius: 5
+  },
+  titleContainer: {
+    width: 200,
+    marginTop: 5,
+    padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: COLORS.gray
   },
   title: {
     fontSize: 16,
     fontWeight: '500',
     color: COLORS.black,
     textAlign: 'center',
-    width: 80
   }
 });
 

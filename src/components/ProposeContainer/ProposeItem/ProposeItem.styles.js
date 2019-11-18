@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
     marginTop: 10, 
     borderRadius: 5, 
     padding: 10,
-    backgroundColor: COLORS.white
+    backgroundColor: COLORS.white,
+    elevation: 5
   },
   title: {
     fontSize: 16,

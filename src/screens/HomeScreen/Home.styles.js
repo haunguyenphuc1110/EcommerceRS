@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: COLORS.red,
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '500'
   }
 });

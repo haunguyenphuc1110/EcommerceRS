@@ -1,8 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { COLORS } from '../../assets';
+
 const styles = StyleSheet.create({
-  main: {
-    elevation: 10
+  image: {
+    width: 60, 
+    height: 60, 
+    borderRadius: 5,
+    margin: 20
   }
 });
 
