@@ -9,7 +9,8 @@ const ScreenIds = {
 	SEARCH: 'Search',
 	MESSAGE: 'Message',
 	THREAD: 'Thread',
-	SURVEY: 'Survey'
+	SURVEY: 'Survey',
+	PAYMENT: 'Payment'
 }
 
 export default ScreenIds;

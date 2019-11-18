@@ -10,7 +10,8 @@ class Cart extends Component {
 
 	render() {
 		const { 
-			recommendationData
+			recommendationData,
+			navigation
 		} = this.props;
 		return (
 			<View style={styles.container}>
@@ -33,12 +34,11 @@ class Cart extends Component {
 					</ScrollView>
 				}
 
-				{/* <Footer
-					cartItemData={cartItemData}
-					totalPrice={totalPrice}
-					totalQuantity={totalQuantity}
-					navigation={navigation} /> */}
-          <Footer/>
+				<Footer
+					// cartItemData={cartItemData}
+					// totalPrice={totalPrice}
+					// totalQuantity={totalQuantity}
+					navigation={navigation} />
 			</View>
 		);
 	}

@@ -4,13 +4,8 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './Footer.styles';
 
 const onProceedToPayment = (props) => {
-  // const { cartItemData, navigation } = props;
-  // if (cartItemData.length === 0) {
-  //   alert('No item needs to paid!')
-  // }
-  // else {
-  //   navigation.navigate('Payment')
-  // }
+  const { navigation } = props;
+  navigation.navigate('Payment');
 }
 
 const renderCoupon = () => {
@@ -34,7 +29,7 @@ const renderTotalContent = (props) => {
         <Text style={styles.textGoods}>10 goods</Text>
       </View>
       <View style={styles.totalStyle}>
-        <Text style={styles.totalTitle}>TOTAL</Text>
+        <Text style={styles.totalTitle}>Tổng tiền</Text>
         <Text style={styles.totalContent}>1.500.000 đ</Text>
       </View>
     </View>
@@ -44,7 +39,7 @@ const renderTotalContent = (props) => {
 const renderButton = (props) => {
   return (
     <TouchableOpacity style={styles.checkoutButtonStyle} onPress={() => onProceedToPayment(props)}>
-      <Text style={styles.text}>CHECKOUT</Text>
+      <Text style={styles.text}>Mua hàng</Text>
     </TouchableOpacity>
   );
 }

@@ -8,7 +8,6 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import ScreenIds from './screenIds';
 import { COLORS } from '../assets';
 
-
 import HomeScreen from '../screens/HomeScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ProductDetailsScreen from '../screens/ProductDetailsScreen';
@@ -17,7 +16,7 @@ import SearchScreen from '../screens/SearchScreen';
 import MessageScreen from '../screens/MessageScreen';
 import ThreadScreen from '../screens/ThreadScreen';
 import SurveyScreen from '../screens/SurveyScreen';
-
+import PaymentScreen from '../screens/PaymentScreen';
 
 const AppNavigator = createBottomTabNavigator(
   {
@@ -97,9 +96,9 @@ const MyStackNavigator = createStackNavigator(
     [ScreenIds.SURVEY]: {
       screen: SurveyScreen
     },
-    // [Navigations.LIST_ITEM]: {
-    //   screen: ListItem
-    // },
+    [ScreenIds.PAYMENT]: {
+      screen: PaymentScreen
+    },
     // [Navigations.PIZZA_DETAIL]: {
     //   screen: PizzaDetail
     // },
