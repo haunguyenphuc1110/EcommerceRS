@@ -2,43 +2,43 @@ import { COLORS } from '../assets';
 export const swiperData = [
   {
     id: 1,
-    url: 'https://sudospaces.com/chanhtuoi-com/uploads/2018/09/ma-giam-gia-sendo.png'
+    url: 'https://cf.shopee.vn/file/0393093dca3b2732bf8fcc5f003d5080_xxhdpi'
   },
   {
     id: 2,
-    url: 'https://bloggiamgia.vn/wp-content/uploads/2018/09/ma%CC%83-gia%CC%89m-gia%CC%81-sendo.jpg'
+    url: 'https://cf.shopee.vn/file/8eff4439308d4f517d8e05dc423c7c44_xxhdpi'
   },
   {
     id: 3,
-    url: 'https://tingiare.com/wp-content/uploads/2018/02/ma-giam-gia-sendo-9.jpg'
+    url: 'https://cf.shopee.vn/file/c63a90342f57ec4474f922331c482047_xxhdpi'
   },
   {
     id: 4,
-    url: 'http://channel.vcmedia.vn/prupload/270/2018/11/img_201811221410579468.jpg'
+    url: 'https://cf.shopee.vn/file/8aee774baf7ea8b2b1d8adab64852599_xxhdpi'
   },
   {
     id: 5,
-    url: 'https://www.sendo.vn/nhip-song/media/camnang/2016/05/mien-phi-van-chuyen.jpg'
+    url: 'https://cf.shopee.vn/file/cad27a41fd78191c845489642fbd2a7f_xxhdpi'
   },
   {
     id: 6,
-    url: 'https://mavoucher.vn/wp-content/uploads/2016/06/Flash-Sale-Sendo.png'
+    url: 'https://cf.shopee.vn/file/7d14a03fbf2190aac4773d47e80cf1e7_xxhdpi'
   },
   {
     id: 7,
-    url: 'https://mavoucher.vn/wp-content/uploads/2016/06/Cua-hang-dong-gia.png'
+    url: 'https://cf.shopee.vn/file/fb21e31353856923f21a4692b8a5f6a3_xxhdpi'
   },
   {
     id: 8,
-    url: 'https://www.tiendauroi.com/uploads/default/original/2X/1/1e41049f65b405562f71f3af35aa1146422907d0.jpeg'
+    url: 'https://cf.shopee.vn/file/0393093dca3b2732bf8fcc5f003d5080_xxhdpi'
   },
   {
     id: 9,
-    url: 'https://www.tingiamgia247.com/wp-content/plugins/RSSPoster_PRO/cache/68773_ma-giam-gia-sendo-1537508008.png'
+    url: 'https://cf.shopee.vn/file/c40355ff983c90c9ed985708a05dcbf3_xxhdpi'
   },
   {
     id: 10,
-    url: 'https://www.sendo.vn/nhip-song/media/camnang/2016/05/dai-tiec-sinh-nhat.jpg'
+    url: 'https://cf.shopee.vn/file/0eb5c31547cfe3a7334c3e9eac8618ee_xxhdpi'
   }
 ];
 
@@ -167,3 +167,86 @@ export const populariryData = [
     image: 'https://haanhshop.com/image/cache/Hinh-Do-Ngu/Ao-Lot-Al1-Al8-Triumph-Lovely-Victoria/ao-lot-triumph-al2-do%20(5)-800x800.jpg'
   }
 ];
+
+export const surveyData = [
+  { 
+      "belong_cate_lvl1_id": 8, 
+      "belong_cate_lvl1_name": "Thời trang nữ",
+      "imageUrl": "https://cafestyle.yes24.vn/Upload/ImageZine/Board/chitietxeplytrothanhxuhu%C3%B3ng924220197.jpg"
+  },
+  { 
+      "belong_cate_lvl1_id": 94, 
+      "belong_cate_lvl1_name": "Thời trang nam",
+      "imageUrl": "https://znews-photo.zadn.vn/w660/Uploaded/ycgmvjvj/2018_04_16/9_2.jpg"
+  },
+  { 
+      "belong_cate_lvl1_id": 138, 
+      "belong_cate_lvl1_name": "Mẹ và bé",
+      "imageUrl": "https://thegioithoitrangbaby.com/wp-content/uploads/2018/06/thoi-trang-me-va-be-gai-giong-nhau-de-dang-cho-ban-lua-chon3.jpg"
+  },
+  { 
+      "belong_cate_lvl1_id": 220, 
+      "belong_cate_lvl1_name": "Sức khỏe & Làm đẹp",
+      "imageUrl": "http://mobile.vtc.vn/uploads/mecon/c/2019/05/13/206652-e9c5c82a-0218-45ce-a93a-98c2567ae558.jpg"
+  },
+  { 
+      "belong_cate_lvl1_id": 528, 
+      "belong_cate_lvl1_name": "Phụ kiện công nghệ",
+      "imageUrl": "https://cdn.tgdd.vn/Products/Images/54/70820/tai-nghe-chup-tai-kanen-ip-952-2-6-org.jpg"
+  },
+  { 
+      "belong_cate_lvl1_id": 604, 
+      "belong_cate_lvl1_name": "Không gian sống",
+      "imageUrl": "https://icdn.dantri.com.vn/thumb_w/640/075af8604d/2016/09/09/img20160909132858108-5181c.jpg"
+  },
+  {
+      "belong_cate_lvl1_id": 736,
+      "belong_cate_lvl1_name": "Thể thao & giải trí",
+      "imageUrl": "http://tiki.vn/tu-van/wp-content/uploads/2016/06/giay-the-thao-tr%C3%AAn-tiki-02.png"
+  },
+  { 
+      "belong_cate_lvl1_id": 1019, 
+      "belong_cate_lvl1_name": "Đồ dùng trong nhà",
+      "imageUrl": "https://daubepgiadinh.vn/wp-content/uploads/2017/11/nhung-chiec-thot.jpg"
+  },
+  { 
+      "belong_cate_lvl1_id": 1108, 
+      "belong_cate_lvl1_name": "Đồ điện gia dụng",
+      "imageUrl": "https://images.samsung.com/is/image/samsung/vn-multi-door-rf56k9041sg-rf56k9041sg-sv-001-front-black?$PD_GALLERY_L_JPG$"
+  },
+  { 
+      "belong_cate_lvl1_id": 1171, 
+      "belong_cate_lvl1_name": "Thực phẩm",
+      "imageUrl": "https://scdn.thitruongsi.com/image/cached/size/w640-h640/img/product/2017/04/19/6c27f4e0-24e8-11e7-a0dd-811fc4e5b0c7.jpg"
+  },
+  { 
+      "belong_cate_lvl1_id": 1366, 
+      "belong_cate_lvl1_name": "Đồng hồ",
+      "imageUrl": "https://galle.vn/upload_images/images/g-shock-x-justice-league.jpg"
+  },
+  { 
+      "belong_cate_lvl1_id": 1458, 
+      "belong_cate_lvl1_name": "Đồ chơi",
+      "imageUrl": "https://www.sahadeal.vn/upload/team/2017/0704/sahadeal.vn-14991368439249.jpg"
+  },
+  { 
+      "belong_cate_lvl1_id": 1663, 
+      "belong_cate_lvl1_name": "Công nghệ",
+      "imageUrl": "https://techland.com.vn/wp-content/uploads/2019/09/dien-thoai-iphone-11-pro-max-3a.jpg"
+  },
+  { 
+      "belong_cate_lvl1_id": 1686, 
+      "belong_cate_lvl1_name": "Giày dép",
+      "imageUrl": "https://a.ipricegroup.com/media/Sneaker/adidas/Ultraboost/giay_adidas_Ultra_Boost_chinh_hang.jpg"
+  },
+  { 
+      "belong_cate_lvl1_id": 1722,
+      "belong_cate_lvl1_name": "Túi xách",
+      "imageUrl": "https://vcdn.tikicdn.com/ts/product/dd/0b/d8/5027fec7189a7905d00c6a9829c4fb84.jpg"
+  },
+  {
+      "belong_cate_lvl1_id": 1629,
+      "belong_cate_lvl1_name": "Phụ kiện thời trang",
+      "imageUrl": "https://bizweb.dktcdn.net/thumb/large/100/180/420/products/0-2-60bcdc92-fd07-468a-9597-62592ff31228-b46331b9-a119-4262-bf53-fbd4b8a54890-3765b4b7-70d1-4cad-8b3f-b56f871a71af.jpg"
+  }
+]
