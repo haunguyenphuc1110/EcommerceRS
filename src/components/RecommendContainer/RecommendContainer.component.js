@@ -10,7 +10,9 @@ const PopularContainer = (props) => {
   return (
     <View style={styles.main}>
       <FlatList
-        numColumns={3}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        numColumns={1}
         data={data}
         renderItem={({ item }) => (<RecommendItem item={item}/>)}
         keyExtractor={item => item.id}

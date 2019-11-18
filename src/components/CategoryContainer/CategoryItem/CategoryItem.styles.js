@@ -8,17 +8,15 @@ const styles = StyleSheet.create({
     marginRight: 10, 
     marginTop: 10, 
     borderRadius: 5, 
-    padding: 10,
-    backgroundColor: COLORS.gray
+    padding: 10 
   },
   image: {
-    width: 50, 
-    height: 50, 
-    borderRadius: 25
+    width: 80, 
+    height: 80, 
+    borderRadius: 40
   },
   title: {
     fontSize: 16,
-    fontWeight: '500',
     color: COLORS.black,
     textAlign: 'center',
     width: 80
