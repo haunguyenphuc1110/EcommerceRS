@@ -16,6 +16,7 @@ import CartScreen from '../screens/CartScreen';
 import SearchScreen from '../screens/SearchScreen';
 import MessageScreen from '../screens/MessageScreen';
 import ThreadScreen from '../screens/ThreadScreen';
+import SurveyScreen from '../screens/SurveyScreen';
 
 
 const AppNavigator = createBottomTabNavigator(
@@ -93,9 +94,9 @@ const MyStackNavigator = createStackNavigator(
     [ScreenIds.THREAD]: {
       screen: ThreadScreen
     },
-    // [Navigations.CHANGE_PASSWORD]: {
-    //   screen: ChangePassword
-    // },
+    [ScreenIds.SURVEY]: {
+      screen: SurveyScreen
+    },
     // [Navigations.LIST_ITEM]: {
     //   screen: ListItem
     // },
