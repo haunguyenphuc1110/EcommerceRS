@@ -18,7 +18,7 @@ const DeliveryAddress = props => {
       <Dropdown
         value={city}
         onChangeText={(text) => handleInput(text, "city")}
-        label="Province/City"
+        label="Thành phố"
         itemColor={COLORS.black}
         textColor={COLORS.darkGray}
         selectedItemColor={COLORS.lightBlue}
@@ -28,7 +28,7 @@ const DeliveryAddress = props => {
       <Dropdown
         value={district}
         onChangeText={(text) => handleInput(text, "district")}
-        label="District"
+        label="Quận"
         itemColor={COLORS.black}
         textColor={COLORS.darkGray}
         selectedItemColor={COLORS.lightBlue}
@@ -38,7 +38,7 @@ const DeliveryAddress = props => {
       <Dropdown
         value={ward}
         onChangeText={(text) => handleInput(text, "ward")}
-        label="Ward"
+        label="Phường"
         itemColor={COLORS.black}
         textColor={COLORS.darkGray}
         selectedItemColor={COLORS.lightBlue}
@@ -54,7 +54,7 @@ const DeliveryAddress = props => {
         value={street}
         onChangeText={(text) => handleInput(text, "street")}
         textColor={COLORS.black}
-        label="Street, Quarter, Hamlet"
+        label="Đường"
         tintColor={COLORS.appColor}
         baseColor={COLORS.darkGray}
         onSubmitEditing={() => this.houseNumber.focus()}
@@ -63,7 +63,7 @@ const DeliveryAddress = props => {
         value={houseNumber}
         onChangeText={(text) => handleInput(text, "houseNumber")}
         textColor={COLORS.black}
-        label="House number"
+        label="Số nhà"
         tintColor={COLORS.appColor}
         baseColor={COLORS.darkGray}
         ref={input => (this.houseNumber = input)}
