@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, Image } from 'react-native';
+import { View, TouchableOpacity, Image, ImageBackground } from 'react-native';
 import Icon from "react-native-vector-icons/FontAwesome5";
 import { COLORS, IMAGES } from "../../../assets";
 import styles from './PaymentMethod.styles';
@@ -15,38 +15,43 @@ const PaymentMethod = props => {
   return (
     <View style={styles.paymentContainer}>
       <TouchableOpacity onPress={onChooseCash}>
-        <Image source={IMAGES.CASH} style={styles.paymentImg} />
+        <ImageBackground source={IMAGES.CASH} style={styles.paymentImg}>
+          {showCheckCash && (
+            <Icon
+              name="check-circle"
+              color={COLORS.white}
+              size={20}
+              style={styles.iconCheck}
+            />
+          )}
+        </ImageBackground>
       </TouchableOpacity>
-      {showCheckCash && (
-        <Icon
-          name="check-circle"
-          color={COLORS.white}
-          size={20}
-          style={styles.iconCheck}
-        />
-      )}
+      
       <TouchableOpacity onPress={onChooseVisa}>
-        <Image source={IMAGES.VISA} style={styles.paymentImg} />
+        <ImageBackground source={IMAGES.VISA} style={styles.paymentImg}>
+          {showCheckVisa && (
+            <Icon
+              name="check-circle"
+              color={COLORS.white}
+              size={20}
+              style={styles.iconCheck}
+            />
+          )}
+        </ImageBackground>
       </TouchableOpacity>
-      {showCheckVisa && (
-        <Icon
-          name="check-circle"
-          color={COLORS.white}
-          size={20}
-          style={styles.iconCheck}
-        />
-      )}
+
       <TouchableOpacity onPress={onChooseMastercard}>
-        <Image source={IMAGES.MASTER_CARD} style={styles.paymentImg} />
+        <ImageBackground source={IMAGES.MASTER_CARD} style={styles.paymentImg}>
+          {showCheckMastercard && (
+            <Icon
+              name="check-circle"
+              color={COLORS.white}
+              size={20}
+              style={styles.iconCheck}
+            />
+          )}
+        </ImageBackground>
       </TouchableOpacity>
-      {showCheckMastercard && (
-        <Icon
-          name="check-circle"
-          color={COLORS.white}
-          size={20}
-          style={styles.iconCheck}
-        />
-      )}
     </View>
   );
 };
