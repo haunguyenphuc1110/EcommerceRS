@@ -6,7 +6,7 @@ import styles from './UserPartials.styles';
 import Avatar from './Avatar/Avatar.component';
 import SmallButton from './SmallButton/SmallButton.component';
 
-const UserPartials = ({ avatarUrl, rating, name }) => (
+const UserPartials = ({ avatarUrl, rating, name, navigateToMessage, navigateToCart }) => (
   <View style={styles.container}>
     <View style={styles.column}>
       <Avatar source={avatarUrl} />
@@ -17,9 +17,9 @@ const UserPartials = ({ avatarUrl, rating, name }) => (
     </View>
     <View style={styles.column}>
       <View style={styles.buttonContainer}>
-        <SmallButton text='Nhắn tin' />
+        <SmallButton text='Nhắn tin' onPress={navigateToMessage}/>
       </View>
-      <SmallButton text='Mua ngay' accent={true} />
+      <SmallButton text='Mua ngay' onPress={navigateToCart} accent={true} />
     </View>
   </View>
 );

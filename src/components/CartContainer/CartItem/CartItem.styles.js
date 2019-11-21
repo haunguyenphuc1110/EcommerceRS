@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
 		padding: 10,
 		marginVertical: 5,
     borderRadius: 10,
-    backgroundColor: COLORS.white
+		backgroundColor: COLORS.white,
+		elevation: 5
 	},
 	content: {
     flex: 1,
@@ -22,8 +23,7 @@ const styles = StyleSheet.create({
 		borderRadius: 5
 	},
 	name: {
-		fontSize: 18,
-		fontWeight: 'bold',
+		fontSize: 16,
 		color: COLORS.black,
 		maxWidth: 220
 	},
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
 	price: {
 		marginLeft: 5,
 		fontWeight: 'bold',
-		color: COLORS.appColor,
+		color: COLORS.black,
 		fontSize: 18
 	}
 });
