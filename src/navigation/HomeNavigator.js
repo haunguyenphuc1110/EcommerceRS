@@ -9,6 +9,7 @@ import ScreenIds from './screenIds';
 import { COLORS } from '../assets';
 
 import HomeScreen from '../screens/HomeScreen';
+import OfferScreen from '../screens/OfferScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ProductDetailsScreen from '../screens/ProductDetailsScreen';
 import CartScreen from '../screens/CartScreen';
@@ -17,6 +18,7 @@ import MessageScreen from '../screens/MessageScreen';
 import ThreadScreen from '../screens/ThreadScreen';
 import SurveyScreen from '../screens/SurveyScreen';
 import PaymentScreen from '../screens/PaymentScreen';
+import BillScreen from '../screens/BillScreen';
 
 const AppNavigator = createBottomTabNavigator(
   {
@@ -29,6 +31,15 @@ const AppNavigator = createBottomTabNavigator(
         ),
       }
     },
+    [ScreenIds.OFFER]: {
+      screen: OfferScreen,
+      navigationOptions: {
+        tabBarLabel: 'Ưu đãi',
+        tabBarIcon: ({ tintColor }) => (
+          <Icon name='award' color={tintColor} size={18} />
+        )
+      }
+    },
     [ScreenIds.MESSAGE]: {
       screen: MessageScreen,
       navigationOptions: {
@@ -38,15 +49,6 @@ const AppNavigator = createBottomTabNavigator(
         )
       }
     },
-    // [ScreenIds.NOTIFICATION]: {
-    //   screen: HomeScreen,
-    //   navigationOptions: {
-    //     tabBarLabel: 'Thông báo',
-    //     tabBarIcon: ({ tintColor }) => (
-    //       <Icon name='bell' color={tintColor} size={18} />
-    //     )
-    //   }
-    // },
     [ScreenIds.PROFILE]: {
       screen: ProfileScreen,
       navigationOptions: {
@@ -99,9 +101,9 @@ const MyStackNavigator = createStackNavigator(
     [ScreenIds.PAYMENT]: {
       screen: PaymentScreen
     },
-    // [Navigations.PIZZA_DETAIL]: {
-    //   screen: PizzaDetail
-    // },
+    [ScreenIds.BILL]: {
+      screen: BillScreen
+    },
     // [Navigations.LIST_TOPPING]: {
     //   screen: ListTopping
     // },

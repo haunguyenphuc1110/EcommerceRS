@@ -1,7 +1,7 @@
 const ScreenIds = {
 	APP: 'App',
 	HOME: 'Home',
-	EXCLUSIVE: 'Exclusive',
+	OFFER: 'Offer',
 	NOTIFICATION: 'Notification',
 	PROFILE: 'Profile',
 	PRODUCT_DETAILS: 'ProductDetails',
@@ -10,7 +10,8 @@ const ScreenIds = {
 	MESSAGE: 'Message',
 	THREAD: 'Thread',
 	SURVEY: 'Survey',
-	PAYMENT: 'Payment'
+	PAYMENT: 'Payment',
+	BILL: 'Bill'
 }
 
 export default ScreenIds;
