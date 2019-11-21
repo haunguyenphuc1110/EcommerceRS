@@ -20,7 +20,7 @@ const ContactInfo = props => {
       <TextField
         value={phone}
         keyboardType="phone-pad"
-        onChangeText={() => handleInput(text, "phone")}
+        onChangeText={(text) => handleInput(text, "phone")}
         textColor={COLORS.white}
         label="Phone"
         tintColor={COLORS.appColor}

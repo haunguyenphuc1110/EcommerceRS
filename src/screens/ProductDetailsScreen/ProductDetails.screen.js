@@ -2,27 +2,43 @@ import React from 'react';
 import { TouchableOpacity, View, Platform } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ProductDetails from './ProductDetails.view';
+import CartHeader from '../../components/Common/CartHeader/CartHeader.component';
+import { connect } from 'react-redux';
+import { COLORS } from '../../assets';
 
-export default class extends React.Component {
-  static navigationOptions = {
+const ProductDetailsScreen = (props) => (<ProductDetails {...props}/>);
+
+const mapStateToProps = state => {
+  return {
+    
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    
+  };
+};
+
+ProductDetailsScreen.navigationOptions = ({ navigation }) => {
+  return {
     title: 'Chi tiết sản phẩm',
     headerTransparent: true,
     headerRight: (
-      <TouchableOpacity>
-        <View
-          style={{
-            ...Platform.select({ ios: { heigth: 45 } }),
-            justifyContent: 'center',
-            paddingLeft: 20
-          }}
-        >
-          <Icon
-            name={Platform.OS === 'ios' ? 'ios-heart-empty' : 'md-heart-empty'}
-            size={Platform.OS === 'ios' ? 26 : 20}
-            color='white'
-          />
-        </View>
-      </TouchableOpacity>
+      <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+        <TouchableOpacity>
+          <View
+            style={{ marginRight: 10 }}
+          >
+            <Icon
+              name={Platform.OS === 'ios' ? 'ios-heart-empty' : 'md-heart-empty'}
+              size={Platform.OS === 'ios' ? 26 : 20}
+              color='white'
+            />
+          </View>
+        </TouchableOpacity>
+        <CartHeader navigation={navigation} color={COLORS.white}/>
+      </View>
     ),
     headerRightContainerStyle: {
       ...Platform.select({
@@ -31,14 +47,12 @@ export default class extends React.Component {
           paddingVertical: 12
         },
         android: {
-          paddingRight: 20,
+          paddingRight: 10,
           paddingVertical: 12
         }
       })
     }
-  };
-
-  render() {
-    return <ProductDetails />;
   }
-}
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDetailsScreen);

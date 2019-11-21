@@ -4,15 +4,25 @@ import Swiper from 'react-native-swiper';
 import { COLORS, IMAGES } from '../../assets';
 import styles from './ProductDetails.styles';
 
+import ScreenIds from '../../navigation/screenIds';
+
 import UserPartials from '../../components/UserPartials/UserPartials.component';
 
-const ProductDetails = () => (
+const navigateToMessage = (navigation) => {
+  navigation.navigate(ScreenIds.THREAD);
+}
+
+const navigateToCart = (navigation) => {
+  navigation.navigate(ScreenIds.CART);
+}
+
+const ProductDetails = (props) => (
   <View style={styles.container}>
     <ScrollView contentContainerStyle={styles.scroll} bounces={false}>
       <Swiper
         style={styles.swiper}
         activeDotColor={COLORS.white}
-        dotColor='rgba(255, 255, 255, 0.3)'
+        dotColor={COLORS.gray}
       >
         <Image
           source={{
@@ -57,6 +67,8 @@ const ProductDetails = () => (
           name='Hau Nguyen'
           rating={4.6}
           avatarUrl={IMAGES.AVATAR}
+          navigateToCart={() => navigateToCart(props.navigation)}
+          navigateToMessage={() => navigateToMessage(props.navigation)}
         />
       </View>
     </ScrollView>

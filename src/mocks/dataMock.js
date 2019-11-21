@@ -249,4 +249,47 @@ export const surveyData = [
       "belong_cate_lvl1_name": "Phụ kiện thời trang",
       "imageUrl": "https://bizweb.dktcdn.net/thumb/large/100/180/420/products/0-2-60bcdc92-fd07-468a-9597-62592ff31228-b46331b9-a119-4262-bf53-fbd4b8a54890-3765b4b7-70d1-4cad-8b3f-b56f871a71af.jpg"
   }
-]
+];
+
+export const offerData = [
+  {
+    id: 'OFFER1',
+    image: 'https://media3.scdn.vn/img3/2019/11_16/FbpouJ.png'
+  },
+  {
+    id: 'OFFER2',
+    image: 'https://media3.scdn.vn/img3/2019/11_16/pQQCHo.png'
+  },
+  {
+    id: 'OFFER3',
+    image: 'https://media3.scdn.vn/img3/2019/11_16/KsRKdT.png'
+  },
+  {
+    id: 'OFFER4',
+    image: 'https://media3.scdn.vn/img3/2019/11_16/zOvCAu.png'
+  },
+  {
+    id: 'OFFER5',
+    image: 'https://media3.scdn.vn/img3/2019/11_16/NpRQDB.png'
+  },
+  {
+    id: 'OFFER6',
+    image: 'https://media3.scdn.vn/img3/2019/11_19/p1bvhm.jpg'
+  },
+  {
+    id: 'OFFER7',
+    image: 'https://media3.scdn.vn/img3/2019/11_19/1NSJq1.jpg'
+  },
+  {
+    id: 'OFFER8',
+    image: 'https://media3.scdn.vn/img3/2019/11_19/6KOHky.jpg'
+  },
+  {
+    id: 'OFFER9',
+    image: 'https://media3.scdn.vn/img3/2019/11_19/DY3Uz0.png'
+  },
+  {
+    id: 'OFFER10',
+    image: 'https://media3.scdn.vn/img3/2019/11_16/3HSlJ2.png'
+  }
+];

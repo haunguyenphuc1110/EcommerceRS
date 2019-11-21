@@ -2,7 +2,7 @@ import React from 'react';
 import Payment from './Payment.view';
 import { connect } from 'react-redux';
 
-const PaymentScreen = props => (<Payment {...props}/>);
+const PaymentScreen = (props) => (<Payment {...props}/>);
 
 const mapStateToProps = state => {
   return {

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View, ScrollView, TouchableOpacity, Text } from 'react-native';
 import styles from './Payment.styles';
 
+import ScreenIds from'../../navigation/screenIds';
+
 import TotalContainer from '../../components/PaymentContainer/TotalContainer/TotalContainer.component';
 import Title from '../../components/PaymentContainer/Title/Title.component';
 import ContactInfo from '../../components/PaymentContainer/ContactInfo/ContactInfo.component';
@@ -27,7 +29,25 @@ class Payment extends Component {
   }
 
   onProceedToConfirm = () => {
-    alert('Đặt hàng!')
+    const {
+      phone,
+      name,
+      paymentMethod,
+      houseNumber,
+      street,
+      ward,
+      district,
+      city
+    } = this.state;
+    let address = houseNumber + ", " + street + ", " + ward + ", " + district + ", " + city;
+    this.props.navigation.navigate(ScreenIds.BILL, {
+      data: {
+        name,
+        phone,
+        address,
+        paymentMethod
+      }
+    });
   };
 
   handleMultiInput = (text, name) => {

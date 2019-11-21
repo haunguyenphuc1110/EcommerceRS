@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		margin: 10,
 		borderRadius: 10,
-		borderWidth: 0.5,
+		borderWidth: 1,
 		overflow: 'hidden'
 	},
 	buttonApply: {
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-between',
 		paddingHorizontal: 10,
 		paddingVertical: 20,
-		backgroundColor: COLORS.gray
+		backgroundColor: COLORS.white
 	},
 	goodsStyle: {
 		flexDirection: 'row',
@@ -37,11 +37,11 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	cartIcon: {
-		color: COLORS.white,
+		color: COLORS.black,
 		marginRight: 10
 	},
 	textGoods: {
-		color: COLORS.white,
+		color: COLORS.black,
 		textAlign: 'center',
 		fontSize: 14,
 		fontWeight: '400'
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	totalTitle: {
-		color: COLORS.lightGray,
+		color: COLORS.black,
 		textAlign: 'center',
 		fontSize: 16,
 		fontWeight: 'bold',
