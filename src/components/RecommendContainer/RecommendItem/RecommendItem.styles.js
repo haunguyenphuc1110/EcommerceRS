@@ -1,35 +1,31 @@
 import { StyleSheet, Dimensions } from 'react-native';
 import { COLORS } from '../../../assets';
-
-const width= Dimensions.get('window').width;
+const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
-  main: { 
-    justifyContent: 'space-evenly', 
-    alignItems: 'center', 
-    margin: 10,
-    borderRadius: 5, 
-    padding: 10,
-    backgroundColor: COLORS.white,
-    elevation: 10
+  item: {
+    borderRadius: 10,
+    marginTop: 10,
+    marginRight: 10
   },
-  image: {
-    width: 200, 
-    height: 200, 
-    borderRadius: 5
+  imgBackground: {
+    width: width / 2 - 25,
+    height: height / 2 - 200,
+    borderRadius: 10
   },
-  titleContainer: {
-    width: 200,
-    marginTop: 5,
-    padding: 10,
+  imageContainer: {
+    backgroundColor: 'rgba(37,55,64,0.5)',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: COLORS.gray
+    borderRadius: 10
   },
-  title: {
-    fontSize: 16,
-    fontWeight: '500',
-    color: COLORS.black,
-    textAlign: 'center',
+  text: {
+    color: COLORS.white,
+    fontWeight: 'bold'
   }
 });
 

@@ -5,7 +5,7 @@ import RecommendItem from './RecommendItem/RecommendItem.component';
 
 import styles from './RecommendContainer.styles';
 
-const PopularContainer = (props) => {
+const RecommendContainer = (props) => {
   const { data } = props;
   return (
     <View style={styles.main}>
@@ -21,4 +21,4 @@ const PopularContainer = (props) => {
   )
 }
 
-export default PopularContainer;
+export default RecommendContainer;
