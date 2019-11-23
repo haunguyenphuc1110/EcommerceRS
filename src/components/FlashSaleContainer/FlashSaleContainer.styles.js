@@ -1,9 +1,9 @@
 import { StyleSheet } from 'react-native';
-
+import { COLORS } from '../../assets';
 const styles = StyleSheet.create({
-  flatlist: {
-    paddingLeft: 10,
-    paddingBottom: 10
+  main: {
+    backgroundColor: COLORS.appColor,
+    elevation: 10
   }
 });
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, FlatList } from 'react-native';
 
-import RecommendItem from './RecommendItem/RecommendItem.component';
+import FlashSaleItem from './FlashSaleItem/FlashSaleItem.component';
 
-import styles from './RecommendContainer.styles';
+import styles from './FlashSaleContainer.styles';
 
-const RecommendContainer = (props) => {
+const FlashSaleContainer = (props) => {
   const { data } = props;
   return (
     <View style={styles.main}>
@@ -14,11 +14,11 @@ const RecommendContainer = (props) => {
         showsHorizontalScrollIndicator={false}
         numColumns={1}
         data={data}
-        renderItem={({ item }) => (<RecommendItem item={item}/>)}
+        renderItem={({ item }) => (<FlashSaleItem item={item}/>)}
         keyExtractor={item => item.id}
       />
     </View>
   )
 }
 
-export default RecommendContainer;
+export default FlashSaleContainer;

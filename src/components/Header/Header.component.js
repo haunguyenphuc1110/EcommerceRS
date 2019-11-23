@@ -15,14 +15,14 @@ const Header = (props) => {
           <View style={styles.row}>
             <Icon name='search' color='gray' size={18} />
             <Text style={styles.text1}>Tìm kiếm trên </Text>
-            <Text style={styles.text2}>Sendo</Text>
+            <Text style={styles.text2}>E-Shopper</Text>
           </View>
         </TouchableWithoutFeedback>
         <View style={styles.row}>
           <View
             style={styles.seperator}
           />
-          <CartHeader navigation={navigation} color={COLORS.appColor} />
+          <CartHeader navigation={navigation} color={COLORS.red} />
         </View>
     </View>
     </View>

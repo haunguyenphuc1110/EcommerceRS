@@ -8,6 +8,18 @@ const images = {
   EMPTY_CART: require('./empty_cart.jpg'),
   CASH: require('./icon_wallet.png'),
   VISA: require('./icon_visa.png'),
-  MASTER_CARD: require('./icon_mastercard.png')
+  MASTER_CARD: require('./icon_mastercard.png'),
+  EXAMPLE_1: {
+    uri: 'http://media3.scdn.vn/img3/2019/11_4/0mLRBX.png'
+  },
+  EXAMPLE_2: {
+    uri: 'https://cf.shopee.vn/file/31043aa13790be1ffacfd21edc60df21_xxhdpi'
+  },
+  EXAMPLE_3: {
+    uri: 'https://cf.shopee.vn/file/6d017d5d623ded553e8408d08660eda1_xxhdpi'
+  },
+  EXAMPLE_4: {
+    uri: 'http://media3.scdn.vn/img3/2019/11_22/GWyzWO.png'
+  }
 }
 export default images;
