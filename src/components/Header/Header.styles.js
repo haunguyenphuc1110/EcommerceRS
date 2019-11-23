@@ -11,9 +11,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: COLORS.white,
-    height: 40,
+    height: 50,
     margin: 10,
-    padding: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 20,
     borderRadius: 5
   },
   row: {
