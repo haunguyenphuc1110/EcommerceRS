@@ -13,7 +13,7 @@ const colors = {
   formBackground: '#455a64',
   headerTab: '#233d52',
   lightBlue: '#4897bd',
-  red: '#b30000',
+  red: '#db1212',
   button: '#1c313a',
   facebook: '#3b5998'
 }
