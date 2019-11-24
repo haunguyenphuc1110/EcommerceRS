@@ -6,7 +6,7 @@ import {
   Image
 } from 'react-native'
 import { swiperData, dealData, populariryData } from '../../mocks/dataMock';
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import Icon from 'react-native-vector-icons/Ionicons';
 import { COLORS, IMAGES } from '../../assets';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './Home.styles';
@@ -29,9 +29,8 @@ class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      category: [],
-      listItem: [],
-      isLoading: true
+      isLoading: true,
+      pageNumber: 1
     }
   }
 
@@ -47,11 +46,20 @@ class Home extends Component {
 
   componentDidMount() {
     this.props.getListCategory();
-    this.props.getListItem();
+    this.props.getListItem(this.state.pageNumber);
   }
 
-  onNavigateToDetails = () => {
-    this.props.navigation.navigate(ScreenIds.PRODUCT_DETAILS);
+  loadMoreItems = () => {
+    const { pageNumber } = this.state;
+    const { getListItem } = this.props;
+    this.setState({
+      pageNumber: pageNumber + 1 
+    });
+    getListItem(pageNumber + 1);
+  }
+
+  onNavigateToDetails = (item) => {
+    this.props.navigation.navigate(ScreenIds.PRODUCT_DETAILS, { item });
   }
 
   onNavigateToCart = () => {
@@ -101,9 +109,9 @@ class Home extends Component {
           <LinearGradient colors={[COLORS.red, COLORS.lightOrange, COLORS.gray]} style={styles.popularContainer}>
             <View style={[styles.header, { marginLeft: 10 }]}>
               <Icon
-                name={'bolt'}
+                name={'ios-flash'}
                 color={COLORS.white}
-                size={20}/>
+                size={22}/>
               <Text style={[styles.title, { color: COLORS.white }]}>FLASH SALE</Text>
               <CountDown
                 until={7200}
@@ -120,9 +128,9 @@ class Home extends Component {
           <View style={styles.popularContainer}>
             <View style={styles.header}>
               <Icon
-                name={'fire'}
+                name={'ios-flame'}
                 color={COLORS.appColor}
-                size={20}/>
+                size={22}/>
               <Text style={styles.title}>TÌM KIẾM PHỔ BIẾN</Text>
             </View>
             <PopulaContainer data={populariryData} />
@@ -137,9 +145,9 @@ class Home extends Component {
           <View style={styles.popularContainer}>
             <View style={styles.header}>
               <Icon
-                name={'bookmark'}
+                name={'ios-bookmark'}
                 color={COLORS.appColor}
-                size={20}/>
+                size={22}/>
               <Text style={styles.title}>DANH MỤC</Text>
             </View>
             <CategoryContainer data={this.props.categoryData} />
@@ -154,9 +162,9 @@ class Home extends Component {
           <View style={[styles.popularContainer, { paddingLeft: 10 }]}>
             <View style={styles.header}>
               <Icon
-                name={'heart'}
+                name={'ios-heart'}
                 color={COLORS.appColor}
-                size={20}/>
+                size={22}/>
               <Text style={styles.title}>BỘ SƯU TẬP YÊU THÍCH</Text>
             </View>
             <RecommendContainer data={this.props.categoryData} />
@@ -177,12 +185,16 @@ class Home extends Component {
 
           <LinearGradient colors={[COLORS.red, COLORS.lightOrange]} style={[styles.popularContainer, { flexDirection: 'row' }]}>
             <Icon
-              name={'star'}
+              name={'ios-star'}
               color={COLORS.yellow}
-              size={20}/>
-            <Text style={[styles.title, { color: COLORS.white }]}>SẢN PHẨM ĐỀ CỬ</Text>
+              size={22}/>
+            <Text style={[styles.title, { color: COLORS.white }]}>GỢI Ý HÔM NAY</Text>
           </LinearGradient>
-          <ProposeContainer data={this.props.recommendationData} onNavigateToDetails={this.onNavigateToDetails} />
+          <ProposeContainer
+            loadMoreItems={this.loadMoreItems}
+            data={this.props.recommendationData} 
+            onNavigateToDetails={this.onNavigateToDetails} 
+          />
         </View>
       </ScrollView>
     )

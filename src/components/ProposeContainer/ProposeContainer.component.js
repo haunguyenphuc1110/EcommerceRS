@@ -1,12 +1,16 @@
 import React from 'react';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, ActivityIndicator } from 'react-native';
 
 import ProposeItem from './ProposeItem/ProposeItem.component';
 
 import styles from './ProposeContainer.styles';
 
 const ProposeContainer = (props) => {
-  const { data, onNavigateToDetails } = props;
+  const {
+    data,
+    onNavigateToDetails,
+    loadMoreItems
+  } = props;
   return (
     <View style={{ flex: 1 }}>
       <FlatList
@@ -15,6 +19,8 @@ const ProposeContainer = (props) => {
         renderItem={({ item }) => (<ProposeItem item={item} onNavigateToDetails={onNavigateToDetails}/>)}
         keyExtractor={item => item.product_id}
         style={styles.flatlist}
+        onEndReached={loadMoreItems} 
+        onEndReachedThreshold={0.5}
       />
     </View>
   )

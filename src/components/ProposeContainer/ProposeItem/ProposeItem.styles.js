@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     marginRight: 10, 
     marginTop: 10, 
     borderRadius: 5, 
-    padding: 10,
+    paddingBottom: 10,
     backgroundColor: COLORS.white,
     elevation: 5
   },
@@ -17,16 +17,25 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '500',
     color: COLORS.black,
-    width: width/2 - 35
+    width: width/2 - 35,
+    marginHorizontal: 10,
+    marginTop: 10
   },
   price: {
     fontSize: 11,
-    color: COLORS.red
+    color: COLORS.red,
+    marginHorizontal: 10,
+    marginTop: 10
   },
   image: {
-    width: width/2 - 35, 
+    width: width/2 - 15, 
     height: 200, 
-    borderRadius: 5 
+    borderTopLeftRadius: 5,
+    borderTopRightRadius: 5 
+  },
+  star: {
+    marginTop: 10, 
+    marginLeft: 10
   }
 });
 
