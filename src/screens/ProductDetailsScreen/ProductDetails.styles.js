@@ -2,11 +2,6 @@ import { StyleSheet } from 'react-native';
 import { COLORS } from '../../assets';
 import Layout from '../../constants/Layout';
 
-const getHeight = () =>
-  Layout.window.height <= 667
-    ? Layout.window.height / 2.8
-    : Layout.window.height / 2.3;
-
 const styles = StyleSheet.create({
   container:{
     flex: 1,
@@ -19,13 +14,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20
   },
   swiper: {
-    height: getHeight(), 
+    height: 500, 
     marginBottom: 20
   },
   image: {
     width: Layout.window.width,
-    height: getHeight(),
-    position: 'relative'
+    height: 500,
+    position: 'relative',
+    marginBottom: 20
   },
   timeLocation: {
     color: COLORS.darkGray,
@@ -34,14 +30,18 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   namePrice: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: 'column',
     marginBottom: 20
   },
-  namePriceText: {
+  nameText: {
     fontSize: 24,
     color: COLORS.black,
-    fontWeight: '600'
+    fontWeight: '400'
+  },
+  priceText: {
+    fontSize: 20,
+    color: COLORS.appColor,
+    marginTop: 20
   },
   divider: {
     width: '100%',
