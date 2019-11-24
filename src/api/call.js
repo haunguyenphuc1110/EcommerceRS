@@ -8,8 +8,8 @@ const getCategory = async () => {
   });
 };
 
-const getListItem = async () => {
-  const task = new Service('https://demo7730250.mockable.io/hau/ecommerce/data/listItem');
+const getListItem = async (pageNumber) => {
+  const task = new Service(`http://165.22.97.19:8000/api/v1/products/popularity/?page=${pageNumber}`);
 
   return task.get().then(data => {
     return data;

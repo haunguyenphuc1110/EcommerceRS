@@ -18,7 +18,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getListCategory: () => dispatch(getListCategory()),
-    getListItem: () => dispatch(getListItem())
+    getListItem: (pageNumber) => dispatch(getListItem(pageNumber))
   };
 };
 

@@ -38,7 +38,7 @@ const homeDataReducer = (state = initialState, action) => {
     case CONSTANTS.GET_RECOMMEND_PRODUCT_SUCCEED:
       return {
         ...state,
-        listProduct: [...action.payload],
+        listProduct: [...state.listProduct, ...action.payload],
         pending: false,
         error: false
       };

@@ -18,14 +18,22 @@ function* getListCategory() {
   }
 }
 
-function* getListRecommendedItem() {
+function* getListRecommendedItem(action) {
   try {
-    const response = yield call(Api.getListItem);
+    const response = yield call(Api.getListItem, action.payload);
 
-    yield put({
-      type: CONSTANTS.GET_RECOMMEND_PRODUCT_SUCCEED,
-      payload: response.cate_lvl3
-    });
+    if (response.response) {
+      yield put({
+        type: CONSTANTS.GET_RECOMMEND_PRODUCT_SUCCEED,
+        payload: []
+      });
+    }
+    else{
+      yield put({
+        type: CONSTANTS.GET_RECOMMEND_PRODUCT_SUCCEED,
+        payload: response
+      });
+    }
 
   } catch (e) {
     yield put({
