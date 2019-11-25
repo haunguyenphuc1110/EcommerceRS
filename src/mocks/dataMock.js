@@ -169,85 +169,85 @@ export const populariryData = [
 ];
 
 export const surveyData = [
-  { 
-      "belong_cate_lvl1_id": 8, 
-      "belong_cate_lvl1_name": "Thời trang nữ",
-      "imageUrl": "https://cafestyle.yes24.vn/Upload/ImageZine/Board/chitietxeplytrothanhxuhu%C3%B3ng924220197.jpg"
-  },
-  { 
-      "belong_cate_lvl1_id": 94, 
-      "belong_cate_lvl1_name": "Thời trang nam",
-      "imageUrl": "https://znews-photo.zadn.vn/w660/Uploaded/ycgmvjvj/2018_04_16/9_2.jpg"
-  },
-  { 
-      "belong_cate_lvl1_id": 138, 
-      "belong_cate_lvl1_name": "Mẹ và bé",
-      "imageUrl": "https://thegioithoitrangbaby.com/wp-content/uploads/2018/06/thoi-trang-me-va-be-gai-giong-nhau-de-dang-cho-ban-lua-chon3.jpg"
-  },
-  { 
-      "belong_cate_lvl1_id": 220, 
-      "belong_cate_lvl1_name": "Sức khỏe & Làm đẹp",
-      "imageUrl": "http://mobile.vtc.vn/uploads/mecon/c/2019/05/13/206652-e9c5c82a-0218-45ce-a93a-98c2567ae558.jpg"
-  },
-  { 
-      "belong_cate_lvl1_id": 528, 
-      "belong_cate_lvl1_name": "Phụ kiện công nghệ",
-      "imageUrl": "https://cdn.tgdd.vn/Products/Images/54/70820/tai-nghe-chup-tai-kanen-ip-952-2-6-org.jpg"
-  },
-  { 
-      "belong_cate_lvl1_id": 604, 
-      "belong_cate_lvl1_name": "Không gian sống",
-      "imageUrl": "https://icdn.dantri.com.vn/thumb_w/640/075af8604d/2016/09/09/img20160909132858108-5181c.jpg"
+  {
+    "belong_cate_lvl1_id": "8",
+    "belong_cate_lvl1_name": "Thời trang nữ",
+    "imageUrl": "https://cafestyle.yes24.vn/Upload/ImageZine/Board/chitietxeplytrothanhxuhu%C3%B3ng924220197.jpg"
   },
   {
-      "belong_cate_lvl1_id": 736,
-      "belong_cate_lvl1_name": "Thể thao & giải trí",
-      "imageUrl": "http://tiki.vn/tu-van/wp-content/uploads/2016/06/giay-the-thao-tr%C3%AAn-tiki-02.png"
-  },
-  { 
-      "belong_cate_lvl1_id": 1019, 
-      "belong_cate_lvl1_name": "Đồ dùng trong nhà",
-      "imageUrl": "https://daubepgiadinh.vn/wp-content/uploads/2017/11/nhung-chiec-thot.jpg"
-  },
-  { 
-      "belong_cate_lvl1_id": 1108, 
-      "belong_cate_lvl1_name": "Đồ điện gia dụng",
-      "imageUrl": "https://images.samsung.com/is/image/samsung/vn-multi-door-rf56k9041sg-rf56k9041sg-sv-001-front-black?$PD_GALLERY_L_JPG$"
-  },
-  { 
-      "belong_cate_lvl1_id": 1171, 
-      "belong_cate_lvl1_name": "Thực phẩm",
-      "imageUrl": "https://scdn.thitruongsi.com/image/cached/size/w640-h640/img/product/2017/04/19/6c27f4e0-24e8-11e7-a0dd-811fc4e5b0c7.jpg"
-  },
-  { 
-      "belong_cate_lvl1_id": 1366, 
-      "belong_cate_lvl1_name": "Đồng hồ",
-      "imageUrl": "https://galle.vn/upload_images/images/g-shock-x-justice-league.jpg"
-  },
-  { 
-      "belong_cate_lvl1_id": 1458, 
-      "belong_cate_lvl1_name": "Đồ chơi",
-      "imageUrl": "https://www.sahadeal.vn/upload/team/2017/0704/sahadeal.vn-14991368439249.jpg"
-  },
-  { 
-      "belong_cate_lvl1_id": 1663, 
-      "belong_cate_lvl1_name": "Công nghệ",
-      "imageUrl": "https://techland.com.vn/wp-content/uploads/2019/09/dien-thoai-iphone-11-pro-max-3a.jpg"
-  },
-  { 
-      "belong_cate_lvl1_id": 1686, 
-      "belong_cate_lvl1_name": "Giày dép",
-      "imageUrl": "https://a.ipricegroup.com/media/Sneaker/adidas/Ultraboost/giay_adidas_Ultra_Boost_chinh_hang.jpg"
-  },
-  { 
-      "belong_cate_lvl1_id": 1722,
-      "belong_cate_lvl1_name": "Túi xách",
-      "imageUrl": "https://vcdn.tikicdn.com/ts/product/dd/0b/d8/5027fec7189a7905d00c6a9829c4fb84.jpg"
+    "belong_cate_lvl1_id": "94",
+    "belong_cate_lvl1_name": "Thời trang nam",
+    "imageUrl": "https://znews-photo.zadn.vn/w660/Uploaded/ycgmvjvj/2018_04_16/9_2.jpg"
   },
   {
-      "belong_cate_lvl1_id": 1629,
-      "belong_cate_lvl1_name": "Phụ kiện thời trang",
-      "imageUrl": "https://bizweb.dktcdn.net/thumb/large/100/180/420/products/0-2-60bcdc92-fd07-468a-9597-62592ff31228-b46331b9-a119-4262-bf53-fbd4b8a54890-3765b4b7-70d1-4cad-8b3f-b56f871a71af.jpg"
+    "belong_cate_lvl1_id": "138",
+    "belong_cate_lvl1_name": "Mẹ và bé",
+    "imageUrl": "https://thegioithoitrangbaby.com/wp-content/uploads/2018/06/thoi-trang-me-va-be-gai-giong-nhau-de-dang-cho-ban-lua-chon3.jpg"
+  },
+  {
+    "belong_cate_lvl1_id": "220",
+    "belong_cate_lvl1_name": "Sức khỏe & Làm đẹp",
+    "imageUrl": "http://mobile.vtc.vn/uploads/mecon/c/2019/05/13/206652-e9c5c82a-0218-45ce-a93a-98c2567ae558.jpg"
+  },
+  {
+    "belong_cate_lvl1_id": "528",
+    "belong_cate_lvl1_name": "Phụ kiện công nghệ",
+    "imageUrl": "https://cdn.tgdd.vn/Products/Images/54/70820/tai-nghe-chup-tai-kanen-ip-952-2-6-org.jpg"
+  },
+  {
+    "belong_cate_lvl1_id": "604",
+    "belong_cate_lvl1_name": "Không gian sống",
+    "imageUrl": "https://icdn.dantri.com.vn/thumb_w/640/075af8604d/2016/09/09/img20160909132858108-5181c.jpg"
+  },
+  {
+    "belong_cate_lvl1_id": "736",
+    "belong_cate_lvl1_name": "Thể thao & giải trí",
+    "imageUrl": "http://tiki.vn/tu-van/wp-content/uploads/2016/06/giay-the-thao-tr%C3%AAn-tiki-02.png"
+  },
+  {
+    "belong_cate_lvl1_id": "1019",
+    "belong_cate_lvl1_name": "Đồ dùng trong nhà",
+    "imageUrl": "https://daubepgiadinh.vn/wp-content/uploads/2017/11/nhung-chiec-thot.jpg"
+  },
+  {
+    "belong_cate_lvl1_id": "1108",
+    "belong_cate_lvl1_name": "Đồ điện gia dụng",
+    "imageUrl": "https://images.samsung.com/is/image/samsung/vn-multi-door-rf56k9041sg-rf56k9041sg-sv-001-front-black?$PD_GALLERY_L_JPG$"
+  },
+  {
+    "belong_cate_lvl1_id": "1171",
+    "belong_cate_lvl1_name": "Thực phẩm",
+    "imageUrl": "https://scdn.thitruongsi.com/image/cached/size/w640-h640/img/product/2017/04/19/6c27f4e0-24e8-11e7-a0dd-811fc4e5b0c7.jpg"
+  },
+  {
+    "belong_cate_lvl1_id": "1366",
+    "belong_cate_lvl1_name": "Đồng hồ",
+    "imageUrl": "https://galle.vn/upload_images/images/g-shock-x-justice-league.jpg"
+  },
+  {
+    "belong_cate_lvl1_id": "1458",
+    "belong_cate_lvl1_name": "Đồ chơi",
+    "imageUrl": "https://www.sahadeal.vn/upload/team/2017/0704/sahadeal.vn-14991368439249.jpg"
+  },
+  {
+    "belong_cate_lvl1_id": "1663",
+    "belong_cate_lvl1_name": "Công nghệ",
+    "imageUrl": "https://techland.com.vn/wp-content/uploads/2019/09/dien-thoai-iphone-11-pro-max-3a.jpg"
+  },
+  {
+    "belong_cate_lvl1_id": "1686",
+    "belong_cate_lvl1_name": "Giày dép",
+    "imageUrl": "https://a.ipricegroup.com/media/Sneaker/adidas/Ultraboost/giay_adidas_Ultra_Boost_chinh_hang.jpg"
+  },
+  {
+    "belong_cate_lvl1_id": "1722",
+    "belong_cate_lvl1_name": "Túi xách",
+    "imageUrl": "https://vcdn.tikicdn.com/ts/product/dd/0b/d8/5027fec7189a7905d00c6a9829c4fb84.jpg"
+  },
+  {
+    "belong_cate_lvl1_id": "1629",
+    "belong_cate_lvl1_name": "Phụ kiện thời trang",
+    "imageUrl": "https://bizweb.dktcdn.net/thumb/large/100/180/420/products/0-2-60bcdc92-fd07-468a-9597-62592ff31228-b46331b9-a119-4262-bf53-fbd4b8a54890-3765b4b7-70d1-4cad-8b3f-b56f871a71af.jpg"
   }
 ];
 
