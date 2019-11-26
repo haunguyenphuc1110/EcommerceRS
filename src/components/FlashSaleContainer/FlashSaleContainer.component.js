@@ -15,7 +15,7 @@ const FlashSaleContainer = (props) => {
         numColumns={1}
         data={data}
         renderItem={({ item }) => (<FlashSaleItem item={item}/>)}
-        keyExtractor={item => item.id}
+        keyExtractor={item => item.product_id}
       />
     </View>
   )

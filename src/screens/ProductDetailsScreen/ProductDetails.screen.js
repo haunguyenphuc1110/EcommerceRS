@@ -10,7 +10,7 @@ const ProductDetailsScreen = (props) => (<ProductDetails {...props}/>);
 
 const mapStateToProps = state => {
   return {
-    
+    categoryData: state.homeReducer.listCategory
   };
 };
 
@@ -31,7 +31,7 @@ ProductDetailsScreen.navigationOptions = ({ navigation }) => {
             style={{ marginRight: 10 }}
           >
             <Icon
-              name={Platform.OS === 'ios' ? 'ios-heart-empty' : 'md-heart-empty'}
+              name={'ios-heart-empty'}
               size={Platform.OS === 'ios' ? 26 : 20}
               color='white'
             />

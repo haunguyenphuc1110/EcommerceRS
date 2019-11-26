@@ -6,7 +6,7 @@ import RecommendItem from './RecommendItem/RecommendItem.component';
 import styles from './RecommendContainer.styles';
 
 const RecommendContainer = (props) => {
-  const { data } = props;
+  const { data, onNavigationToCateDetails } = props;
   return (
     <View style={styles.main}>
       <FlatList
@@ -14,8 +14,12 @@ const RecommendContainer = (props) => {
         showsHorizontalScrollIndicator={false}
         numColumns={1}
         data={data}
-        renderItem={({ item }) => (<RecommendItem item={item}/>)}
-        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <RecommendItem 
+            item={item} 
+            onNavigationToCateDetails={onNavigationToCateDetails}/>
+          )}
+        keyExtractor={item => item.cate1_id}
       />
     </View>
   )

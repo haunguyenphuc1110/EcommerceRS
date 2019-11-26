@@ -2,7 +2,7 @@ import React from 'react';
 import Home from './Home.view';
 import { connect } from "react-redux";
 
-import { getListCategory, getListItem } from '../../store/actions/homeDataActions';
+import { getListCategoryLvl1, getListItem } from '../../store/actions/homeDataActions';
 
 const HomeScreen = (props) => ( <Home {...props}/> );
 
@@ -17,7 +17,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getListCategory: () => dispatch(getListCategory()),
+    getListCategoryLvl1: () => dispatch(getListCategoryLvl1()),
     getListItem: (pageNumber) => dispatch(getListItem(pageNumber))
   };
 };

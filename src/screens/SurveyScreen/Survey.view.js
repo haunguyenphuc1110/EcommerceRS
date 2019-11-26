@@ -4,32 +4,36 @@ import { surveyData } from '../../mocks/dataMock'
 import { COLORS } from '../../assets';
 import styles from './Survey.styles';
 
-import Icon from 'react-native-vector-icons/FontAwesome5';
 import LinearGradient from 'react-native-linear-gradient';
-
-
+import SurveyItem from '../../components/SurveyItem/SurveyItem.component';
 
 class Survey extends Component {
 
+  state = {
+    selected: new Map()
+  }
+
+  checkSelectedItem = (id) => {
+    this.setState((state) => {
+      const selected = new Map(state.selected);
+      //remove key if selected, add key if not selected
+      this.state.selected.has(id) ? selected.delete(id, !selected.get(id)) : selected.set(id, !selected.get(id));
+      return {selected};
+    });
+  }
+
   renderItem = (item) => {
     return (
-      <TouchableOpacity style={styles.imgContainer} onPress={() => alert('hello')}>
-        <ImageBackground
-          source={{ uri: item.imageUrl }}
-          style={styles.image}
-          imageStyle={{ borderRadius: 50 }}>
-          <View style={styles.iconWrapper}>
-            <Icon name={"check"} color={COLORS.white} size={20} />
-          </View>
-        </ImageBackground>
-        <Text style={styles.name}>
-          {item.belong_cate_lvl1_name}
-        </Text>
-      </TouchableOpacity>
+      <SurveyItem
+        item={item}
+        checkSelectedItem={this.checkSelectedItem}
+        isSelected={!!this.state.selected.get(item.belong_cate_lvl1_id)}
+      />
     );
   }
 
   render() {
+    console.log(this.state);
     return (
       <LinearGradient colors={[COLORS.gray, COLORS.lightGray]} style={{ flex: 1 }}>
         <LinearGradient colors={[COLORS.appColor, COLORS.lightOrange]}>
@@ -40,6 +44,7 @@ class Survey extends Component {
           data={surveyData}
           renderItem={({ item }) => this.renderItem(item)}
           keyExtractor={(item) => item.belong_cate_lvl1_id}
+          extraData={this.state}
           style={styles.flatlist}
         />
       </LinearGradient>

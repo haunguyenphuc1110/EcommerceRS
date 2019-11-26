@@ -6,7 +6,9 @@ import { formatMoney } from '../../utils/formatCurrency';
 
 import ScreenIds from '../../navigation/screenIds';
 
+import Icon from 'react-native-vector-icons/Ionicons';
 import UserPartials from '../../components/UserPartials/UserPartials.component';
+import RecommendContainer from '../../components/RecommendContainer/RecommendContainer.component';
 
 const navigateToMessage = (navigation) => {
   navigation.navigate(ScreenIds.THREAD);
@@ -22,9 +24,7 @@ const ProductDetails = (props) => {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scroll} bounces={false}>
         <Image
-          source={{
-            uri: item.uri
-          }}
+          source={item.uri ? { uri: item.uri } : IMAGES.DEFAULT}
           style={styles.image}
         />
         <View style={styles.dataContainer}>
@@ -51,6 +51,16 @@ const ProductDetails = (props) => {
             navigateToCart={() => navigateToCart(props.navigation)}
             navigateToMessage={() => navigateToMessage(props.navigation)}
           />
+        </View>
+        <View style={[styles.popularContainer, { marginTop: 20 }]}>
+          <View style={styles.header}>
+            <Icon
+              name={'ios-gift'}
+              color={COLORS.appColor}
+              size={22} />
+            <Text style={styles.title}>SẢN PHẨM LIÊN QUAN</Text>
+          </View>
+          <RecommendContainer data={props.categoryData} />
         </View>
       </ScrollView>
     </View>

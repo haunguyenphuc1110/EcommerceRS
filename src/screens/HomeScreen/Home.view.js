@@ -45,7 +45,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.props.getListCategory();
+    this.props.getListCategoryLvl1();
     this.props.getListItem(this.state.pageNumber);
   }
 
@@ -62,8 +62,12 @@ class Home extends Component {
     this.props.navigation.navigate(ScreenIds.PRODUCT_DETAILS, { item });
   }
 
-  onNavigateToCart = () => {
-    this.props.navigation.navigate(ScreenIds.CART);
+  onNavigateToCartSearch = () => {
+    this.props.navigation.navigate(ScreenIds.SEARCH);
+  }
+
+  onNavigationToCateDetails = (id) => {
+    this.props.navigation.navigate(ScreenIds.CATEGORY_DETAILS, { id });
   }
 
   render() {
@@ -83,8 +87,7 @@ class Home extends Component {
           height: 200,
           borderBottomLeftRadius: 40,
           borderBottomRightRadius: 40
-        }}
-        />
+        }}/>
         <View style={styles.absolute}>
           <Header
             navigation={navigation}
@@ -123,7 +126,7 @@ class Home extends Component {
               />
             </View>
           </LinearGradient>
-          <FlashSaleContainer data={populariryData} />
+          <FlashSaleContainer data={this.props.recommendationData.slice(0, 10)} />
 
           <View style={styles.popularContainer}>
             <View style={styles.header}>
@@ -150,7 +153,10 @@ class Home extends Component {
                 size={22}/>
               <Text style={styles.title}>DANH MỤC</Text>
             </View>
-            <CategoryContainer data={this.props.categoryData} />
+            <CategoryContainer 
+              onNavigationToCateDetails={this.onNavigationToCateDetails} 
+              data={this.props.categoryData} 
+            />
           </View>
 
           <Image
@@ -167,7 +173,9 @@ class Home extends Component {
                 size={22}/>
               <Text style={styles.title}>BỘ SƯU TẬP YÊU THÍCH</Text>
             </View>
-            <RecommendContainer data={this.props.categoryData} />
+            <RecommendContainer 
+              data={this.props.categoryData} 
+              onNavigationToCateDetails={this.onNavigationToCateDetails} />
           </View>
 
 

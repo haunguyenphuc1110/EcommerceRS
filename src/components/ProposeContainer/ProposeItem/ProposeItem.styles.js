@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
     borderRadius: 5, 
     paddingBottom: 10,
     backgroundColor: COLORS.white,
-    elevation: 5
+    elevation: 2
   },
   title: {
     fontSize: 16,

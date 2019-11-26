@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Text, View, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './CartItem.styles';
-import { COLORS } from '../../../assets';
+import { COLORS, IMAGES } from '../../../assets';
+import { formatMoney } from '../../../utils/formatCurrency';
 
 class Item extends Component {
 
@@ -12,10 +13,10 @@ class Item extends Component {
 	}
 
 	renderItemImageAndName = () => {
-		const { product_image, product_name, price } = this.props.item;
+		const { uri, product_name } = this.props.item;
 		return (
 			<View style={styles.content}>
-				<Image style={styles.image} source={{ uri: product_image }} />
+				<Image style={styles.image} source={uri ? { uri: uri } : IMAGES.DEFAULT} />
 				<Text style={styles.name}>{product_name}</Text>
         <Icon
           name='times'
@@ -27,7 +28,7 @@ class Item extends Component {
 	}
 
 	renderQuantityAndPrice = () => {
-		// let total = this.state.total.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+		const { price } = this.props.item;
 		return (
 			<View style={styles.priceContainer}>
 				<View style={styles.button}>
@@ -43,7 +44,7 @@ class Item extends Component {
 						color={COLORS.white}
 					/>
 				</View>
-				<Text style={styles.price}>1.500.000 đ</Text>
+				<Text style={styles.price}>{price ? formatMoney(price) : formatMoney(200000)}đ</Text>
 			</View>
 		);
 	}

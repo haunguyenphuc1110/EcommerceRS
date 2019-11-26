@@ -2,18 +2,18 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import CONSTANTS from '../constants';
 import Api  from '../../api/call';
 
-function* getListCategory() {
+function* getListCategoryLvl1() {
   try {
     const response = yield call(Api.getCategory);
 
     yield put({
-      type: CONSTANTS.GET_LIST_CATEGORY_SUCCEED,
-      payload: response.cate_lvl1
+      type: CONSTANTS.GET_LIST_CATEGORY_LVL1_SUCCEED,
+      payload: response
     });
 
   } catch (e) {
     yield put({
-      type: CONSTANTS.GET_LIST_CATEGORY_FAILED
+      type: CONSTANTS.GET_LIST_CATEGORY_LVL2_FAILED
     });
   }
 }
@@ -43,7 +43,7 @@ function* getListRecommendedItem(action) {
 }
 
 function* homeDataSaga() {
-  yield takeLatest(CONSTANTS.GET_LIST_CATEGORY, getListCategory);
+  yield takeLatest(CONSTANTS.GET_LIST_CATEGORY_LVL1, getListCategoryLvl1);
   yield takeLatest(CONSTANTS.GET_RECOMMEND_PRODUCT, getListRecommendedItem);
 }
 
