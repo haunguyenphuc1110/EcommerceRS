@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
 import HomeNavigator from './navigation/HomeNavigator';
 
@@ -11,7 +11,9 @@ class App extends Component{
 
   render() {
     return (
-      <HomeNavigator/>
+      <SafeAreaView style={{ flex: 1 }}>
+        <HomeNavigator/>
+      </SafeAreaView>
     );
   }
 }
