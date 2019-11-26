@@ -1,22 +1,22 @@
 import React from 'react';
 import { View, ImageBackground, Text, TouchableWithoutFeedback } from 'react-native';
 import { IMAGES } from '../../../assets';
-
+import IMAGES_MAPPING from '../../../utils/imageMapping';
 import styles from './RecommendItem.styles';
 
 const RecommendItem = (props) => {
-  const { item } = props;
+  const { item, onNavigationToCateDetails } = props;
   return (
-    <TouchableWithoutFeedback onPress={props.onPress}>
+    <TouchableWithoutFeedback onPress={() => onNavigationToCateDetails(item.cate1_id)}>
       <View style={styles.item}>
         <ImageBackground
-          source={ item.image ? { uri: item.image } : IMAGES.DEFAULT }
+          source={{ uri: IMAGES_MAPPING[item.cate1_id] }}
           style={styles.imgBackground}
           imageStyle={{ borderRadius: 10 }}
           resizeMode={'contain'}
         >
           <View style={styles.imageContainer}>
-            <Text style={styles.text}>{item.name}</Text>
+            <Text style={styles.text}>{item.cate1_name}</Text>
           </View>
         </ImageBackground>
       </View>

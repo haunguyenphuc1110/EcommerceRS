@@ -12,6 +12,7 @@ import HomeScreen from '../screens/HomeScreen';
 import OfferScreen from '../screens/OfferScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ProductDetailsScreen from '../screens/ProductDetailsScreen';
+import CategoryDetailsScreen from '../screens/CategoryDetailsScreen';
 import CartScreen from '../screens/CartScreen';
 import SearchScreen from '../screens/SearchScreen';
 import MessageScreen from '../screens/MessageScreen';
@@ -85,6 +86,9 @@ const MyStackNavigator = createStackNavigator(
     },
     [ScreenIds.PRODUCT_DETAILS]: {
       screen: ProductDetailsScreen
+    },
+    [ScreenIds.CATEGORY_DETAILS]: {
+      screen: CategoryDetailsScreen
     },
     [ScreenIds.SEARCH]: {
       screen: SearchScreen

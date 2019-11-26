@@ -3,7 +3,12 @@ import { COLORS } from '../../assets';
 
 const styles = StyleSheet.create({
   root: {
+    flexDirection: 'row',
+    alignItems: 'center',
     backgroundColor: COLORS.appColor
+  },
+  arrowBack: {
+    marginLeft: 10
   },
   container: {
     flex: 1,

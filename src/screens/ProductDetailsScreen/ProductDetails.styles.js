@@ -11,11 +11,7 @@ const styles = StyleSheet.create({
     paddingBottom: 40
   },
   dataContainer: {
-    paddingHorizontal: 20
-  },
-  swiper: {
-    height: 500, 
-    marginBottom: 20
+    paddingHorizontal: 10
   },
   image: {
     width: Layout.window.width,
@@ -46,7 +42,7 @@ const styles = StyleSheet.create({
   divider: {
     width: '100%',
     height: 2,
-    backgroundColor: 'rgba(151, 151, 151, 0.1)',
+    backgroundColor: COLORS.lightGray,
     marginBottom: 25,
   },
   description: {
@@ -56,6 +52,22 @@ const styles = StyleSheet.create({
   readMore: {
     color: COLORS.black,
     marginBottom: 40
+  },
+  header: {
+    alignItems: 'center',
+    flexDirection: 'row'
+  },
+  popularContainer: {
+    padding: 10, 
+    backgroundColor: COLORS.white, 
+    marginTop: 10, 
+    elevation: 10 
+  },
+  title: {
+    color: COLORS.red,
+    fontSize: 20,
+    fontWeight: '500',
+    marginHorizontal: 10
   }
 })
 
