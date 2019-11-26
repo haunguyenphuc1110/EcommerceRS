@@ -10,7 +10,7 @@ const storeFactory = () => {
   const persistConfig = {
     key: 'root',
     storage: storage,
-    whitelist: []
+    whitelist: ['cartReducer']
   };  
 
   const pReducer = persistReducer(persistConfig, appReducer);

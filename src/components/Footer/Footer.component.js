@@ -13,24 +13,24 @@ const renderCoupon = () => {
     <View style={styles.couponContainer}>
       <TextInput placeholder="Enter coupon code" />
       <TouchableOpacity style={styles.buttonApply}>
-        <Text style={styles.textApply}>Apply</Text>
+        <Text style={styles.textApply}>Áp dụng</Text>
       </TouchableOpacity>
     </View>
   );
 }
 
 const renderTotalContent = (props) => {
-  // const { totalPrice, totalQuantity } = props;
+  const { totalQuantity } = props;
   // let total = totalPrice.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
   return (
     <View style={styles.containerTotalStyle}>
       <View style={styles.goodsStyle}>
         <Icon name="shopping-cart" size={20} style={styles.cartIcon} />
-        <Text style={styles.textGoods}>10 goods</Text>
+        <Text style={styles.textGoods}>{totalQuantity} sản phẩm</Text>
       </View>
       <View style={styles.totalStyle}>
         <Text style={styles.totalTitle}>Tổng tiền</Text>
-        <Text style={styles.totalContent}>1.500.000 đ</Text>
+        <Text style={styles.totalContent}>1.500.000đ</Text>
       </View>
     </View>
   );

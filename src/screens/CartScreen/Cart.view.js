@@ -10,13 +10,14 @@ class Cart extends Component {
 
 	render() {
 		const { 
-			recommendationData,
-			navigation
+			cartData,
+			navigation,
+			cartQuantity
 		} = this.props;
 		return (
 			<View style={styles.container}>
 				{
-					(false) &&
+					(cartQuantity === 0) &&
 					<View style={styles.imageContainer}>
 						<Image source={IMAGES.EMPTY_CART} style={styles.image} />
             <Text>Giỏ hàng trống</Text>
@@ -26,10 +27,10 @@ class Cart extends Component {
 					</View>
 				}
 				{
-					(true) &&
+					(cartQuantity > 0) &&
 					<ScrollView showsVerticalScrollIndicator={false}>
 						<CartContainer
-							data={recommendationData}
+							data={cartData}
 						/>
 					</ScrollView>
 				}
@@ -37,7 +38,7 @@ class Cart extends Component {
 				<Footer
 					// cartItemData={cartItemData}
 					// totalPrice={totalPrice}
-					// totalQuantity={totalQuantity}
+					totalQuantity={cartQuantity}
 					navigation={navigation} />
 			</View>
 		);

@@ -6,7 +6,8 @@ const CartScreen = (props) => (<Cart {...props}/>);
 
 const mapStateToProps = state => {
 	return {
-		recommendationData: state.homeReducer.listProduct
+		cartData: state.cartReducer.listProduct,
+		cartQuantity: state.cartReducer.cartQuantity
 	};
 };
 

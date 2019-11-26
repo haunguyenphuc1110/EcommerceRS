@@ -6,6 +6,8 @@ import CartHeader from '../../components/Common/CartHeader/CartHeader.component'
 import { connect } from 'react-redux';
 import { COLORS } from '../../assets';
 
+import { addProductToCart } from '../../store/actions/cartDataActions';
+
 const ProductDetailsScreen = (props) => (<ProductDetails {...props}/>);
 
 const mapStateToProps = state => {
@@ -16,7 +18,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    
+    addProductToCart: (product) => dispatch(addProductToCart(product))
   };
 };
 

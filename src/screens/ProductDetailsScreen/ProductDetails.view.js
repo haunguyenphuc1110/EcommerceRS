@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, Image, Text } from 'react-native';
+import { View, ScrollView, Image, Text, TouchableOpacity } from 'react-native';
 import { COLORS, IMAGES } from '../../assets';
 import styles from './ProductDetails.styles';
 import { formatMoney } from '../../utils/formatCurrency';
@@ -10,16 +10,25 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import UserPartials from '../../components/UserPartials/UserPartials.component';
 import RecommendContainer from '../../components/RecommendContainer/RecommendContainer.component';
 
+import { checkExistProduct } from './ProductDetails.handler';
+
 const navigateToMessage = (navigation) => {
   navigation.navigate(ScreenIds.THREAD);
 }
 
-const navigateToCart = (navigation) => {
-  navigation.navigate(ScreenIds.CART);
+const navigateToCart = (props, item) => {
+  props.addProductToCart(item);
+  props.navigation.navigate(ScreenIds.CART);
+}
+
+const addToCart = (props, item) => {
+  props.addProductToCart(item);
+  props.navigation.goBack();
 }
 
 const ProductDetails = (props) => {
-  const item = props.navigation.getParam('item', {})
+  const { navigation } = props;
+  const item = navigation.getParam('item', {})
   return (
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scroll} bounces={false}>
@@ -48,8 +57,8 @@ const ProductDetails = (props) => {
             name='Hau Nguyen'
             rating={4.6}
             avatarUrl={IMAGES.AVATAR}
-            navigateToCart={() => navigateToCart(props.navigation)}
-            navigateToMessage={() => navigateToMessage(props.navigation)}
+            navigateToCart={() => navigateToCart(props, item)}
+            navigateToMessage={() => navigateToMessage(navigation)}
           />
         </View>
         <View style={[styles.popularContainer, { marginTop: 20 }]}>
@@ -63,6 +72,9 @@ const ProductDetails = (props) => {
           <RecommendContainer data={props.categoryData} />
         </View>
       </ScrollView>
+      <TouchableOpacity style={styles.button} onPress={() => addToCart(props, item)}>
+        <Text style={styles.textButton}>Thêm vào giỏ hàng</Text>
+      </TouchableOpacity>
     </View>
   )
 };

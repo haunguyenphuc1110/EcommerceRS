@@ -9,8 +9,8 @@ import { connect } from 'react-redux';
 import ScreenIds from '../../../navigation/screenIds';
 import styles from './CartHeader.styles';
 
-const Header = props => {
-	const { navigation, color } = props;
+const CartHeader = props => {
+	const { navigation, color, cartQuantity } = props;
 	return (
 		<TouchableOpacity onPress={() => navigation.navigate(ScreenIds.CART)} >
 			<Icon
@@ -25,7 +25,7 @@ const Header = props => {
 				<Text
 					style={styles.textHeaderRight}
 				>
-					10
+					{cartQuantity}
 				</Text>
 			</View>
 		</TouchableOpacity>
@@ -34,8 +34,8 @@ const Header = props => {
 
 const mapStateToProps = state => {
 	return {
-		
+		cartQuantity: state.cartReducer.cartQuantity
 	};
 };
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps)(CartHeader);
