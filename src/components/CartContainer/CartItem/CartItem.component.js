@@ -9,26 +9,28 @@ class Item extends Component {
 
 	constructor(props) {
 		super(props);
-    
+
 	}
 
 	renderItemImageAndName = () => {
 		const { uri, product_name } = this.props.item;
 		return (
 			<View style={styles.content}>
-				<Image style={styles.image} source={uri ? { uri: uri } : IMAGES.DEFAULT} />
-				<Text style={styles.name}>{product_name}</Text>
-        <Icon
-          name='times'
-          size={20}
-          color={COLORS.darkGray}
-        />
+				<View style={{ flexDirection: 'row' }}>
+					<Image style={styles.image} source={uri ? { uri: uri } : IMAGES.DEFAULT} />
+					<Text style={styles.name}>{product_name}</Text>
+				</View>
+				<Icon
+					name='times'
+					size={20}
+					color={COLORS.darkGray}
+				/>
 			</View>
 		);
 	}
 
 	renderQuantityAndPrice = () => {
-		const { price } = this.props.item;
+		const { price, quantity } = this.props.item;
 		return (
 			<View style={styles.priceContainer}>
 				<View style={styles.button}>
@@ -37,7 +39,7 @@ class Item extends Component {
 						size={20}
 						color={COLORS.white}
 					/>
-					<Text style={styles.quantity}>10</Text>
+					<Text style={styles.quantity}>{quantity}</Text>
 					<Icon
 						name='plus'
 						size={20}

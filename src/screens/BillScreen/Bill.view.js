@@ -61,7 +61,7 @@ class Bill extends Component {
   };
 
   render() {
-    const { recommendationData, navigation } = this.props;
+    const { cartData, navigation } = this.props;
     const data = navigation.getParam('data', {});
     // const { address, name, phone, paymentMethod } = this.state;
     return (
@@ -75,7 +75,7 @@ class Bill extends Component {
 
           <View style={styles.subContainer}>
             <Title index={'2'} title={'Your Order'} />
-            <ItemContainer data={recommendationData} />
+            <ItemContainer data={cartData} />
           </View>
         </ScrollView>
         <TotalContainer/>

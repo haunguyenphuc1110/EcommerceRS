@@ -28,10 +28,10 @@ class Item extends Component {
 	}
 
 	renderQuantityAndPrice = () => {
-		const { price } = this.props.item;
+		const { price, quantity } = this.props.item;
 		return (
 			<View style={styles.priceContainer}>
-        <Text style={styles.quantity}>Quantity: 10</Text>
+				<Text style={styles.quantity}>Quantity: {quantity}</Text>
         <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
           <Text style={styles.price}>{price ? formatMoney(price) : formatMoney(200000)}đ</Text>
         </View>

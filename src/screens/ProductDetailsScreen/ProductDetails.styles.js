@@ -68,6 +68,17 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '500',
     marginHorizontal: 10
+  },
+  button: {
+    height: 40,
+    backgroundColor: COLORS.appColor,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  textButton: {
+    color: COLORS.white,
+    fontSize: 20,
+    fontWeight: '500'
   }
 })
 

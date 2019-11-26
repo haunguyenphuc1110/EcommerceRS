@@ -25,7 +25,8 @@ const styles = StyleSheet.create({
 	name: {
 		fontSize: 16,
 		color: COLORS.black,
-		maxWidth: 220
+		maxWidth: 220,
+		marginLeft: 10
 	},
 	priceContainer: {
 		flexDirection: 'row',

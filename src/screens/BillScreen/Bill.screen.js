@@ -6,7 +6,7 @@ const BillScreen = (props) => (<Bill {...props}/>);
 
 const mapStateToProps = state => {
   return {
-    recommendationData: state.homeReducer.listProduct
+    cartData: state.cartReducer.listProduct,
   };
 };
 
