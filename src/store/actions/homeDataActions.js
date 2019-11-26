@@ -1,7 +1,7 @@
 import CONSTANTS from '../constants';
 
-export const getListCategory = () => ({
-  type: CONSTANTS.GET_LIST_CATEGORY
+export const getListCategoryLvl1 = () => ({
+  type: CONSTANTS.GET_LIST_CATEGORY_LVL1
 });
 
 export const getListItem = (payload) => ({
