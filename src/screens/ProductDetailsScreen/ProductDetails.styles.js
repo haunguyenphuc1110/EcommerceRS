@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 10
   },
   button: {
-    height: 40,
+    height: 50,
     backgroundColor: COLORS.appColor,
     justifyContent: 'center',
     alignItems: 'center'

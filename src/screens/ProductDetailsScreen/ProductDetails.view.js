@@ -10,10 +10,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import UserPartials from '../../components/UserPartials/UserPartials.component';
 import RecommendContainer from '../../components/RecommendContainer/RecommendContainer.component';
 
-import { checkExistProduct } from './ProductDetails.handler';
 
-const navigateToMessage = (navigation) => {
-  navigation.navigate(ScreenIds.THREAD);
+const navigateToMessage = (navigation, item) => {
+  navigation.navigate(ScreenIds.THREAD, {item});
 }
 
 const navigateToCart = (props, item) => {
@@ -23,7 +22,6 @@ const navigateToCart = (props, item) => {
 
 const addToCart = (props, item) => {
   props.addProductToCart(item);
-  props.navigation.goBack();
 }
 
 const ProductDetails = (props) => {
@@ -58,7 +56,7 @@ const ProductDetails = (props) => {
             rating={4.6}
             avatarUrl={IMAGES.AVATAR}
             navigateToCart={() => navigateToCart(props, item)}
-            navigateToMessage={() => navigateToMessage(navigation)}
+            navigateToMessage={() => navigateToMessage(navigation, item)}
           />
         </View>
         <View style={[styles.popularContainer, { marginTop: 20 }]}>
@@ -69,7 +67,7 @@ const ProductDetails = (props) => {
               size={22} />
             <Text style={styles.title}>SẢN PHẨM LIÊN QUAN</Text>
           </View>
-          <RecommendContainer data={props.categoryData} />
+          <RecommendContainer data={props.categoryDataLvl1} />
         </View>
       </ScrollView>
       <TouchableOpacity style={styles.button} onPress={() => addToCart(props, item)}>

@@ -4,6 +4,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import createSagaMiddleware from 'redux-saga'
 import rootSaga from './sagas';
+import cartMiddleware from '../store/middlewares/cartDataMiddleware';
 
 const storeFactory = () => {
   
@@ -22,7 +23,7 @@ const storeFactory = () => {
   }
 
   const sagaMiddleware = createSagaMiddleware();
-  const store = createStore(pReducer, composeEnhancers(applyMiddleware(sagaMiddleware)));
+  const store = createStore(pReducer, composeEnhancers(applyMiddleware(sagaMiddleware, cartMiddleware)));
   sagaMiddleware.run(rootSaga);
 	return store;
 };
