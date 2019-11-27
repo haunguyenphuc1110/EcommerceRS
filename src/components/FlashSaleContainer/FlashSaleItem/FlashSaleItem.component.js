@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Image, Text } from 'react-native';
+import { View, TouchableOpacity, Image, Text } from 'react-native';
 import { IMAGES } from '../../../assets';
 import styles from './FlashSaleItem.styles';
 import ProgressBar from '../../Common/ProgressBar/ProgressBar.component';
 import { formatMoney } from '../../../utils/formatCurrency';
 
 const FlashSaleItem = (props) => {
-  const { item } = props;
+  const { item, onNavigateToDetails } = props;
   return (
-    <View style={styles.main}>
+    <TouchableOpacity style={styles.main} onPress={() => onNavigateToDetails(item)}>
       <Image 
         source={ item.uri ? { uri: item.uri } : IMAGES.DEFAULT } 
         style={styles.image} 
@@ -19,8 +19,7 @@ const FlashSaleItem = (props) => {
         </Text>
       </View>
       <ProgressBar percentage={70}/>
-      
-    </View>
+    </TouchableOpacity>
   )
 }
 
