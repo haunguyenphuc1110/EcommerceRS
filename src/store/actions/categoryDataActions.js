@@ -10,6 +10,16 @@ export const getListCategoryLvl3 = (payload) => ({
   payload
 });
 
+export const getListCategoryLvl2ByCategoryLvl1 = (payload) => ({
+  type: CONSTANTS.GET_LIST_CATEGORY_LVL2_BY_CATEGORY_LVL1,
+  payload
+});
+
+export const getListCategoryLvl3ByCategoryLvl2 = (payload) => ({
+  type: CONSTANTS.GET_LIST_CATEGORY_LVL3_BY_CATEGORY_LVL2,
+  payload
+});
+
 export const getTopProductCateLvl1 = (payload) => ({
   type: CONSTANTS.GET_TOP_PRODUCT_CATE_LVL1,
   payload

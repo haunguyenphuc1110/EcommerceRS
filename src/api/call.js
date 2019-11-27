@@ -1,7 +1,31 @@
 import Service from './Service';
 
-const getCategory = async () => {
+const getListCategory1 = async () => {
   const task = new Service('http://165.22.97.19:8000/api/v1/category_1/');
+
+  return task.get().then(data => {
+    return data;
+  });
+};
+
+const getListCategory2 = async () => {
+  const task = new Service('http://165.22.97.19:8000/api/v1/category_2/');
+
+  return task.get().then(data => {
+    return data;
+  });
+};
+
+const getListCategory2ByCateId1 = async (id) => {
+  const task = new Service(`http://165.22.97.19:8000/category?cate1_id=${id}`);
+
+  return task.get().then(data => {
+    return data;
+  });
+};
+
+const getListCategory3ByCateId2 = async (id) => {
+  const task = new Service(`http://165.22.97.19:8000/category?cate2_id=${id}`);
 
   return task.get().then(data => {
     return data;
@@ -41,7 +65,10 @@ const getTopProductCate3 = async (id) => {
 }
 
 export default {
-  getCategory,
+  getListCategory1,
+  getListCategory2,
+  getListCategory2ByCateId1,
+  getListCategory3ByCateId2,
   getListItem,
   getTopProductCate1,
   getTopProductCate2,
