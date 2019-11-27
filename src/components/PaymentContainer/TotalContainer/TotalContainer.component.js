@@ -4,10 +4,10 @@ import styles from './TotalContainer.styles';
 
 const TotalContainer = props => (
   <View style={styles.totalContainer}>
-    <Text style={styles.textTotal}>TOTAL</Text>
+    <Text style={styles.textTotal}>TỔNG CỘNG</Text>
     <View style={{ alignItems: 'flex-end' }}>
-      <Text style={styles.textPrice}>1.500.000 đ</Text>
-      <Text style={styles.infoDelivery}>30000VND Delivery fee included</Text>
+      <Text style={styles.textPrice}>1.500.000đ</Text>
+      <Text style={styles.infoDelivery}>30.000đ Bao gồm phí ship</Text>
     </View>
   </View>
 );

@@ -14,13 +14,13 @@ const styles = StyleSheet.create({
     marginRight: 15
   },
   productName: {
-    color: COLORS.darkGray,
+    color: COLORS.black,
     fontSize: 12,
     marginBottom: 7,
     fontWeight: '600'
   },
   productPrice: {
-    color: COLORS.black,
+    color: COLORS.appColor,
     fontWeight: '600'
   },
   column: {

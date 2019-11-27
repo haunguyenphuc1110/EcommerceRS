@@ -1,15 +1,17 @@
 import React from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
+import { IMAGES } from '../../assets';
 import styles from './ProductPartial.styles';
 import PropTypes from 'prop-types';
+import { formatMoney } from '../../utils/formatCurrency';
 
 const ProductPartial = ({ image, name, price }) => (
   <View style={styles.container}>
     <View style={styles.column}>
-      <Image style={styles.image} source={image} />
+      <Image style={styles.image} source={{uri: image} || IMAGES.DEFAULT} />
       <View>
-        <Text style={styles.productName}>{name}</Text>
-        <Text style={styles.productPrice}>{`$ ${price}`}</Text>
+        <Text style={styles.productName}>{name || 'Product'}</Text>
+        <Text style={styles.productPrice}>{`${formatMoney(price) || formatMoney(200000)}đ`}</Text>
       </View>
     </View>
     <TouchableOpacity style={styles.btnContainer}>
