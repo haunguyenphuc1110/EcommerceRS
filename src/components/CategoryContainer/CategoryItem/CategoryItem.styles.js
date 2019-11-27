@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     marginRight: 10, 
     marginTop: 10, 
     borderRadius: 5, 
-    padding: 10 
+    paddingVertical: 10
   },
   image: {
     width: 80, 

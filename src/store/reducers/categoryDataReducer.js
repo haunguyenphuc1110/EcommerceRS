@@ -10,25 +10,25 @@ const initialState = {
 };
 
 const categoryDataReducer = (state = initialState, action) => {
-	switch (action.type) {
-    case CONSTANTS.GET_LIST_CATEGORY_LVL2:
-    case CONSTANTS.GET_LIST_CATEGORY_LVL3:
+  switch (action.type) {
+    case CONSTANTS.GET_LIST_CATEGORY_LVL2_BY_CATEGORY_LVL1:
+    case CONSTANTS.GET_LIST_CATEGORY_LVL3_BY_CATEGORY_LVL2:
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL1:
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL2:
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL3:
-			return {
-				...state,
+      return {
+        ...state,
         pending: true
-			};
-		case CONSTANTS.GET_LIST_CATEGORY_LVL2_SUCCEED:
-    case CONSTANTS.GET_LIST_CATEGORY_LVL3_SUCCEED:
-			return {
-				...state,
+      };
+    case CONSTANTS.GET_LIST_CATEGORY_LVL2_BY_CATEGORY_LVL1_SUCCEED:
+    case CONSTANTS.GET_LIST_CATEGORY_LVL3_BY_CATEGORY_LVL2_SUCCEED:
+      return {
+        ...state,
         listCategory: action.payload,
         pending: false,
         error: false
       };
-      
+
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL1_SUCCEED:
       debugger;
       return {
@@ -37,7 +37,7 @@ const categoryDataReducer = (state = initialState, action) => {
         pending: false,
         error: false
       };
-    
+
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL2_SUCCEED:
       return {
         ...state,
@@ -54,20 +54,20 @@ const categoryDataReducer = (state = initialState, action) => {
         error: false
       };
 
-    case CONSTANTS.GET_LIST_CATEGORY_LVL2_FAILED:
-    case CONSTANTS.GET_LIST_CATEGORY_LVL3_FAILED:
+    case CONSTANTS.GET_LIST_CATEGORY_LVL2_BY_CATEGORY_LVL1_FAILED:
+    case CONSTANTS.GET_LIST_CATEGORY_LVL3_BY_CATEGORY_LVL2_FAILED:
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL1_FAILED:
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL2_FAILED:
-    case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL3_FAILED: 
+    case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL3_FAILED:
       return {
         ...state,
         pending: false,
         error: true
       };
 
-		default:
-			return state;
-	}
+    default:
+      return state;
+  }
 };
 
 export default categoryDataReducer;

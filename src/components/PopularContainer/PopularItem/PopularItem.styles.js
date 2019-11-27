@@ -22,14 +22,13 @@ const styles = StyleSheet.create({
     color: COLORS.black,
     width: 80
   },
-  quantity: {
-    fontSize: 11,
-    color: COLORS.black
-  },
   image: {
     width: 50, 
     height: 50, 
     borderRadius: 5 
+  },
+  star: {
+    
   }
 });
 

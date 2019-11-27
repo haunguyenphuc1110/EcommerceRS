@@ -14,6 +14,18 @@ const IMAGE_MAPPING = {
   '1019': 'http://media3.scdn.vn/img3/2019/10_9/PjxmNG_simg_b5529c_250x250_maxb.jpg',
   '1458': 'https://cf.shopee.vn/file/6cb7e633f8b63757463b676bd19a50e4_tn',
   '1629': 'http://media3.scdn.vn/img3/2019/9_6/af2trN_simg_b5529c_250x250_maxb.jpg',
-  '138': 'https://cf.shopee.vn/file/099edde1ab31df35bc255912bab54a5e_tn'
+  '138': 'https://cf.shopee.vn/file/099edde1ab31df35bc255912bab54a5e_tn',
+
+
+  '749': 'http://media3.scdn.vn/img3/2019/10_7/10PoX2_simg_b5529c_250x250_maxb.jpg',
+  '759': 'http://media3.scdn.vn/img2/2018/11_18/HaF1qv_simg_b5529c_250x250_maxb.jpg',
+  '221': 'https://media3.scdn.vn/img2/2018/7_25/yPgcer_simg_b5529c_250x250_maxb.jpg',
+  '1209': 'https://media3.scdn.vn/img2/2018/8_30/jli0YP_simg_b5529c_250x250_maxb.jpg',
+  '1825': 'https://media3.scdn.vn/img3/2019/3_5/Fn9Qrd_simg_b5529c_250x250_maxb.jpg',
+  '18': 'https://media3.scdn.vn/img3/2019/11_27/Qb0T0v_simg_b5529c_250x250_maxb.jpg',
+  '1190': 'https://media3.scdn.vn/img3/2019/6_6/ZoidP6_simg_b5529c_250x250_maxb.jpg',
+  '1726': 'https://media3.scdn.vn/img2/2017/7_16/FcMyKI_simg_b5529c_250x250_maxb.jpg',
+  '263': 'https://media3.scdn.vn/img3/2019/11_8/re0saW_simg_b5529c_250x250_maxb.jpg',
+  '1251': 'https://media3.scdn.vn/img2/2018/11_1/w78mlv_simg_b5529c_250x250_maxb.jpg',
 }
 export default IMAGE_MAPPING;

@@ -18,6 +18,13 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginTop: 10
   },
+  rowBanner: {
+    width: width/2 - 15, 
+    height: 150, 
+    borderRadius: 5,
+    marginLeft: 10,
+    marginTop: 10
+  },
   absolute: {
     zIndex: 9999,
     position: 'absolute', 

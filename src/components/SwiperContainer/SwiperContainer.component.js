@@ -24,7 +24,7 @@ const SwiperContainer = props => {
     return (
       <Swiper
         style={styles.swiper}
-        height={150}
+        height={200}
         showsPagination={true}
         activeDotColor={COLORS.red}
         dotStyle={styles.dotStyle}

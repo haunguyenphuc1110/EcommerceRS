@@ -6,7 +6,7 @@ import FlashSaleItem from './FlashSaleItem/FlashSaleItem.component';
 import styles from './FlashSaleContainer.styles';
 
 const FlashSaleContainer = (props) => {
-  const { data } = props;
+  const { data, onNavigateToDetails } = props;
   return (
     <View style={styles.main}>
       <FlatList
@@ -14,7 +14,11 @@ const FlashSaleContainer = (props) => {
         showsHorizontalScrollIndicator={false}
         numColumns={1}
         data={data}
-        renderItem={({ item }) => (<FlashSaleItem item={item}/>)}
+        renderItem={({ item }) => (
+          <FlashSaleItem 
+            item={item} 
+            onNavigateToDetails={onNavigateToDetails}/>
+          )}
         keyExtractor={item => item.product_id}
       />
     </View>

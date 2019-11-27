@@ -12,7 +12,8 @@ const ProductDetailsScreen = (props) => (<ProductDetails {...props}/>);
 
 const mapStateToProps = state => {
   return {
-    categoryData: state.homeReducer.listCategory
+    categoryDataLvl1: state.homeReducer.listCategoryLvl1,
+    cartData: state.cartReducer.listProduct
   };
 };
 

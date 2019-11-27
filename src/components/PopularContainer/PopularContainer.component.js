@@ -16,7 +16,7 @@ const PopularContainer = (props) => {
           scrollEnabled={false}
           data={data.slice(0, centerPopularityData)}
           renderItem={({ item }) => (<PopularItem item={item}/>)}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.cate2_id}
         />
 
         <FlatList
@@ -24,7 +24,7 @@ const PopularContainer = (props) => {
           scrollEnabled={false}
           data={data.slice(centerPopularityData)}
           renderItem={({ item }) => (<PopularItem item={item}/>)}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.cate2_id}
         />
       </View>
     </ScrollView>

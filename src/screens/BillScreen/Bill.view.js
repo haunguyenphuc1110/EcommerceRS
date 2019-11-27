@@ -69,12 +69,12 @@ class Bill extends Component {
         {/* {isPlaceOrderPending && <ModalLoading />} */}
         <ScrollView showsVerticalScrollIndicator={false} style={styles.scroll}>
           <View style={styles.subContainer}>
-            <Title index={'1'} title={'Contact Info'} />
+            <Title index={'1'} title={'Thông tin liên hệ'} />
             <ContactContainer data={data}/>
           </View>
 
           <View style={styles.subContainer}>
-            <Title index={'2'} title={'Your Order'} />
+            <Title index={'2'} title={'Đơn hàng của bạn'} />
             <ItemContainer data={cartData} />
           </View>
         </ScrollView>

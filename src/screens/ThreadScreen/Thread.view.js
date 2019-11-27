@@ -19,16 +19,14 @@ export default class extends React.Component {
   };
 
   render() {
+    const item = this.props.navigation.getParam('item', {});
     return (
       <View style={styles.container}>
         <View style={styles.productContainer}>
           <ProductPartial
-            image={{
-              uri:
-                'https://i.pinimg.com/564x/83/58/f8/8358f80257b84f985f9493ebd9ad60e1.jpg'
-            }}
-            name='Wooden Clock'
-            price={49}
+            image={item.uri}
+            name={item.product_name}
+            price={item.price}
           />
         </View>
         <KeyboardAvoidingView style={{ flex: 1 }} behavior='padding' keyboardVerticalOffset={-300}>

@@ -101,7 +101,7 @@ class Payment extends Component {
         <TotalContainer/>
         <ScrollView showsVerticalScrollIndicator={false} style={styles.scroll}>
           <View style={styles.subContainer}>
-            <Title index={'1'} title={'Contact Info'} />
+            <Title index={'1'} title={'Thông tin liên hệ'} />
             <ContactInfo
               name={name}
               phone={phone}
@@ -109,7 +109,7 @@ class Payment extends Component {
           </View>
 
           <View style={styles.subContainer}>
-            <Title index={'2'} title={'Delivery Address'} />
+            <Title index={'2'} title={'Địa chỉ giao hàng'} />
             <DeliveryAddress
               city={city}
               district={district}
@@ -120,7 +120,7 @@ class Payment extends Component {
           </View>
 
           <View style={[styles.subContainer]}>
-            <Title index={'3'} title={'Payment Info'} />
+            <Title index={'3'} title={'Hình thức thanh toán'} />
             <PaymentMethod
               onChooseCash={this.onChooseCash}
               onChooseMastercard={this.onChooseMastercard}

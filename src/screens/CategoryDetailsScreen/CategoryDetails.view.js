@@ -71,28 +71,6 @@ class CategoryDetails extends Component {
           navigation={navigation}
         />
 
-        <View style={[styles.popularContainer, { paddingLeft: 10 }]}>
-          <View style={styles.header}>
-            <Icon
-              name={'ios-heart'}
-              color={COLORS.appColor}
-              size={22} />
-            <Text style={styles.title}>TOP SẢN PHẨM BÁN CHẠY</Text>
-          </View>
-          <RecommendContainer data={categoryData} />
-        </View>
-
-        <View style={[styles.popularContainer, { paddingLeft: 10 }]}>
-          <View style={styles.header}>
-            <Icon
-              name={'ios-gift'}
-              color={COLORS.appColor}
-              size={22} />
-            <Text style={styles.title}>ƯU ĐÃI CHO BẠN</Text>
-          </View>
-          <RecommendContainer data={categoryData} />
-        </View>
-
         <View style={[styles.popularContainer, { paddingLeft: 0 }]}>
           <View style={[styles.header, { marginLeft: 10 }]}>
             <Icon
