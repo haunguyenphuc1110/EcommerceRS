@@ -60,6 +60,7 @@ class Home extends Component {
   }
 
   onNavigateToDetails = (item) => {
+    this.props.saveViewedProduct(item);
     this.props.navigation.navigate(ScreenIds.PRODUCT_DETAILS, { item });
   }
 
@@ -196,11 +197,9 @@ class Home extends Component {
               onNavigationToCateDetails={this.onNavigationToCateDetails} />
           </View>
 
-
-
           <View style={styles.popularContainer}>
             <Text style={styles.title}>SẢN PHẨM VỪA XEM</Text>
-            <ViewedContainer data={populariryData} />
+            <ViewedContainer data={this.props.viewedProducts} />
           </View>
 
           <Image

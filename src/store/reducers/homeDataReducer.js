@@ -4,6 +4,7 @@ const initialState = {
   listCategoryLvl1: [],
   listCategoryLvl2: [],
   listProduct: [],
+  viewedProducts: [],
   pending: false,
   error: false
 };
@@ -17,6 +18,13 @@ const homeDataReducer = (state = initialState, action) => {
         ...state,
         pending: true
       };
+
+    case CONSTANTS.SAVE_VIEWED_PRODUCT:
+      return {
+        ...state,
+        viewedProducts: state.viewedProducts.concat(action.payload)
+      };
+
     case CONSTANTS.GET_LIST_CATEGORY_LVL1_SUCCEED:
       return {
         ...state,
@@ -33,6 +41,14 @@ const homeDataReducer = (state = initialState, action) => {
         error: false
       };
 
+    case CONSTANTS.GET_RECOMMEND_PRODUCT_SUCCEED:
+      return {
+        ...state,
+        listProduct: [...state.listProduct, ...action.payload],
+        pending: false,
+        error: false
+      };
+
     case CONSTANTS.GET_LIST_CATEGORY_LVL1_FAILED:
     case CONSTANTS.GET_LIST_CATEGORY_LVL2_FAILED:
     case CONSTANTS.GET_RECOMMEND_PRODUCT_FAILED:
@@ -40,14 +56,6 @@ const homeDataReducer = (state = initialState, action) => {
         ...state,
         pending: false,
         error: true
-      };
-
-    case CONSTANTS.GET_RECOMMEND_PRODUCT_SUCCEED:
-      return {
-        ...state,
-        listProduct: [...state.listProduct, ...action.payload],
-        pending: false,
-        error: false
       };
 
     default:

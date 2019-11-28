@@ -12,3 +12,8 @@ export const getListItem = (payload) => ({
   type: CONSTANTS.GET_RECOMMEND_PRODUCT,
   payload
 });
+
+export const saveViewedProduct = (payload) => ({
+  type: CONSTANTS.SAVE_VIEWED_PRODUCT,
+  payload
+})
