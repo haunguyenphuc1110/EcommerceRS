@@ -51,7 +51,7 @@ class CategoryDetails extends Component {
 
   render() {
     const { isLoading } = this.state;
-    const { navigation, categoryData, topProductCateLvl1 } = this.props;
+    const { navigation, topProductCateLvl1 } = this.props;
     return (
       <ScrollView contentContainerStyle={{ backgroundColor: COLORS.lightGray }} showsVerticalScrollIndicator={false}>
         <Spinner

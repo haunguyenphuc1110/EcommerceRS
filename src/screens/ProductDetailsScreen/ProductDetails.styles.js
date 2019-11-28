@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: Layout.window.width,
-    height: 500,
+    height: 400,
     position: 'relative',
     marginBottom: 20
   },
