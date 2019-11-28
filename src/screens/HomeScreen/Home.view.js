@@ -67,7 +67,7 @@ class Home extends Component {
     this.props.navigation.navigate(ScreenIds.SEARCH);
   }
 
-  onNavigationToCateDetails = (id) => {
+  onNavigationToCateDetails = ({}, id) => { //In case don't need prop navigation
     this.props.navigation.navigate(ScreenIds.CATEGORY_DETAILS, { id });
   }
 
@@ -191,6 +191,7 @@ class Home extends Component {
               <Text style={styles.title}>BỘ SƯU TẬP YÊU THÍCH</Text>
             </View>
             <RecommendContainer
+              navigation={navigation}
               data={this.props.categoryDataLvl1}
               onNavigationToCateDetails={this.onNavigationToCateDetails} />
           </View>

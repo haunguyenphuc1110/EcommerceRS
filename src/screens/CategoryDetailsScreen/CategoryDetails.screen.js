@@ -12,7 +12,6 @@ CategoryDetailsScreen.navigationOptions = {
 
 const mapStateToProps = state => {
   return {
-    categoryData: state.homeReducer.listCategory,
     topProductCateLvl1: state.categoryReducer.topProductCateLvl1,
     pending: state.categoryReducer.pending,
     error: state.categoryReducer.error

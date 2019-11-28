@@ -30,7 +30,6 @@ const categoryDataReducer = (state = initialState, action) => {
       };
 
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL1_SUCCEED:
-      debugger;
       return {
         ...state,
         topProductCateLvl1: action.payload,

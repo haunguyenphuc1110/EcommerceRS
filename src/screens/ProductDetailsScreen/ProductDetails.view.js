@@ -24,6 +24,10 @@ const addToCart = (props, item) => {
   props.addProductToCart(item);
 }
 
+const onNavigationToCateDetails = (navigation, id) => {
+  navigation.navigate(ScreenIds.CATEGORY_DETAILS, { id });
+}
+
 const ProductDetails = (props) => {
   const { navigation } = props;
   const item = navigation.getParam('item', {})
@@ -67,7 +71,10 @@ const ProductDetails = (props) => {
               size={22} />
             <Text style={styles.title}>SẢN PHẨM LIÊN QUAN</Text>
           </View>
-          <RecommendContainer data={props.categoryDataLvl1} />
+          <RecommendContainer 
+            data={props.categoryDataLvl1} 
+            navigation={navigation}
+            onNavigationToCateDetails={onNavigationToCateDetails}/>
         </View>
       </ScrollView>
       <TouchableOpacity style={styles.button} onPress={() => addToCart(props, item)}>
