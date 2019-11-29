@@ -82,6 +82,7 @@ class Profile extends Component {
 
   render() {
     const { isLoggedIn } = this.state;
+    const { navigation } = this.props;
     if ( !isLoggedIn ) {
       return (
         <View style={{ flex: 1 }}>
@@ -120,7 +121,8 @@ class Profile extends Component {
         avatar={IMAGES.AVATAR}
         phoneNumber={'0933537713'}
         historyOrders={[{}, {}]}
-        onLogout={this.logOut}/>
+        onLogout={this.logOut}
+        navigation={navigation}/>
     )      
   }
 }

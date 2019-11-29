@@ -5,7 +5,8 @@ import { connect } from "react-redux";
 import { 
   getListCategoryLvl1,
   getListCategoryLvl2, 
-  getListItem 
+  getListItem,
+  saveViewedProduct
 } from '../../store/actions/homeDataActions';
 
 const HomeScreen = (props) => ( <Home {...props}/> );
@@ -15,6 +16,7 @@ const mapStateToProps = state => {
     categoryDataLvl1: state.homeReducer.listCategoryLvl1,
     categoryDataLvl2: state.homeReducer.listCategoryLvl2,
     recommendationData: state.homeReducer.listProduct,
+    viewedProducts: state.homeReducer.viewedProducts,
     pending: state.homeReducer.pending,
     error: state.homeReducer.error
   };
@@ -24,7 +26,8 @@ const mapDispatchToProps = dispatch => {
   return {
     getListCategoryLvl1: () => dispatch(getListCategoryLvl1()),
     getListCategoryLvl2: () => dispatch(getListCategoryLvl2()),
-    getListItem: (pageNumber) => dispatch(getListItem(pageNumber))
+    getListItem: (pageNumber) => dispatch(getListItem(pageNumber)),
+    saveViewedProduct: (payload) => dispatch(saveViewedProduct(payload))
   };
 };
 

@@ -3,6 +3,7 @@ import CategoryDetails from './CategoryDetails.view';
 import { connect } from 'react-redux';
 
 import { getTopProductCateLvl1 } from '../../store/actions/categoryDataActions';
+import { saveViewedProduct } from '../../store/actions/homeDataActions';
 
 const CategoryDetailsScreen = (props) => (<CategoryDetails {...props}/>);
 
@@ -21,6 +22,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getTopProductCateLvl1: (id) => dispatch(getTopProductCateLvl1(id)),
+    saveViewedProduct: (payload) => dispatch(saveViewedProduct(payload))
   }
 };
 

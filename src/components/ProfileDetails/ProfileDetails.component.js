@@ -1,23 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { ScrollView, Text, View, TouchableOpacity, Alert } from 'react-native';
 import { Avatar, ListItem } from 'react-native-elements';
 import BaseIcon from './BaseIcon/BaseIcon.component';
 import Chevron from './Chevron/Chevron.component';
 import InfoText from './InfoText/InfoText.component';
-import { IMAGES, COLORS } from '../../assets';
+import { COLORS } from '../../assets';
 import ProfileDetail from '../../mocks/ProfileDetails';
 import styles from './ProfileDetails.styles';
+import ScreenIds from '../../navigation/screenIds';
+import LinearGradient from 'react-native-linear-gradient';
 
-const onPressOptions = (route, props) => {
-  // const { navigation, historyOrders } = props;
-  // navigation.navigate(route, {
-  //   historyOrders: historyOrders
-  // });
-}
-
-const onPressSetting = (route, props) => {
-  // const { navigation } = props;
-  // navigation.navigate(route);
+const onPressDoSurvey = (props) => {
+  const { navigation } = props;
+  navigation.navigate(ScreenIds.SURVEY);
 }
 
 const handleLogout = (props) => {
@@ -72,49 +67,27 @@ const renderUserInfo = (props) => {
   );
 }
 
-const renderManageOrder = (props) => {
-  const { historyOrders } = props;
+const renderDoSurvey = (props) => {
   return (
     <ListItem
-      title="Manage Order"
-      //onPress={() => onPressOptions(Navigations.MANAGE_ORDER, props)}
-      titleStyle={{ color: COLORS.black }}
-      containerStyle={styles.listItemContainer}
-      badge={{
-        value: 10,
-        textStyle: { color: 'white', fontWeight: '500' },
+      title='Help us do survey'
+      onPress={() => onPressDoSurvey(props)}
+      titleStyle={{ color: COLORS.white }}
+      containerStyle={[styles.listItemContainer, { backgroundColor: COLORS.appColor, borderWidth: 0 }]}
+      linearGradientProps={{
+        colors: [COLORS.appColor, COLORS.lightOrange]
       }}
+      ViewComponent={LinearGradient}
       leftIcon={
         <BaseIcon
-          containerStyle={{ backgroundColor: '#A4C8F0' }}
+          containerStyle={{ backgroundColor: '#00C001' }}
           icon={{
-            type: 'font-awesome',
-            name: 'list-alt',
+            type: 'materialicon',
+            name: 'feedback',
           }}
         />
       }
-      rightIcon={<Chevron />}
-    />
-  );
-}
-
-const renderChangPassword = (props) => {
-  return (
-    <ListItem
-      title="Change Password"
-      // onPress={() => onPressOptions(Navigations.CHANGE_PASSWORD, props)}
-      titleStyle={{ color: COLORS.black }}
-      containerStyle={styles.listItemContainer}
-      leftIcon={
-        <BaseIcon
-          containerStyle={{ backgroundColor: '#57DCE7' }}
-          icon={{
-            type: 'material',
-            name: 'lock',
-          }}
-        />
-      }
-      rightIcon={<Chevron />}
+      rightIcon={<Chevron color={COLORS.white} />}
     />
   );
 }
@@ -165,15 +138,14 @@ const ProfileDetails = props => {
   return (
     <ScrollView style={styles.scroll}>
       {renderUserInfo(props)}
-      <InfoText text="TÀI KHOẢN" />
+      <InfoText text='TÀI KHOẢN' />
       <View>
-        {renderManageOrder(props)}
-        {renderChangPassword(props)}
         {renderItemInfo(ProfileDetail.accountInfo)}
       </View>
-      <InfoText text="HỖ TRỢ" />
+      <InfoText text='HỖ TRỢ' />
       <View>
-        {renderItemInfo(ProfileDetail.moreInfo, props)}
+        {renderDoSurvey(props)}
+        {renderItemInfo(ProfileDetail.moreInfo)}
         {renderButtonLogout(props)}
         {renderAppInfo()}
       </View>

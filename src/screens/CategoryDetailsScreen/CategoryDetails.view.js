@@ -42,6 +42,7 @@ class CategoryDetails extends Component {
   }
 
   onNavigateToDetails = (item) => {
+    this.props.saveViewedProduct(item);
     this.props.navigation.navigate(ScreenIds.PRODUCT_DETAILS, { item });
   }
 

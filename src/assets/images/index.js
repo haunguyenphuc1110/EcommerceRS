@@ -10,6 +10,7 @@ const images = {
   VISA: require('./icon_visa.png'),
   MASTER_CARD: require('./icon_mastercard.png'),
   ICON_APP: require('./app_icon.png'),
+  ICON_CHECK: require('./icon_check.png'),
   EXAMPLE_1: {
     uri: 'http://media3.scdn.vn/img3/2019/11_4/0mLRBX.png'
   },

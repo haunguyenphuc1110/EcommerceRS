@@ -21,6 +21,7 @@
     "react-native-material-textfield": "^0.16.1",
     "react-native-reanimated": "^1.4.0",
     "react-native-splash-screen": "^3.2.0",
+    "react-native-star-rating": "^1.1.0",
     "react-native-swiper": "^1.5.14",
     "react-native-tab-view": "^2.10.0",
     "react-native-vector-icons": "^6.4.2",
