@@ -1,6 +1,18 @@
 const data = {
   accountInfo: [
     {
+      title: 'Manage Order',
+      backgroundColor: '#A4C8F0',
+      iconType: 'font-awesome',
+      iconName: 'list-alt'
+    },
+    {
+      title: 'Change Password',
+      backgroundColor: '#57DCE7',
+      iconType: 'font-awesome',
+      iconName: 'lock'
+    },
+    {
       title: 'Favourite',
       backgroundColor: '#FEA8A1',
       iconType: 'font-awesome',
@@ -26,12 +38,6 @@ const data = {
       iconType: 'entypo',
       iconName: 'star'
     },
-    {
-      title: 'Contact Us',
-      backgroundColor: '#00C001',
-      iconType: 'materialicon',
-      iconName: 'feedback'
-    }
   ]
 };
 
