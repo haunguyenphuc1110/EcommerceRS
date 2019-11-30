@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList, TouchableOpacity, Modal, Image } from 'react-native';
-import { surveyData } from '../../mocks/dataMock'
 import { COLORS, IMAGES } from '../../assets';
 import styles from './Survey.styles';
 
@@ -41,7 +40,7 @@ class Survey extends Component {
 
   render() {
     const { visible } = this.state;
-    const { navigation } = this.props;
+    const { navigation, categoryDataLvl1 } = this.props;
 
     return (
       <LinearGradient colors={[COLORS.gray, COLORS.lightGray]} style={styles.main}>
@@ -69,9 +68,9 @@ class Survey extends Component {
         </LinearGradient>
         <FlatList
           numColumns={3}
-          data={surveyData}
+          data={categoryDataLvl1}
           renderItem={({ item }) => this.renderItem(item)}
-          keyExtractor={(item) => item.belong_cate_lvl1_id}
+          keyExtractor={(item) => item.cate1_id}
           extraData={this.state}
           style={styles.flatlist}
         />
