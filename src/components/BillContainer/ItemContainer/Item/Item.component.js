@@ -16,7 +16,7 @@ class Item extends Component {
 		const { uri, product_name } = this.props.item;
 		return (
 			<View style={styles.content}>
-				<Image style={styles.image} source={uri ? {uri: uri} : IMAGES.DEFAULT}/>
+				<Image style={styles.image} source={uri ? {uri: uri} : IMAGES.PRODUCT}/>
 				<Text style={styles.name}>{product_name}</Text>
         <Icon
           name='times'

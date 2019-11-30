@@ -10,7 +10,7 @@ const ProposeItem = (props) => {
   const { item, onNavigateToDetails } = props;
   return (
     <TouchableOpacity style={styles.main} onPress={() => onNavigateToDetails(item)}>
-      <Image source={item.uri ? { uri: item.uri } : IMAGES.DEFAULT} style={styles.image}/>
+      <Image source={item.uri ? { uri: item.uri } : IMAGES.PRODUCT} style={styles.image}/>
       <Text style={styles.title} ellipsizeMode='tail' numberOfLines={2}>
         {item.product_name}
       </Text>

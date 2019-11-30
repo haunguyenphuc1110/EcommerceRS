@@ -17,7 +17,7 @@ class Item extends Component {
 		return (
 			<View style={styles.content}>
 				<View style={{ flexDirection: 'row' }}>
-					<Image style={styles.image} source={uri ? { uri: uri } : IMAGES.DEFAULT} />
+					<Image style={styles.image} source={uri ? { uri: uri } : IMAGES.PRODUCT} />
 					<Text style={styles.name}>{product_name}</Text>
 				</View>
 				<Icon

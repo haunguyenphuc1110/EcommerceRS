@@ -35,7 +35,7 @@ const ProductDetails = (props) => {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scroll} bounces={false}>
         <Image
-          source={item.uri ? { uri: item.uri } : IMAGES.DEFAULT}
+          source={item.uri ? { uri: item.uri } : IMAGES.PRODUCT}
           style={styles.image}
         />
         <View style={styles.dataContainer}>
