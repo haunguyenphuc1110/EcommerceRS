@@ -5,9 +5,10 @@ import IMAGES_MAPPING from '../../../utils/imageMapping';
 import styles from './RecommendItem.styles';
 
 const RecommendItem = (props) => {
-  const { item, onNavigationToCateDetails, navigation } = props;
+  const { item, onNavigationToCateDetails } = props;
   return (
-    <TouchableWithoutFeedback onPress={() => onNavigationToCateDetails(navigation, item.cate1_id)}>
+    <TouchableWithoutFeedback 
+      onPress={() => onNavigationToCateDetails(item.cate1_id, item.cate1_name, true, false)}>
       <View style={styles.item}>
         <ImageBackground
           source={{ uri: IMAGES_MAPPING[item.cate1_id] }}

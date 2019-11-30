@@ -68,8 +68,8 @@ class Home extends Component {
     this.props.navigation.navigate(ScreenIds.SEARCH);
   }
 
-  onNavigationToCateDetails = ({}, id) => { //In case don't need prop navigation
-    this.props.navigation.navigate(ScreenIds.CATEGORY_DETAILS, { id });
+  onNavigationToCateDetails = (id, title, isCateLvl1, isCateLvl2) => {
+    this.props.navigation.navigate(ScreenIds.CATEGORY_DETAILS, { id, title, isCateLvl1, isCateLvl2 });
   }
 
   render() {
@@ -154,7 +154,9 @@ class Home extends Component {
                 size={22} />
               <Text style={styles.title}>TÌM KIẾM PHỔ BIẾN</Text>
             </View>
-            <PopulaContainer data={this.props.categoryDataLvl2.slice(0, 10)} />
+            <PopulaContainer
+              onNavigationToCateDetails={this.onNavigationToCateDetails} 
+              data={this.props.categoryDataLvl2.slice(0, 10)} />
           </View>
 
           <Image
@@ -192,14 +194,15 @@ class Home extends Component {
               <Text style={styles.title}>BỘ SƯU TẬP YÊU THÍCH</Text>
             </View>
             <RecommendContainer
-              navigation={navigation}
               data={this.props.categoryDataLvl1}
               onNavigationToCateDetails={this.onNavigationToCateDetails} />
           </View>
 
           <View style={styles.popularContainer}>
             <Text style={styles.title}>SẢN PHẨM VỪA XEM</Text>
-            <ViewedContainer data={this.props.viewedProducts} />
+            <ViewedContainer 
+              data={this.props.viewedProducts} 
+              onNavigateToDetails={this.onNavigateToDetails}/>
           </View>
 
           <Image
