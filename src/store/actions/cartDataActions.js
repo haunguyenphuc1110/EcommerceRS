@@ -9,3 +9,13 @@ export const addExistProductToCart = (payload) => ({
   type: CONSTANTS.ADD_EXIST_PRODUCT_CART,
   payload
 });
+
+export const removeProductCart = (payload) => ({
+  type: CONSTANTS.REMOVE_PRODUCT_CART,
+  payload
+});
+
+export const updateCartQuantity = (payload) => ({
+  type: CONSTANTS.UPDATE_CART_QUANTITY,
+  payload
+});

@@ -6,27 +6,32 @@ const initialState = {
 };
 
 const cartDataReducer = (state = initialState, action) => {
-	switch (action.type) {
+  switch (action.type) {
     case CONSTANTS.ADD_PRODUCT_CART:
-			return {
-				...state,
+      return {
+        ...state,
         listProduct: state.listProduct.concat({
           ...action.payload,
           quantity: 1
-        }),
-        cartQuantity: state.cartQuantity + 1
-			};
+        })
+      };
 
     case CONSTANTS.ADD_EXIST_PRODUCT_CART:
+    case CONSTANTS.REMOVE_PRODUCT_CART:
       return {
         ...state,
-        listProduct: action.payload,
-        cartQuantity: state.cartQuantity + 1
+        listProduct: action.payload
       }
 
-		default:
-			return state;
-	}
+    case CONSTANTS.UPDATE_CART_QUANTITY:
+      return {
+        ...state,
+        cartQuantity: action.payload
+      }
+
+    default:
+      return state;
+  }
 };
 
 export default cartDataReducer;

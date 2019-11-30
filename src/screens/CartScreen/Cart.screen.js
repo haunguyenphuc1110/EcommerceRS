@@ -1,6 +1,7 @@
 import React from 'react';
 import Cart from './Cart.view';
 import { connect } from 'react-redux';
+import { removeProductCart } from '../../store/actions/cartDataActions';
 
 const CartScreen = (props) => (<Cart {...props}/>);
 
@@ -13,7 +14,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		
+		removeProductCart: (id) => dispatch(removeProductCart(id))
 	};
 };
 

@@ -4,12 +4,12 @@ import CartItem from './CartItem/CartItem.component';
 import styles from './CartContainer.styles';
 
 const CartContainer = (props) => {
-  const { data } = props;
+  const { data, removeProductCart } = props;
   return (
     <View style={styles.containter}>
       <FlatList
         data={data}
-        renderItem={({item}) => (<CartItem item={item}/>)}
+        renderItem={({item}) => (<CartItem item={item} removeProductCart={removeProductCart}/>)}
         keyExtractor={item => item.product_id}
       />
     </View>
