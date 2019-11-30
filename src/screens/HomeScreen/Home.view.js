@@ -112,7 +112,7 @@ class Home extends Component {
             resizeMode='stretch'
           />
 
-          <View style={{ flexDirection: 'row' }}>
+          <ScrollView horizontal style={{ flexDirection: 'row' }}>
             <Image
               source={IMAGES.EXAMPLE_5}
               style={styles.rowBanner}
@@ -123,7 +123,7 @@ class Home extends Component {
               style={styles.rowBanner}
               resizeMode='stretch'
             />
-          </View>
+          </ScrollView>
 
           <LinearGradient colors={[COLORS.red, COLORS.lightOrange, COLORS.gray]} style={styles.popularContainer}>
             <View style={[styles.header, { marginLeft: 10 }]}>

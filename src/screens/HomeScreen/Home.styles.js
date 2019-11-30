@@ -19,10 +19,10 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   rowBanner: {
-    width: width/2 - 15, 
+    width: 300, 
     height: 150, 
     borderRadius: 5,
-    marginLeft: 10,
+    marginHorizontal: 10,
     marginTop: 10
   },
   absolute: {

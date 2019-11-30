@@ -67,10 +67,6 @@ class CategoryDetails extends Component {
           onBack={this.onBack}
           onNavigateToCartSearch={this.onNavigateToCartSearch}
         />
-        <SwiperContainer
-          data={swiperData}
-          navigation={navigation}
-        />
 
         <View style={[styles.popularContainer, { paddingLeft: 0 }]}>
           <View style={[styles.header, { marginLeft: 10 }]}>
