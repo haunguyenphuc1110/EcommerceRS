@@ -13,6 +13,8 @@ import OfferScreen from '../screens/OfferScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ProductDetailsScreen from '../screens/ProductDetailsScreen';
 import CategoryDetailsScreen from '../screens/CategoryDetailsScreen';
+import MoreCategoryScreen from '../screens/MoreCategoryScreen';
+import ListCategoryScreen from '../screens/ListCategoryScreen';
 import CartScreen from '../screens/CartScreen';
 import SearchScreen from '../screens/SearchScreen';
 import MessageScreen from '../screens/MessageScreen';
@@ -108,24 +110,12 @@ const MyStackNavigator = createStackNavigator(
     [ScreenIds.BILL]: {
       screen: BillScreen
     },
-    // [Navigations.LIST_TOPPING]: {
-    //   screen: ListTopping
-    // },
-    // [Navigations.OTHER_DETAIL]: {
-    //   screen: OtherDetail
-    // },
-    // [Navigations.PAYMENT]: {
-    //   screen: Payment
-    // },
-    // [Navigations.BILL]: {
-    //   screen: Bill
-    // },
-    // [Navigations.MANAGE_ORDER]: {
-    //   screen: ManageOrder
-    // },
-    // [Navigations.ORDER_DETAIL]: {
-    //   screen: OrderDetail
-    // }
+    [ScreenIds.MORE_CATEGORY]: {
+      screen: MoreCategoryScreen
+    },
+    [ScreenIds.LIST_CATEGORY]: {
+      screen: ListCategoryScreen
+    }
   },
   {
     initialRouteName: ScreenIds.APP,

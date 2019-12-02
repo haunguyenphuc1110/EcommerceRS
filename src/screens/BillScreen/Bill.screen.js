@@ -7,6 +7,7 @@ const BillScreen = (props) => (<Bill {...props}/>);
 const mapStateToProps = state => {
   return {
     cartData: state.cartReducer.listProduct,
+    total: state.cartReducer.total,
   };
 };
 

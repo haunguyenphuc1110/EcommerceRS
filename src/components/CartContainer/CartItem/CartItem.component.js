@@ -13,17 +13,18 @@ class Item extends Component {
 	}
 
 	renderItemImageAndName = () => {
-		const { uri, product_name } = this.props.item;
+		const { uri, product_name, product_id } = this.props.item;
 		return (
 			<View style={styles.content}>
 				<View style={{ flexDirection: 'row' }}>
-					<Image style={styles.image} source={uri ? { uri: uri } : IMAGES.DEFAULT} />
+					<Image style={styles.image} source={uri ? { uri: uri } : IMAGES.PRODUCT} />
 					<Text style={styles.name}>{product_name}</Text>
 				</View>
 				<Icon
 					name='times'
 					size={20}
 					color={COLORS.darkGray}
+					onPress={() => this.props.removeProductCart(product_id)}
 				/>
 			</View>
 		);

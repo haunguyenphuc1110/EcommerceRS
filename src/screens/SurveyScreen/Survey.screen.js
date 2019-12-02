@@ -6,7 +6,7 @@ const SurveyScreen = (props) => (<Survey {...props}/>);
 
 const mapStateToProps = state => {
 	return {
-
+		categoryDataLvl1: state.homeReducer.listCategoryLvl1,
 	};
 };
 

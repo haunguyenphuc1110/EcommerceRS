@@ -10,7 +10,7 @@ const FlashSaleItem = (props) => {
   return (
     <TouchableOpacity style={styles.main} onPress={() => onNavigateToDetails(item)}>
       <Image 
-        source={ item.uri ? { uri: item.uri } : IMAGES.DEFAULT } 
+        source={ item.uri ? { uri: item.uri } : IMAGES.PRODUCT } 
         style={styles.image} 
         resizeMode='stretch' />
       <View style={styles.titleContainer}>

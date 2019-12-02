@@ -6,6 +6,8 @@ const ScreenIds = {
 	PROFILE: 'Profile',
 	PRODUCT_DETAILS: 'ProductDetails',
 	CATEGORY_DETAILS: 'CategoryDetails',
+	MORE_CATEGORY: 'MoreCategory',
+	LIST_CATEGORY: 'ListCategory',
 	CART: 'Cart',
 	SEARCH: 'Search',
 	MESSAGE: 'Message',

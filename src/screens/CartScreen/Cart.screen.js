@@ -1,19 +1,22 @@
 import React from 'react';
 import Cart from './Cart.view';
 import { connect } from 'react-redux';
+import { removeProductCart } from '../../store/actions/cartDataActions';
 
 const CartScreen = (props) => (<Cart {...props}/>);
 
 const mapStateToProps = state => {
 	return {
 		cartData: state.cartReducer.listProduct,
-		cartQuantity: state.cartReducer.cartQuantity
+		cartQuantity: state.cartReducer.cartQuantity,
+		total: state.cartReducer.total,
+		userId: state.userReducer.userId
 	};
 };
 
 const mapDispatchToProps = dispatch => {
 	return {
-		
+		removeProductCart: (id) => dispatch(removeProductCart(id))
 	};
 };
 

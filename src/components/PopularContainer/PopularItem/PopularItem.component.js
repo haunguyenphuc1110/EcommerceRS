@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Image, Text } from 'react-native';
+import { View, Image, Text, TouchableOpacity } from 'react-native';
 import styles from './PopularItem.styles';
 import { IMAGES, COLORS } from '../../../assets';
 import IMAGES_MAPPING from '../../../utils/imageMapping';
 import StarRating from 'react-native-star-rating';
 
 const PopularItem = (props) => {
-  const { item } = props;
+  const { item, onNavigationToCateDetails } = props;
   return (
-    <View style={styles.main}>
+    <TouchableOpacity style={styles.main} onPress={() => onNavigationToCateDetails(item.cate2_id, item.cate2_name, false, true)}>
       <View style={styles.content}>
         <Text style={styles.title} ellipsizeMode='tail' numberOfLines={1}>
           {item.cate2_name}
@@ -23,7 +23,7 @@ const PopularItem = (props) => {
         />
       </View>
       <Image source={{ uri: IMAGES_MAPPING[item.cate2_id] }} style={styles.image} />
-    </View>
+    </TouchableOpacity>
   )
 }
 

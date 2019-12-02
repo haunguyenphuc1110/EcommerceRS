@@ -6,7 +6,7 @@ import CategoryItem from './CategoryItem/CategoryItem.component';
 import styles from './CategoryContainer.styles';
 
 const CategoryContainer = (props) => {
-  const { data, onNavigationToCateDetails } = props;
+  const { data, onNavigationToMoreCate } = props;
   const centerCategoryData = data ? Math.floor(data.length / 2) : 0;
   return (
     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -17,7 +17,7 @@ const CategoryContainer = (props) => {
           data={data ? data.slice(0, centerCategoryData) : {}}
           renderItem={({ item }) => (
             <CategoryItem 
-              onNavigationToCateDetails={onNavigationToCateDetails} 
+              onNavigationToMoreCate={onNavigationToMoreCate} 
               item={item}
             />
           )}
@@ -30,7 +30,7 @@ const CategoryContainer = (props) => {
           data={ data ? data.slice(centerCategoryData) : {}}
           renderItem={({ item }) => (
             <CategoryItem 
-              onNavigationToCateDetails={onNavigationToCateDetails} 
+              onNavigationToMoreCate={onNavigationToMoreCate} 
               item={item}
             />
           )}

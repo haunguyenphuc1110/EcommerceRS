@@ -39,7 +39,11 @@ class Payment extends Component {
       district,
       city
     } = this.state;
-    let address = houseNumber + ", " + street + ", " + ward + ", " + district + ", " + city;
+    let address = houseNumber || "634/101" + ", " 
+      + street || "Tinh Lo 10" + ", " 
+      + ward || "Binh Tri Dong" + ", " 
+      + district || "Binh Tan" + ", " 
+      + city || "Ho Chi Minh";
     this.props.navigation.navigate(ScreenIds.BILL, {
       data: {
         name,
@@ -96,9 +100,10 @@ class Payment extends Component {
       showCheckMastercard,
       showCheckVisa
     } = this.state;
+    const { total } = this.props;
     return (
       <View style={styles.container}>
-        <TotalContainer/>
+        <TotalContainer total={total}/>
         <ScrollView showsVerticalScrollIndicator={false} style={styles.scroll}>
           <View style={styles.subContainer}>
             <Title index={'1'} title={'Thông tin liên hệ'} />

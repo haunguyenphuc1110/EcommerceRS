@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, Image } from 'react-native';
-import styles from './CategoryDetails.styles';
+import { Text, View, ScrollView } from 'react-native';
+import styles from './MoreCategory.styles';
 
 import ScreenIds from '../../navigation/screenIds';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -8,18 +8,16 @@ import { COLORS, IMAGES } from '../../assets';
 
 import Spinner from '../../components/Common/LoadingIndicator/Loading.conponent';
 import Header from '../../components/Header/Header.component';
+import CategoryListContainer from '../../components/CategoryListContainer/CategoryListContainer.component';
 import ProposeContainer from '../../components/ProposeContainer/ProposeContainer.component';
 
-class CategoryDetails extends Component {
+class MoreCategory extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
       isLoading: true,
-      id: props.navigation.getParam('id', ''),
-      isCateLvl1: props.navigation.getParam('isCateLvl1', false),
-      isCateLvl2: props.navigation.getParam('isCateLvl2', false),
-      isCateLvl3: props.navigation.getParam('isCateLvl3', false),
+      id: props.navigation.getParam('id', '')
     }
   }
 
@@ -34,10 +32,13 @@ class CategoryDetails extends Component {
   }
 
   componentDidMount() {
-    const { id, isCateLvl1, isCateLvl2, isCateLvl3 } = this.state;
-    isCateLvl1 && this.props.getTopProductCateLvl1(id);
-    isCateLvl2 && this.props.getTopProductCateLvl2(id);
-    isCateLvl3 && this.props.getTopProductCateLvl3(id);
+    const { id } = this.state;
+    const { 
+      getListCategoryLvl2ByCategoryLvl1,
+      getTopProductCateLvl1
+    } = this.props;
+    getTopProductCateLvl1(id);
+    getListCategoryLvl2ByCategoryLvl1(id);
   }
 
   onNavigateToSearch = () => {
@@ -49,13 +50,16 @@ class CategoryDetails extends Component {
     this.props.navigation.navigate(ScreenIds.PRODUCT_DETAILS, { item });
   }
 
+  onNavigationToListCate = (id, title) => {
+    this.props.navigation.push(ScreenIds.LIST_CATEGORY, { id, title });
+  }
+
   render() {
-    const { isLoading, isCateLvl1, isCateLvl2 } = this.state;
+    const { isLoading } = this.state;
     const {
       navigation,
       topProductCateLvl1,
-      topProductCateLvl2,
-      topProductCateLvl3
+      listCategoryLvl2
     } = this.props;
     return (
       <ScrollView contentContainerStyle={{ backgroundColor: COLORS.lightGray }} showsVerticalScrollIndicator={false}>
@@ -72,6 +76,19 @@ class CategoryDetails extends Component {
           onNavigateToSearch={this.onNavigateToSearch}
         />
 
+        <View style={[styles.popularContainer, { paddingLeft: 10 }]}>
+          <View style={styles.header}>
+            <Icon
+              name={'ios-medal'}
+              color={COLORS.appColor}
+              size={22} />
+            <Text style={styles.title}>CÓ THỂ BẠN QUAN TÂM</Text>
+          </View>
+          <CategoryListContainer
+            data={listCategoryLvl2}
+            onNavigationToListCate={this.onNavigationToListCate} />
+        </View>
+
         <View style={[styles.popularContainer, { paddingLeft: 0 }]}>
           <View style={[styles.header, { marginLeft: 10 }]}>
             <Icon
@@ -80,26 +97,14 @@ class CategoryDetails extends Component {
               size={22} />
             <Text style={styles.title}>PHỔ BIẾN</Text>
           </View>
-          {
-            (topProductCateLvl1.length || topProductCateLvl2.length || topProductCateLvl3.length)
-              ? (<ProposeContainer
-                data={isCateLvl1 ? topProductCateLvl1 : isCateLvl2 ? topProductCateLvl2 : topProductCateLvl3}
-                onNavigateToDetails={this.onNavigateToDetails}
-              />)
-              : (<View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 100 }}>
-                  <Image source={IMAGES.DEFAULT} style={{ width: 100, height: 100, borderRadius: 10 }}/>
-                  <Text>Không có sản phẩm trong danh mục này</Text>
-                </View>)
-          }
-
+          <ProposeContainer
+            data={topProductCateLvl1}
+            onNavigateToDetails={this.onNavigateToDetails}
+          />
         </View>
       </ScrollView>
     )
   }
 }
 
-CategoryDetails.defaultProps = {
-  loadMoreCategory: true
-}
-
-export default CategoryDetails;
+export default MoreCategory;

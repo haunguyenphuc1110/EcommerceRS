@@ -21,6 +21,7 @@ const ProposeContainer = (props) => {
         style={styles.flatlist}
         onEndReached={loadMoreItems} 
         onEndReachedThreshold={0.5}
+        maxToRenderPerBatch={30}
       />
     </View>
   )

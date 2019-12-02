@@ -1,14 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { View, Dimensions, Image, Text, ScrollView } from 'react-native';
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import { IMAGES, COLORS } from '../../assets';
 import styles from './Profile.styles';
 
-import ParallaxHeader from '../../components/Common/ParallaxHeader/ParallaxHeader.component';
 import { LoginManager, AccessToken, GraphRequest, GraphRequestManager } from "react-native-fbsdk";
 
 import Form from '../../components/Form/Form.component';
 import ProfileDetails from '../../components/ProfileDetails/ProfileDetails.component';
+import Spinner from '../../components/Common/LoadingIndicator/Loading.conponent';
+import ParallaxHeader from '../../components/Common/ParallaxHeader/ParallaxHeader.component';
+import ScreenIds from '../../navigation/screenIds';
 
 class Profile extends Component {
   state = {
@@ -17,44 +19,62 @@ class Profile extends Component {
       { key: 'login', title: 'ĐĂNG NHẬP' },
       { key: 'register', title: 'ĐĂNG KÝ' },
     ],
-    isLoggedIn: false
+    isLoading: false
   };
 
+  componentWillReceiveProps(nextProps) {
+    const { pending, error } = nextProps;
+    const { pending: previousPending, error: previousError } = this.props;
+    if (!pending && pending !== previousPending) {
+      this.setState({
+        isLoading: false
+      });
+    }
+
+    if (error && error !== previousError) {
+      alert('Đăng nhập thất bại!');
+    }
+  }
+
   FirstRoute = () => (
-    <Form type={'ĐĂNG NHẬP'} onPress={this.onLogin}/>
-  );
-  
-  SecondRoute = () => (
-    <Form type={'ĐĂNG KÝ'} isSignupForm={true} onPress={this.onLogin}/>
+    <Form type={'ĐĂNG NHẬP'} onPress={this.onLogin} />
   );
 
-  onLogin = () => {
-    LoginManager.logInWithPermissions(["public_profile"]).then(
-      (result) => {
-        if (result.isCancelled) {
-          console.log("Login cancelled");
-        } else {
-          console.log(result);
-          // AccessToken.getCurrentAccessToken().then(
-          //   (data) => {
-          //     console.log(data.accessToken.toString())
-          //   }
-          // )
-          infoRequest = new GraphRequest(
-            '/me',
-            null,
-            this._responseInfoCallback,
-          );
-          new GraphRequestManager().addRequest(infoRequest).start();
-          this.setState({
-            isLoggedIn: true
-          })
-        }
-      },
-      (error) => {
-        console.log("Login fail with error: " + error);
-      }
-    );
+  SecondRoute = () => (
+    <Form type={'ĐĂNG KÝ'} isSignupForm={true} onPress={this.onLogin} />
+  );
+
+  onLogin = (userName, password) => {
+    // LoginManager.logInWithPermissions(["public_profile"]).then(
+    //   (result) => {
+    //     if (result.isCancelled) {
+    //       console.log("Login cancelled");
+    //     } else {
+    //       console.log(result);
+    //       // AccessToken.getCurrentAccessToken().then(
+    //       //   (data) => {
+    //       //     console.log(data.accessToken.toString())
+    //       //   }
+    //       // )
+    //       infoRequest = new GraphRequest(
+    //         '/me',
+    //         null,
+    //         this._responseInfoCallback,
+    //       );
+    //       new GraphRequestManager().addRequest(infoRequest).start();
+    //       this.setState({
+    //         isLoggedIn: true
+    //       })
+    //     }
+    //   },
+    //   (error) => {
+    //     console.log("Login fail with error: " + error);
+    //   }
+    // );
+    this.setState({
+      isLoading: true
+    });
+    this.props.login({ userName, password })
   };
 
   //Create response callback.
@@ -67,25 +87,31 @@ class Profile extends Component {
   }
 
   logOut = () => {
-    LoginManager.logOut();
-    this.setState({
-      isLoggedIn: false
-    })
+    // LoginManager.logOut();
+    // this.setState({
+    //   isLoggedIn: false
+    // })
+    this.props.logout();
   }
 
   renderTabBar = props => (
-    <TabBar 
+    <TabBar
       {...props}
-      style={{ backgroundColor: COLORS.appColor }} 
+      style={{ backgroundColor: COLORS.appColor }}
     />
   );
 
   render() {
-    const { isLoggedIn } = this.state;
-    const { navigation } = this.props;
-    if ( !isLoggedIn ) {
+    const { isLoading } = this.state;
+    const { navigation, userId } = this.props;
+    if (!userId ) {
       return (
         <View style={{ flex: 1 }}>
+          <Spinner
+            visible={isLoading}
+            textStyle={{ color: COLORS.white }}
+            cancelable={!isLoading}
+          />
           <ParallaxHeader
             headerMinHeight={30}
             headerMaxHeight={170}
@@ -122,8 +148,8 @@ class Profile extends Component {
         phoneNumber={'0933537713'}
         historyOrders={[{}, {}]}
         onLogout={this.logOut}
-        navigation={navigation}/>
-    )      
+        navigation={navigation} />
+    )
   }
 }
 export default Profile;

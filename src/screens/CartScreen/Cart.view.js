@@ -12,7 +12,10 @@ class Cart extends Component {
 		const { 
 			cartData,
 			navigation,
-			cartQuantity
+			cartQuantity,
+			total,
+			removeProductCart,
+			userId
 		} = this.props;
 		return (
 			<View style={styles.container}>
@@ -31,13 +34,14 @@ class Cart extends Component {
 					<ScrollView showsVerticalScrollIndicator={false}>
 						<CartContainer
 							data={cartData}
+							removeProductCart={removeProductCart}
 						/>
 					</ScrollView>
 				}
 
 				<Footer
-					// cartItemData={cartItemData}
-					// totalPrice={totalPrice}
+					userId={userId}
+					totalPrice={total}
 					totalQuantity={cartQuantity}
 					navigation={navigation} />
 			</View>

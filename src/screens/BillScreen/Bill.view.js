@@ -47,7 +47,7 @@ class Bill extends Component {
       navigation
     } = this.props;
     // const { address } = this.state;
-    navigation.navigate(ScreenIds.HOME);
+    navigation.navigate(ScreenIds.APP);
   };
 
   placeOrder = () => {
@@ -61,7 +61,7 @@ class Bill extends Component {
   };
 
   render() {
-    const { cartData, navigation } = this.props;
+    const { cartData, navigation, total } = this.props;
     const data = navigation.getParam('data', {});
     // const { address, name, phone, paymentMethod } = this.state;
     return (
@@ -78,7 +78,7 @@ class Bill extends Component {
             <ItemContainer data={cartData} />
           </View>
         </ScrollView>
-        <TotalContainer/>
+        <TotalContainer total={total}/>
         <TouchableOpacity style={styles.button} onPress={this.placeOrder}>
           <Text style={styles.textButton}>Xác nhận</Text>
         </TouchableOpacity>
