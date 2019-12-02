@@ -10,6 +10,7 @@ import Form from '../../components/Form/Form.component';
 import ProfileDetails from '../../components/ProfileDetails/ProfileDetails.component';
 import Spinner from '../../components/Common/LoadingIndicator/Loading.conponent';
 import ParallaxHeader from '../../components/Common/ParallaxHeader/ParallaxHeader.component';
+import ScreenIds from '../../navigation/screenIds';
 
 class Profile extends Component {
   state = {

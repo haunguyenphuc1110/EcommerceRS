@@ -1,7 +1,8 @@
 import CONSTANTS from '../constants';
 
 const initialState = {
-  listCategory: [],
+  listCategoryLvl2: [],
+  listCategoryLvl3: [],
   topProductCateLvl1: [],
   topProductCateLvl2: [],
   topProductCateLvl3: [],
@@ -21,10 +22,16 @@ const categoryDataReducer = (state = initialState, action) => {
         pending: true
       };
     case CONSTANTS.GET_LIST_CATEGORY_LVL2_BY_CATEGORY_LVL1_SUCCEED:
+      return {
+        ...state,
+        listCategoryLvl2: action.payload,
+        pending: false,
+        error: false
+      };
     case CONSTANTS.GET_LIST_CATEGORY_LVL3_BY_CATEGORY_LVL2_SUCCEED:
       return {
         ...state,
-        listCategory: action.payload,
+        listCategoryLvl3: action.payload,
         pending: false,
         error: false
       };

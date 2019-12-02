@@ -17,7 +17,7 @@ const getListCategory2 = async () => {
 };
 
 const getListCategory2ByCateId1 = async (id) => {
-  const task = new Service(`http://165.22.97.19:8000/category?cate1_id=${id}`);
+  const task = new Service(`http://165.22.97.19:8000/category/level_2/?cate1_id=${id}`);
 
   return task.get().then(data => {
     return data;
@@ -25,7 +25,7 @@ const getListCategory2ByCateId1 = async (id) => {
 };
 
 const getListCategory3ByCateId2 = async (id) => {
-  const task = new Service(`http://165.22.97.19:8000/category?cate2_id=${id}`);
+  const task = new Service(`http://165.22.97.19:8000/category/level_3/?cate2_id=${id}`);
 
   return task.get().then(data => {
     return data;
@@ -64,6 +64,14 @@ const getTopProductCate3 = async (id) => {
   });
 }
 
+const login = async ({userName, password}) => {
+  const task = new Service(`http://165.22.97.19:8000/user/${userName}/${password}`);
+
+  return task.get().then(data => {
+    return data;
+  });
+}
+
 export default {
   getListCategory1,
   getListCategory2,
@@ -72,5 +80,6 @@ export default {
   getListItem,
   getTopProductCate1,
   getTopProductCate2,
-  getTopProductCate3
+  getTopProductCate3,
+  login
 }

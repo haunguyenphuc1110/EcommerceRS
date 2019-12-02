@@ -13,7 +13,9 @@ class Cart extends Component {
 			cartData,
 			navigation,
 			cartQuantity,
-			removeProductCart
+			total,
+			removeProductCart,
+			userId
 		} = this.props;
 		return (
 			<View style={styles.container}>
@@ -38,8 +40,8 @@ class Cart extends Component {
 				}
 
 				<Footer
-					// cartItemData={cartItemData}
-					// totalPrice={totalPrice}
+					userId={userId}
+					totalPrice={total}
 					totalQuantity={cartQuantity}
 					navigation={navigation} />
 			</View>

@@ -6,7 +6,7 @@ const PaymentScreen = (props) => (<Payment {...props}/>);
 
 const mapStateToProps = state => {
   return {
-    
+    total: state.cartReducer.total
   };
 };
 

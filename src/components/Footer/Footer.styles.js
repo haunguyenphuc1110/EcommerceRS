@@ -10,7 +10,8 @@ const styles = StyleSheet.create({
 		margin: 10,
 		borderRadius: 10,
 		borderWidth: 1,
-		overflow: 'hidden'
+		overflow: 'hidden',
+		backgroundColor: COLORS.white
 	},
 	buttonApply: {
 		backgroundColor: '#f39c12',

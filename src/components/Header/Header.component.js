@@ -7,10 +7,10 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import CartHeader from '../Common/CartHeader/CartHeader.component';
 
 const Header = (props) => {
-  const { onNavigateToCartSearch, navigation, showHeader, onBack } = props;
+  const { onNavigateToSearch, navigation, showBackIcon } = props;
   return (
     <View style={styles.root}>
-      { showHeader && 
+      { showBackIcon && 
         <Icon
           name={'arrow-left'}
           size={20}
@@ -19,7 +19,7 @@ const Header = (props) => {
           onPress={onBack}/>
       }
       <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={onNavigateToCartSearch}>
+        <TouchableWithoutFeedback onPress={onNavigateToSearch}>
           <View style={styles.row}>
             <Icon name={'search'} color={'gray'} size={18} />
             <Text style={styles.text1}>Tìm kiếm trên </Text>

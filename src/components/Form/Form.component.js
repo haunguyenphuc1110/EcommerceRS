@@ -42,6 +42,7 @@ export default class Form extends Component {
 
   render() {
     const { isSignupForm, onPress } = this.props;
+    const { email, password } = this.state;
     return (
       <KeyboardAvoidingView behavior="padding">
 
@@ -89,7 +90,7 @@ export default class Form extends Component {
             ref={input => this.password = input}
             autoCapitalize='none'
           />
-          <TouchableOpacity style={styles.button} onPress={onPress}>
+          <TouchableOpacity style={styles.button} onPress={() => onPress(email, password)}>
             <Text style={styles.buttonText}>{this.props.type}</Text>
           </TouchableOpacity>
 

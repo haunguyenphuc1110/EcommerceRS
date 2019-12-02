@@ -36,7 +36,7 @@ function* getTopProductCateLvl2(action) {
 
 function* getTopProductCateLvl3(action) {
   try {
-    const response = yield call(Api.getTopProductCateLvl3, action.payload);
+    const response = yield call(Api.getTopProductCate3, action.payload);
 
     yield put({
       type: CONSTANTS.GET_TOP_PRODUCT_CATE_LVL3_SUCCEED,

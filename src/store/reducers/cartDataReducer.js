@@ -2,7 +2,8 @@ import CONSTANTS from '../constants';
 
 const initialState = {
   listProduct: [],
-  cartQuantity: 0
+  cartQuantity: 0,
+  total: 0
 };
 
 const cartDataReducer = (state = initialState, action) => {
@@ -27,6 +28,12 @@ const cartDataReducer = (state = initialState, action) => {
       return {
         ...state,
         cartQuantity: action.payload
+      }
+
+    case CONSTANTS.UPDATE_TOTAL_PRICE:
+      return {
+        ...state,
+        total: action.payload
       }
 
     default:

@@ -72,6 +72,10 @@ class Home extends Component {
     this.props.navigation.navigate(ScreenIds.CATEGORY_DETAILS, { id, title, isCateLvl1, isCateLvl2 });
   }
 
+  onNavigationToMoreCate = (id, title) => {
+    this.props.navigation.navigate(ScreenIds.MORE_CATEGORY, { id, title });
+  }
+
   render() {
     const { navigation } = this.props;
     const { isLoading } = this.state;
@@ -174,7 +178,7 @@ class Home extends Component {
               <Text style={styles.title}>DANH MỤC</Text>
             </View>
             <CategoryContainer
-              onNavigationToCateDetails={this.onNavigationToCateDetails}
+              onNavigationToMoreCate={this.onNavigationToMoreCate}
               data={this.props.categoryDataLvl1}
             />
           </View>

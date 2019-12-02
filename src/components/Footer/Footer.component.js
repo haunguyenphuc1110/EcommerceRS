@@ -2,16 +2,23 @@ import React from 'react';
 import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './Footer.styles';
+import { formatMoney } from '../../utils/formatCurrency';
+import ScreenIds from '../../navigation/screenIds';
 
 const onProceedToPayment = (props) => {
-  const { navigation } = props;
-  navigation.navigate('Payment');
+  const { navigation, userId } = props;
+  if (userId) {
+    navigation.navigate(ScreenIds.PAYMENT);
+  }
+  else {
+    navigation.navigate(ScreenIds.PROFILE);
+  }
 }
 
 const renderCoupon = () => {
   return (
     <View style={styles.couponContainer}>
-      <TextInput placeholder="Enter coupon code" />
+      <TextInput placeholder="Enter coupon code" maxLength={20} />
       <TouchableOpacity style={styles.buttonApply}>
         <Text style={styles.textApply}>Áp dụng</Text>
       </TouchableOpacity>
@@ -20,8 +27,7 @@ const renderCoupon = () => {
 }
 
 const renderTotalContent = (props) => {
-  const { totalQuantity } = props;
-  // let total = totalPrice.toFixed(0).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+  const { totalQuantity, totalPrice } = props;
   return (
     <View style={styles.containerTotalStyle}>
       <View style={styles.goodsStyle}>
@@ -30,7 +36,7 @@ const renderTotalContent = (props) => {
       </View>
       <View style={styles.totalStyle}>
         <Text style={styles.totalTitle}>Tổng tiền</Text>
-        <Text style={styles.totalContent}>1.500.000đ</Text>
+        <Text style={styles.totalContent}>{formatMoney(totalPrice)}đ</Text>
       </View>
     </View>
   );
