@@ -20,7 +20,7 @@ const RelatedContainer = (props) => {
         numColumns={1}
         data={data}
         renderItem={({ item }) => renderItem(item, props)}
-        keyExtractor={item => item.product_id}
+        keyExtractor={item => item.product_id + item.product_name}
         style={styles.flatlist}
         onEndReachedThreshold={0.5}
         maxToRenderPerBatch={30}

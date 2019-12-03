@@ -72,6 +72,14 @@ const login = async ({userName, password}) => {
   });
 }
 
+const search = async (queryString) => {
+  const task = new Service(`http://165.22.97.19:8000/api/v1/products/?q=${queryString}`);
+
+  return task.get().then(data => {
+    return data;
+  });
+}
+
 export default {
   getListCategory1,
   getListCategory2,
@@ -81,5 +89,6 @@ export default {
   getTopProductCate1,
   getTopProductCate2,
   getTopProductCate3,
-  login
+  login,
+  search
 }

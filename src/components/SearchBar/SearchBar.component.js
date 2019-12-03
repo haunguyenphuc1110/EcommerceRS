@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { View, TextInput, Platform, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { COLORS } from '../../assets';
 import styles from './SearchBar.styles';
 import PropTypes from 'prop-types';
-
+import { removePunctuation } from '../../utils/stringUtils';
 class SearchBar extends Component {
 
   state = {
@@ -26,7 +25,7 @@ class SearchBar extends Component {
   onSubmit = () => {
     const { value } = this.state;
     const { onSubmit } = this.props;
-    onSubmit(value);
+    onSubmit(removePunctuation(value));
   };
 
   render() {

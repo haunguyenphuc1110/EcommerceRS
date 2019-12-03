@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import { Alert } from 'react-native';
+import { View } from 'react-native';
+import { COLORS } from '../../assets';
 import { connect } from 'react-redux';
+import { search } from '../../store/actions/searchDataActions';
 
 import Search from './Search.view';
 import SearchBar from '../../components/SearchBar/SearchBar.component';
+import Spinner from '../../components/Common/LoadingIndicator/Loading.conponent';
+import ScreenIds from '../../navigation/screenIds';
 
 class SearchScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
@@ -18,26 +22,40 @@ class SearchScreen extends Component {
   }
 
   onSubmit = text => {
-    setTimeout(() => {
-      Alert.alert(`Searching by: ${text}`);
-    }, 500);
+    this.props.search(text);
   };
 
+  onNavigateToDetails = (item, title) => {
+    this.props.navigation.navigate(ScreenIds.PRODUCT_DETAILS, { item, title });
+  }
+
   render() {
-    return <Search />;
+    const { pending } = this.props;
+    return (
+      <View style={{ flex: 1 }}>
+        <Spinner
+          visible={pending}
+          textStyle={{ color: COLORS.white }}
+          cancelable={!pending}
+        />
+        <Search {...this.props} onNavigateToDetails={this.onNavigateToDetails}/>
+      </View>
+    );
   }
 }
 
 const mapStateToProps = state => {
-	return {
-
+  return {
+    listProduct: state.searchReducer.listProduct,
+    pending: state.searchReducer.pending,
+    error: state.searchReducer.error
   };
 };
 
 const mapDispatchToProps = dispatch => {
-	return {
-		
-	};
+  return {
+    search: (payload) => dispatch(search(payload))
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);

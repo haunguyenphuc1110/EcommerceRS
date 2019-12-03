@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { COLORS } from '../../assets';
 
 import { addProductToCart } from '../../store/actions/cartDataActions';
+import { search } from '../../store/actions/searchDataActions';
 
 const ProductDetailsScreen = (props) => (<ProductDetails {...props}/>);
 
@@ -14,13 +15,16 @@ const mapStateToProps = state => {
   return {
     categoryDataLvl1: state.homeReducer.listCategoryLvl1,
     recommendationData: state.homeReducer.listProduct,
-    cartData: state.cartReducer.listProduct
+    cartData: state.cartReducer.listProduct,
+    listProduct: state.searchReducer.listProduct,
+    pending: state.searchReducer.pending
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    addProductToCart: (product) => dispatch(addProductToCart(product))
+    addProductToCart: (product) => dispatch(addProductToCart(product)),
+    search: (payload) => dispatch(search(payload))
   };
 };
 

@@ -1,29 +1,32 @@
 import React from 'react';
-import { View, Text, Image, TouchableWithoutFeedback } from 'react-native';
-import { withNavigation } from 'react-navigation';
-import PropTypes from 'prop-types';
+import { TouchableOpacity, Image, Text } from 'react-native';
+import { COLORS, IMAGES } from '../../../assets';
 import styles from './ProductCard.styles';
-import ScreenIds from '../../../navigation/screenIds';
+import { formatMoney } from '../../../utils/formatCurrency';
 
-const ProductCard = ({ imgSrc, name, price, navigation }) => (
-  <TouchableWithoutFeedback onPress={() => navigation.navigate(ScreenIds.PRODUCT_DETAILS)}>
-    <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image
-          source={{ uri: imgSrc }}
-          style={styles.image}
-        />
-      </View>
-      <Text style={styles.name}>{name}</Text>
-      <Text style={styles.price}>{`${price} đ`}</Text>
-    </View>
-  </TouchableWithoutFeedback>
-);
+import StarRating from 'react-native-star-rating';
 
-ProductCard.propTypes = {
-  imgSrc: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired
-};
+const ProductCard = (props) => {
+  const { item, onNavigateToDetails } = props;
+  return (
+    <TouchableOpacity style={styles.main} onPress={() => onNavigateToDetails(item, item.product_name)}>
+      <Image source={item.uri ? { uri: item.uri } : IMAGES.PRODUCT} style={styles.image}/>
+      <Text style={styles.title} ellipsizeMode='tail' numberOfLines={2}>
+        {item.product_name}
+      </Text>
+      <Text style={styles.price}>
+        {item.price ? formatMoney(item.price) : formatMoney(200000)}đ
+      </Text>
+      <StarRating
+        disable={true}
+        maxStars={5}
+        rating={5}
+        starSize={10}
+        fullStarColor={COLORS.appColor}
+        containerStyle={styles.star}
+      />
+    </TouchableOpacity>
+  )
+}
 
-export default withNavigation(ProductCard);
+export default ProductCard;
