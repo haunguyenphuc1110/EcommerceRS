@@ -25,8 +25,9 @@ const ProposeContainer = (props) => {
         style={styles.flatlist}
         onEndReached={loadMoreItems} 
         onEndReachedThreshold={0.5}
+        initialNumToRender={10}
         maxToRenderPerBatch={30}
-        removeClippedSubviews={true}
+        windowSize={10}
       />
     </View>
   )
