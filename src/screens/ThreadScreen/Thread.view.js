@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, KeyboardAvoidingView, Dimensions } from 'react-native';
+import { View, ScrollView, KeyboardAvoidingView } from 'react-native';
 import styles from './Thread.styles';
 import { IMAGES } from '../../assets';
 
@@ -7,7 +7,6 @@ import ProductPartial from '../../components/ProductPartial/ProductPartial.compo
 import MessageBubble from '../../components/MessageBubble/MessageBubble.component';
 import ChatInput from '../../components/ChatInput/ChatInput.component';
 
-const { height } = Dimensions.get('window');
 export default class extends React.Component {
   constructor(props) {
     super(props);
@@ -38,58 +37,55 @@ export default class extends React.Component {
           >
             <MessageBubble
               timeAgo='24m ago'
-              text='Hey, thanks for the interest in my drone.What would you like to know?'
+              text='Hi, cảm ơn đã quan tâm đến sản phẩm của shop. Bạn có cần giải đáp gì không?'
               incoming
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
-              text='Nice meeting you, Keith. I’m interested and would love to know more about the drone. Is it still under warranty? Do you have the bills and stuff?'
+              text='Rất vui được gặp bạn. Mình rất thích sản phẩm này vì màu sắc và chất liệu của nó quá tuyệt vời. Mình có thể biết thêm chi tiết thông tin sản phẩm được không?'
               readReceipt
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
-              text='For sure, my man. I do have them all.  It was bought last year, 24th Mar and still has warranty.'
+              text='Dĩ nhiên rồi bạn. Sản phẩm bên mình 100% y hình, được bảo hành đầy đủ nên bạn yên tâm về chất lượng.'
               incoming
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
-              text='Awesome. Would you accept 40k? I’m ready to purchase it.'
+              text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
-              text='Awesome. Would you accept 40k? I’m ready to purchase it.'
-              incoming
+              text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
-              text='Awesome. Would you accept 40k? I’m ready to purchase it.'
+              text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
-              text='Awesome. Would you accept 40k? I’m ready to purchase it.'
-              incoming
+              text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
-              text='Awesome. Would you accept 40k? I’m ready to purchase it.'
+              text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
-              text='Awesome. Would you accept 40k? I’m ready to purchase it.'
-              incoming
+              text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
-              text='Awesome. Would you accept 40k? I’m ready to purchase it.'
+              text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
               avatar={IMAGES.AVATAR}
             />
           </ScrollView>

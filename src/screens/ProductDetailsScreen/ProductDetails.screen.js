@@ -13,6 +13,7 @@ const ProductDetailsScreen = (props) => (<ProductDetails {...props}/>);
 const mapStateToProps = state => {
   return {
     categoryDataLvl1: state.homeReducer.listCategoryLvl1,
+    recommendationData: state.homeReducer.listProduct,
     cartData: state.cartReducer.listProduct
   };
 };
@@ -25,7 +26,7 @@ const mapDispatchToProps = dispatch => {
 
 ProductDetailsScreen.navigationOptions = ({ navigation }) => {
   return {
-    title: 'Chi tiết sản phẩm',
+    title: navigation.getParam('title', 'Chi tiết sản phẩm'),
     headerTransparent: true,
     headerRight: (
       <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>

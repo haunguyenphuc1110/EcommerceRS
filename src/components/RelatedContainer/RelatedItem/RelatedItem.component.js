@@ -1,15 +1,15 @@
 import React from 'react';
 import { TouchableOpacity, Image, Text } from 'react-native';
 import { COLORS, IMAGES } from '../../../assets';
-import styles from './ProposeItem.styles';
+import styles from './RelatedItem.styles';
 import { formatMoney } from '../../../utils/formatCurrency';
 
 import StarRating from 'react-native-star-rating';
 
-const ProposeItem = (props) => {
-  const { item, onNavigateToDetails } = props;
+const RelatedItem = (props) => {
+  const { item, onNavigateToDetails, navigation } = props;
   return (
-    <TouchableOpacity style={styles.main} onPress={() => onNavigateToDetails(item, item.product_name)}>
+    <TouchableOpacity style={styles.main} onPress={() => onNavigateToDetails(item, item.product_name, navigation)}>
       <Image source={item.uri ? { uri: item.uri } : IMAGES.PRODUCT} style={styles.image}/>
       <Text style={styles.title} ellipsizeMode='tail' numberOfLines={2}>
         {item.product_name}
@@ -29,4 +29,4 @@ const ProposeItem = (props) => {
   )
 }
 
-export default ProposeItem;
+export default RelatedItem;

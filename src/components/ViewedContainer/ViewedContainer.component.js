@@ -8,8 +8,11 @@ const PopularContainer = (props) => {
   return (
     <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
       {data.map(item => (
-        <TouchableOpacity onPress={() => onNavigateToDetails(item)}>
-          <Image source={item.uri ? { uri: item.uri } : IMAGES.PRODUCT} style={styles.image} key={item.product_id} />
+        <TouchableOpacity onPress={() => onNavigateToDetails(item, item.product_name)}>
+          <Image 
+            source={item.uri ? { uri: item.uri } : IMAGES.PRODUCT} 
+            style={styles.image} 
+            key={item.product_id} />
         </TouchableOpacity>
       ))}
     </ScrollView>

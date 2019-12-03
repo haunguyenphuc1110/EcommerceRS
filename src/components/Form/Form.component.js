@@ -19,14 +19,6 @@ export default class Form extends Component {
     };
   }
 
-  handleFullName = text => {
-
-  }
-
-  handlePhoneNumber = text => {
-
-  }
-
   handleEmail = text => {
     this.setState({
       email: text
@@ -47,29 +39,6 @@ export default class Form extends Component {
       <KeyboardAvoidingView behavior="padding">
 
         <View style={styles.container}>
-          {isSignupForm &&
-            <TextInput style={styles.inputBox}
-              placeholder='FullName'
-              placeholderTextColor={COLORS.black}
-              selectionColor={COLORS.black}
-              keyboardType='email-address'
-              onChangeText={this.handleFullName}
-              onSubmitEditing={() => this.phone.focus()}
-            />
-          }
-    
-          {isSignupForm &&
-            <TextInput style={styles.inputBox}
-              placeholder='Phone Number'
-              placeholderTextColor={COLORS.black}
-              selectionColor={COLORS.black}
-              keyboardType='phone-pad'
-              onChangeText={this.handlePhoneNumber}
-              onSubmitEditing={() => this.email.focus()}
-              ref={(input) => this.phone = input}
-            />
-          }
-
           <TextInput
             style={styles.inputBox}
             placeholder='Email'
@@ -98,19 +67,21 @@ export default class Form extends Component {
 
           {!isSignupForm && <Text>Hoặc đăng nhập với</Text>}
 
-          {!isSignupForm && <TouchableOpacity style={[styles.button, { backgroundColor: COLORS.facebook }]} onPress={onPress}>
+          {!isSignupForm && 
+            (<TouchableOpacity style={[styles.button, { backgroundColor: COLORS.facebook }]} onPress={onPress}>
               <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                 <Image source={IMAGES.FACEBOOK} style={styles.image}/>
                 <Text style={styles.buttonText}>Facebook</Text>
               </View>
-            </TouchableOpacity>
+            </TouchableOpacity>)
           }
-          {!isSignupForm && <TouchableOpacity style={[styles.button, { backgroundColor: COLORS.white }]} onPress={onPress}>
+          {!isSignupForm && 
+            (<TouchableOpacity style={[styles.button, { backgroundColor: COLORS.white }]} onPress={onPress}>
               <View style={styles.group}>
                 <Image source={IMAGES.GOOGLE} style={styles.image}/>
                 <Text style={[styles.buttonText, { color: COLORS.black }]}>Google</Text>
               </View>
-            </TouchableOpacity>
+            </TouchableOpacity>)
           }
         </View>
       </KeyboardAvoidingView>

@@ -4,23 +4,18 @@ import SwiperItem from './SwiperItem/SwiperItem.component';
 import { COLORS } from '../../assets';
 import styles from './SwiperContainer.styles';
 
-const onPressImageSwiperDetail = (item, navigation) => {
-  
-}
-
-const renderItemSwiper = (swipers, navigation) => {
+const renderItemSwiper = (swipers) => {
   return swipers.map(item => {
     return <SwiperItem
       key={item.id}
       item={item}
-      navigation={navigation}
-      onPressImageSwiperDetail={onPressImageSwiperDetail} />
+      />
   })
 }
 
 const SwiperContainer = props => {
   try {
-    const { data, navigation } = props;
+    const { data } = props;
     return (
       <Swiper
         style={styles.swiper}
@@ -32,7 +27,7 @@ const SwiperContainer = props => {
         autoplay={true}
         autoplayTimeout={10}
       >
-        {renderItemSwiper(data, navigation)}
+        {renderItemSwiper(data)}
       </Swiper>
     );
   }

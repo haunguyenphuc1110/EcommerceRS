@@ -274,19 +274,19 @@ export const offerData = [
   },
   {
     id: 'OFFER6',
-    image: 'https://media3.scdn.vn/img3/2019/11_19/p1bvhm.jpg'
+    image: 'https://media3.scdn.vn/img3/2019/11_5/EUc68C.jpg'
   },
   {
     id: 'OFFER7',
-    image: 'https://media3.scdn.vn/img3/2019/11_19/1NSJq1.jpg'
+    image: 'https://media3.scdn.vn/img3/2019/12_2/Zuv77F.jpg'
   },
   {
     id: 'OFFER8',
-    image: 'https://media3.scdn.vn/img3/2019/11_19/6KOHky.jpg'
+    image: 'https://media3.scdn.vn/img3/2019/12_3/iu7NMG.jpg'
   },
   {
     id: 'OFFER9',
-    image: 'https://media3.scdn.vn/img3/2019/11_19/DY3Uz0.png'
+    image: 'https://media3.scdn.vn/img3/2019/12_2/ZkZg8I.jpg'
   },
   {
     id: 'OFFER10',

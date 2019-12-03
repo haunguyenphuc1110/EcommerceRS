@@ -71,9 +71,6 @@ class Profile extends Component {
     //     console.log("Login fail with error: " + error);
     //   }
     // );
-    this.setState({
-      isLoading: true
-    });
     this.props.login({ userName, password })
   };
 

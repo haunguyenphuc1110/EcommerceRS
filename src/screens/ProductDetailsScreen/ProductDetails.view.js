@@ -8,7 +8,7 @@ import ScreenIds from '../../navigation/screenIds';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 import UserPartials from '../../components/UserPartials/UserPartials.component';
-import RecommendContainer from '../../components/RecommendContainer/RecommendContainer.component';
+import RelatedContainer from '../../components/RelatedContainer/RelatedContainer.component';
 
 
 const navigateToMessage = (navigation, item) => {
@@ -24,8 +24,8 @@ const addToCart = (props, item) => {
   props.addProductToCart(item);
 }
 
-const onNavigationToCateDetails = (navigation, id) => {
-  navigation.navigate(ScreenIds.CATEGORY_DETAILS, { id });
+const onNavigateToDetails = (item, title, navigation) => {
+  navigation.push(ScreenIds.PRODUCT_DETAILS, { item, title });
 }
 
 const ProductDetails = (props) => {
@@ -39,7 +39,7 @@ const ProductDetails = (props) => {
           style={styles.image}
         />
         <View style={styles.dataContainer}>
-          <Text style={styles.timeLocation}>Ho Chi Minh, VietNam • 2h ago</Text>
+          <Text style={styles.timeLocation}>Ho Chi Minh, VietNam • 2 tiếng trước</Text>
           <View style={styles.namePrice}>
             <Text style={styles.nameText}>{item.product_name}</Text>
             <Text style={styles.priceText}>{item.price ? formatMoney(item.price) : formatMoney(200000)}đ</Text>
@@ -71,10 +71,10 @@ const ProductDetails = (props) => {
               size={22} />
             <Text style={styles.title}>SẢN PHẨM LIÊN QUAN</Text>
           </View>
-          <RecommendContainer 
-            data={props.categoryDataLvl1} 
+          <RelatedContainer 
+            data={props.recommendationData.slice(0, 10)} 
             navigation={navigation}
-            onNavigationToCateDetails={onNavigationToCateDetails}/>
+            onNavigateToDetails={onNavigateToDetails}/>
         </View>
       </ScrollView>
       <TouchableOpacity style={styles.button} onPress={() => addToCart(props, item)}>

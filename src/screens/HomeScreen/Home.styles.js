@@ -25,6 +25,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     marginTop: 10
   },
+  view: {
+    backgroundColor: COLORS.appColor,
+    height: 250,
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40
+  },
   absolute: {
     zIndex: 9999,
     position: 'absolute', 

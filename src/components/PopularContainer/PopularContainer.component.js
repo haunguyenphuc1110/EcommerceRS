@@ -5,6 +5,14 @@ import PopularItem from './PopularItem/PopularItem.component';
 
 import styles from './PopularContainer.styles';
 
+const renderItem = (item, onNavigationToCateDetails) => {
+  return (
+    <PopularItem
+      onNavigationToCateDetails={onNavigationToCateDetails}
+      item={item} />
+  );
+}
+
 const PopularContainer = (props) => {
   const { data, onNavigationToCateDetails } = props;
   const centerPopularityData = Math.floor(data.length / 2);
@@ -15,11 +23,7 @@ const PopularContainer = (props) => {
           horizontal
           scrollEnabled={false}
           data={data.slice(0, centerPopularityData)}
-          renderItem={({ item }) => (
-            <PopularItem 
-              onNavigationToCateDetails={onNavigationToCateDetails} 
-              item={item}/>
-           )}
+          renderItem={({ item }) => renderItem(item, onNavigationToCateDetails)}
           keyExtractor={item => item.cate2_id}
         />
 
@@ -27,16 +31,12 @@ const PopularContainer = (props) => {
           horizontal
           scrollEnabled={false}
           data={data.slice(centerPopularityData)}
-          renderItem={({ item }) => (
-            <PopularItem 
-              onNavigationToCateDetails={onNavigationToCateDetails} 
-              item={item}/>
-          )}
+          renderItem={({ item }) => renderItem(item, onNavigationToCateDetails)}
           keyExtractor={item => item.cate2_id}
         />
       </View>
     </ScrollView>
-  )
+  );
 }
 
 export default PopularContainer;
