@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.white
   },
   scroll: {
-    paddingBottom: 40
+    paddingBottom: 20
   },
   dataContainer: {
     paddingHorizontal: 10
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     padding: 10, 
     backgroundColor: COLORS.white, 
     marginTop: 10, 
-    elevation: 10 
+    elevation: 5
   },
   title: {
     color: COLORS.red,

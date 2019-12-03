@@ -1,6 +1,7 @@
 import React from 'react';
 import Bill from './Bill.view';
 import { connect } from 'react-redux';
+import { clearCart } from '../../store/actions/cartDataActions';
 
 const BillScreen = (props) => (<Bill {...props}/>);
 
@@ -13,7 +14,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    
+    clearCart: () => dispatch(clearCart())
   };
 };
 

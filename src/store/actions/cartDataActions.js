@@ -24,3 +24,7 @@ export const updateTotalPrice = (payload) => ({
   type: CONSTANTS.UPDATE_TOTAL_PRICE,
   payload
 });
+
+export const clearCart = () => ({
+  type: CONSTANTS.CLEAR_CART
+});

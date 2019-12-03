@@ -5,6 +5,14 @@ import CategoryItem from './CategoryItem/CategoryItem.component';
 
 import styles from './CategoryListContainer.styles';
 
+const renderItem = (item, onNavigationToListCate) => {
+  return (
+    <CategoryItem
+      item={item}
+      onNavigationToListCate={onNavigationToListCate} />
+  );
+}
+
 const CategoryListContainer = (props) => {
   const { data, onNavigationToListCate } = props;
   return (
@@ -14,11 +22,7 @@ const CategoryListContainer = (props) => {
         showsHorizontalScrollIndicator={false}
         numColumns={1}
         data={data}
-        renderItem={({ item }) => (
-          <CategoryItem 
-            item={item} 
-            onNavigationToListCate={onNavigationToListCate}/>
-          )}
+        renderItem={({ item }) => renderItem(item, onNavigationToListCate)}
         keyExtractor={item => item.cate2_id}
       />
     </View>

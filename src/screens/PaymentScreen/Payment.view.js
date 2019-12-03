@@ -20,7 +20,7 @@ class Payment extends Component {
       street: '',
       city: '',
       district: '',
-      ward: props.ward,
+      ward: '',
       paymentMethod: 'cash',
       showCheckCash: true,
       showCheckVisa: false,
@@ -39,11 +39,11 @@ class Payment extends Component {
       district,
       city
     } = this.state;
-    let address = houseNumber || "634/101" + ", " 
-      + street || "Tinh Lo 10" + ", " 
-      + ward || "Binh Tri Dong" + ", " 
-      + district || "Binh Tan" + ", " 
-      + city || "Ho Chi Minh";
+    let address = (houseNumber || "634/101") + ", " 
+      + (street || "Tinh Lo 10") + ", " 
+      + (ward || "Binh Tri Dong") + ", " 
+      + (district || "Binh Tan") + ", " 
+      + (city || "Ho Chi Minh");
     this.props.navigation.navigate(ScreenIds.BILL, {
       data: {
         name,

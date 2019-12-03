@@ -8,7 +8,7 @@ import { formatMoney } from '../../../utils/formatCurrency';
 const FlashSaleItem = (props) => {
   const { item, onNavigateToDetails } = props;
   return (
-    <TouchableOpacity style={styles.main} onPress={() => onNavigateToDetails(item)}>
+    <TouchableOpacity style={styles.main} onPress={() => onNavigateToDetails(item, item.product_name)}>
       <Image 
         source={ item.uri ? { uri: item.uri } : IMAGES.PRODUCT } 
         style={styles.image} 

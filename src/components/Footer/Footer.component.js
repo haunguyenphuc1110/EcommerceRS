@@ -6,11 +6,11 @@ import { formatMoney } from '../../utils/formatCurrency';
 import ScreenIds from '../../navigation/screenIds';
 
 const onProceedToPayment = (props) => {
-  const { navigation, userId } = props;
-  if (userId) {
+  const { navigation, userId, totalQuantity } = props;
+  if (userId && totalQuantity) {
     navigation.navigate(ScreenIds.PAYMENT);
   }
-  else {
+  else if (!userId) {
     navigation.navigate(ScreenIds.PROFILE);
   }
 }

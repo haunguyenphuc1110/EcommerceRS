@@ -5,6 +5,14 @@ import RecommendItem from './RecommendItem/RecommendItem.component';
 
 import styles from './RecommendContainer.styles';
 
+const renderItem = (item, onNavigationToCateDetails) => {
+  return (
+    <RecommendItem
+      item={item}
+      onNavigationToCateDetails={onNavigationToCateDetails} />
+  )
+}
+
 const RecommendContainer = (props) => {
   const { data, onNavigationToCateDetails } = props;
   return (
@@ -14,12 +22,8 @@ const RecommendContainer = (props) => {
         showsHorizontalScrollIndicator={false}
         numColumns={1}
         data={data}
-        renderItem={({ item }) => (
-          <RecommendItem 
-            item={item} 
-            onNavigationToCateDetails={onNavigationToCateDetails}/>
-          )}
-        keyExtractor={item => item.cate1_id}
+        renderItem={({ item }) => renderItem(item, onNavigationToCateDetails)}
+        keyExtractor={item => item.cate1_id + item.cate1_name}
       />
     </View>
   )

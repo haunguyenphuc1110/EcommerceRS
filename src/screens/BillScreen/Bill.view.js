@@ -44,9 +44,10 @@ class Bill extends Component {
 
   onProceedToPlaceOrder = () => {
     const {
-      navigation
+      navigation,
+      clearCart
     } = this.props;
-    // const { address } = this.state;
+    clearCart();
     navigation.navigate(ScreenIds.APP);
   };
 
@@ -63,10 +64,8 @@ class Bill extends Component {
   render() {
     const { cartData, navigation, total } = this.props;
     const data = navigation.getParam('data', {});
-    // const { address, name, phone, paymentMethod } = this.state;
     return (
       <View style={styles.container}>
-        {/* {isPlaceOrderPending && <ModalLoading />} */}
         <ScrollView showsVerticalScrollIndicator={false} style={styles.scroll}>
           <View style={styles.subContainer}>
             <Title index={'1'} title={'Thông tin liên hệ'} />

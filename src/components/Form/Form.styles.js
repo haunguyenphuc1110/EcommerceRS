@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'flex-start',
     alignItems: 'center',
     paddingTop: 20,
-    height: height - 170
+    height: height - 150
 	},
 
 	inputBox: {

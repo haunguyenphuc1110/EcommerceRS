@@ -50,7 +50,7 @@ class CategoryDetails extends Component {
   }
 
   render() {
-    const { isLoading, isCateLvl1, isCateLvl2 } = this.state;
+    const { isLoading, isCateLvl1, isCateLvl2, isCateLvl3 } = this.state;
     const {
       navigation,
       topProductCateLvl1,
@@ -81,7 +81,9 @@ class CategoryDetails extends Component {
             <Text style={styles.title}>PHỔ BIẾN</Text>
           </View>
           {
-            (topProductCateLvl1.length || topProductCateLvl2.length || topProductCateLvl3.length)
+            ((isCateLvl1 && topProductCateLvl1.length) 
+              || (isCateLvl2 && topProductCateLvl2.length) 
+              || (isCateLvl3 && topProductCateLvl3.length))
               ? (<ProposeContainer
                 data={isCateLvl1 ? topProductCateLvl1 : isCateLvl2 ? topProductCateLvl2 : topProductCateLvl3}
                 onNavigateToDetails={this.onNavigateToDetails}

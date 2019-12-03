@@ -65,7 +65,6 @@ class MoreCategory extends Component {
       <ScrollView contentContainerStyle={{ backgroundColor: COLORS.lightGray }} showsVerticalScrollIndicator={false}>
         <Spinner
           visible={isLoading}
-          // textContent={'Loading...'}
           textStyle={{ color: COLORS.white }}
           cancelable={!isLoading}
           overlayColor={COLORS.white}

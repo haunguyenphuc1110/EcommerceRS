@@ -3,7 +3,7 @@ const { height, width } = Dimensions.get('window');
 const styles = StyleSheet.create({
   image: {
     flex: 1,
-    height: 150,
+    height: 180,
     width: width - 20,
     borderRadius: 5,
     marginBottom: 10
