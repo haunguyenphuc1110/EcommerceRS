@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, ScrollView, Image, Text, TouchableOpacity } from 'react-native';
 import { COLORS, IMAGES } from '../../assets';
 import styles from './ProductDetails.styles';
@@ -9,10 +9,10 @@ import ScreenIds from '../../navigation/screenIds';
 import Icon from 'react-native-vector-icons/Ionicons';
 import UserPartials from '../../components/UserPartials/UserPartials.component';
 import RelatedContainer from '../../components/RelatedContainer/RelatedContainer.component';
-
+import Spinner from '../../components/Common/LoadingIndicator/Loading.conponent';
 
 const navigateToMessage = (navigation, item) => {
-  navigation.navigate(ScreenIds.THREAD, {item});
+  navigation.navigate(ScreenIds.THREAD, { item });
 }
 
 const navigateToCart = (props, item) => {
@@ -29,10 +29,28 @@ const onNavigateToDetails = (item, title, navigation) => {
 }
 
 const ProductDetails = (props) => {
-  const { navigation } = props;
-  const item = navigation.getParam('item', {})
+  const { navigation, search } = props;
+  const item = navigation.getParam('item', {});
+
+  const [pending, setState] = useState(true);
+
+  useEffect(() => {
+    if (!props.pending) {
+      setState(false);
+    }
+  }, [props.pending])
+
+  useEffect(() => {
+    search(item.product_name.slice(0, 10));
+  });
+
   return (
     <View style={styles.container}>
+      <Spinner
+        visible={pending}
+        textStyle={{ color: COLORS.white }}
+        cancelable={!pending}
+      />
       <ScrollView contentContainerStyle={styles.scroll} bounces={false}>
         <Image
           source={item.uri ? { uri: item.uri } : IMAGES.PRODUCT}
@@ -71,10 +89,10 @@ const ProductDetails = (props) => {
               size={22} />
             <Text style={styles.title}>SẢN PHẨM LIÊN QUAN</Text>
           </View>
-          <RelatedContainer 
-            data={props.recommendationData.slice(0, 10)} 
+          <RelatedContainer
+            data={props.listProduct.slice(0, 10)}
             navigation={navigation}
-            onNavigateToDetails={onNavigateToDetails}/>
+            onNavigateToDetails={onNavigateToDetails} />
         </View>
       </ScrollView>
       <TouchableOpacity style={styles.button} onPress={() => addToCart(props, item)}>

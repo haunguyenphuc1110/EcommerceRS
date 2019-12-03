@@ -1,14 +1,9 @@
 import { StyleSheet } from 'react-native';
-import { COLORS } from '../../assets';
 
 const styles = StyleSheet.create({
-  scroll: {
-    paddingHorizontal: 20,
-    paddingVertical: 15
-  },
-  masonryContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+  flatlist: {
+    paddingLeft: 10,
+    paddingBottom: 10
   }
 });
 

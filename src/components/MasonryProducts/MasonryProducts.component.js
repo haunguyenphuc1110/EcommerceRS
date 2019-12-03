@@ -1,54 +1,33 @@
 import React from 'react';
-import { View, ScrollView } from 'react-native';
-import PropTypes from 'prop-types';
-import styles from './MasonryProducts.styles';
+import { View, FlatList } from 'react-native';
 
 import ProductCard from './ProductCard/ProductCard.component';
 
-const splitArray = arr => {
-  const { length } = arr;
-  const half = length / 2;
-  const firstHalf = arr.slice(0, half);
-  const secondHalf = arr.slice(half, length);
-  return { firstHalf, secondHalf };
-};
+import styles from './MasonryProducts.styles';
 
-const MasonryProducts = ({ products, children = null }) => (
-  <ScrollView
-    contentContainerStyle={styles.scroll}
-  >
-    {children}
-    <View style={styles.masonryContainer}>
-      <View>
-        {splitArray(products).firstHalf.map(product => (
-          <ProductCard
-            imgSrc={product.uri}
-            price={product.price}
-            name={product.name}
-            key={product.name}
-          />
-        ))}
-      </View>
-      <View>
-        {splitArray(products).secondHalf.map(product => (
-          <ProductCard
-            imgSrc={product.uri}
-            price={product.price}
-            name={product.name}
-            key={product.name}
-          />
-        ))}
-      </View>
+const renderItem = (item, onNavigateToDetails) => {
+  return (<ProductCard item={item} onNavigateToDetails={onNavigateToDetails}/>);
+}
+
+const MasonryProducts = (props) => {
+  const {
+    data,
+    onNavigateToDetails
+  } = props;
+  return (
+    <View style={{ flex: 1 }}>
+      <FlatList
+        numColumns={2}
+        data={data}
+        renderItem={({ item }) => renderItem(item, onNavigateToDetails)}
+        keyExtractor={item => item.product_id}
+        style={styles.flatlist}
+        onEndReachedThreshold={0.5}
+        maxToRenderPerBatch={30}
+        removeClippedSubviews={true}
+      />
     </View>
-  </ScrollView>
-);
-
-MasonryProducts.propTypes = {
-  products: PropTypes.instanceOf(Array),
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ])
-};
+  )
+}
 
 export default MasonryProducts;
