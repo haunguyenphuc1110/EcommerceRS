@@ -56,40 +56,47 @@ export default class extends React.Component {
             <MessageBubble
               timeAgo='24m ago'
               text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
+              readReceipt
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
+              incoming
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
+              readReceipt
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
+              incoming
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
+              readReceipt
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
+              incoming
               avatar={IMAGES.AVATAR}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
+              readReceipt
               avatar={IMAGES.AVATAR}
             />
           </ScrollView>
-          <ChatInput/>
+          <ChatInput />
         </KeyboardAvoidingView>
       </View>
     );

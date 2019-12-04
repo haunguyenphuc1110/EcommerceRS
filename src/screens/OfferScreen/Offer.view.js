@@ -15,7 +15,7 @@ const renderHeader = navigation => {
   return (
     <Header 
       navigation={navigation} 
-      onNavigateToCartSearch={() => onNavigateToCartSearch(navigation)}
+      onNavigateToSearch={onNavigateToSearch}
     />
   );
 }
@@ -43,7 +43,7 @@ const renderOfferItem = ({ item }) => {
   );
 }
 
-const onNavigateToCartSearch = (navigation) => {
+const onNavigateToSearch = (navigation) => {
   navigation.navigate(ScreenIds.SEARCH);
 }
 

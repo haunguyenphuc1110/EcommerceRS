@@ -5,7 +5,7 @@ import HomeNavigator from './navigation/HomeNavigator';
 
 import NetInfo from '@react-native-community/netinfo';
 import DeviceInfo from 'react-native-device-info';
-import NetConnection from './components/Common/NetConnection/NetConnection.component';
+import ModalLoading from './components/Common/ModalLoading/ModalLoading.component';
 
 class App extends Component{
 
@@ -63,11 +63,10 @@ class App extends Component{
   }
 
   render() {
-    if (!this.state.isConnected) {
-      return (<NetConnection onRetry={this.onRetry}/>);
-    }
+    const { isConnected } = this.state;
     return (
       <SafeAreaView style={{ flex: 1 }}>
+        <ModalLoading visible={!isConnected} onRetry={this.onRetry}/>
         <HomeNavigator/>
       </SafeAreaView>
     );

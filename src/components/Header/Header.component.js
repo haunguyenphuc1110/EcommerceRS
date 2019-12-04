@@ -19,7 +19,7 @@ const Header = (props) => {
           onPress={onBack}/>
       }
       <View style={styles.container}>
-        <TouchableWithoutFeedback onPress={onNavigateToSearch}>
+        <TouchableWithoutFeedback onPress={() => onNavigateToSearch(navigation)}>
           <View style={styles.row}>
             <Icon name={'search'} color={'gray'} size={18} />
             <Text style={styles.text1}>Tìm kiếm trên </Text>

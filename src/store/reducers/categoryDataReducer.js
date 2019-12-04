@@ -7,10 +7,16 @@ const initialState = {
   topProductCateLvl2: [],
   topProductCateLvl3: [],
   pending: false,
-  error: false
+  error: false,
+  numberOfRequests: 0
 };
 
 const categoryDataReducer = (state = initialState, action) => {
+
+  const numberOfRequests = state.numberOfRequests;
+  const increasedRequests = numberOfRequests + 1;
+  const decreasedRequests = numberOfRequests > 0 ? numberOfRequests -  1 : 0; // if number of requests is zero, the global loading will be hidden
+
   switch (action.type) {
     case CONSTANTS.GET_LIST_CATEGORY_LVL2_BY_CATEGORY_LVL1:
     case CONSTANTS.GET_LIST_CATEGORY_LVL3_BY_CATEGORY_LVL2:
@@ -19,20 +25,23 @@ const categoryDataReducer = (state = initialState, action) => {
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL3:
       return {
         ...state,
+        numberOfRequests: increasedRequests,
         pending: true
       };
     case CONSTANTS.GET_LIST_CATEGORY_LVL2_BY_CATEGORY_LVL1_SUCCEED:
       return {
         ...state,
         listCategoryLvl2: action.payload,
-        pending: false,
+        numberOfRequests: decreasedRequests,
+        pending: decreasedRequests > 0,
         error: false
       };
     case CONSTANTS.GET_LIST_CATEGORY_LVL3_BY_CATEGORY_LVL2_SUCCEED:
       return {
         ...state,
         listCategoryLvl3: action.payload,
-        pending: false,
+        numberOfRequests: decreasedRequests,
+        pending: decreasedRequests > 0,
         error: false
       };
 
@@ -40,7 +49,8 @@ const categoryDataReducer = (state = initialState, action) => {
       return {
         ...state,
         topProductCateLvl1: action.payload,
-        pending: false,
+        numberOfRequests: decreasedRequests,
+        pending: decreasedRequests > 0,
         error: false
       };
 
@@ -48,7 +58,8 @@ const categoryDataReducer = (state = initialState, action) => {
       return {
         ...state,
         topProductCateLvl2: action.payload,
-        pending: false,
+        numberOfRequests: decreasedRequests,
+        pending: decreasedRequests > 0,
         error: false
       };
 
@@ -56,7 +67,8 @@ const categoryDataReducer = (state = initialState, action) => {
       return {
         ...state,
         topProductCateLvl3: action.payload,
-        pending: false,
+        numberOfRequests: decreasedRequests,
+        pending: decreasedRequests > 0,
         error: false
       };
 
@@ -67,7 +79,8 @@ const categoryDataReducer = (state = initialState, action) => {
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL3_FAILED:
       return {
         ...state,
-        pending: false,
+        numberOfRequests: decreasedRequests,
+        pending: decreasedRequests > 0,
         error: true
       };
 

@@ -6,16 +6,23 @@ const initialState = {
   listProduct: [],
   viewedProducts: [],
   pending: false,
-  error: false
+  error: false,
+  numberOfRequests: 0
 };
 
 const homeDataReducer = (state = initialState, action) => {
+
+  const numberOfRequests = state.numberOfRequests;
+  const increasedRequests = numberOfRequests + 1;
+  const decreasedRequests = numberOfRequests > 0 ? numberOfRequests -  1 : 0; // if number of requests is zero, the global loading will be hidden
+
   switch (action.type) {
     case CONSTANTS.GET_LIST_CATEGORY_LVL1:
     case CONSTANTS.GET_LIST_CATEGORY_LVL2:
     case CONSTANTS.GET_RECOMMEND_PRODUCT:
       return {
         ...state,
+        numberOfRequests: increasedRequests,
         pending: true
       };
 
@@ -29,7 +36,8 @@ const homeDataReducer = (state = initialState, action) => {
       return {
         ...state,
         listCategoryLvl1: action.payload,
-        pending: false,
+        numberOfRequests: decreasedRequests,
+        pending: decreasedRequests > 0,
         error: false
       };
 
@@ -37,7 +45,8 @@ const homeDataReducer = (state = initialState, action) => {
       return {
         ...state,
         listCategoryLvl2: action.payload,
-        pending: false,
+        numberOfRequests: decreasedRequests,
+        pending: decreasedRequests > 0,
         error: false
       };
 
@@ -45,7 +54,8 @@ const homeDataReducer = (state = initialState, action) => {
       return {
         ...state,
         listProduct: [...state.listProduct, ...action.payload],
-        pending: false,
+        numberOfRequests: decreasedRequests,
+        pending: decreasedRequests > 0,
         error: false
       };
 
@@ -54,7 +64,8 @@ const homeDataReducer = (state = initialState, action) => {
     case CONSTANTS.GET_RECOMMEND_PRODUCT_FAILED:
       return {
         ...state,
-        pending: false,
+        numberOfRequests: decreasedRequests,
+        pending: decreasedRequests > 0,
         error: true
       };
 

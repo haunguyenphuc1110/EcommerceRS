@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import { COLORS } from '../../assets';
 import { connect } from 'react-redux';
 import { search } from '../../store/actions/searchDataActions';
+import { saveViewedProduct } from '../../store/actions/homeDataActions';
 
 import Search from './Search.view';
 import SearchBar from '../../components/SearchBar/SearchBar.component';
-import Spinner from '../../components/Common/LoadingIndicator/Loading.conponent';
 import ScreenIds from '../../navigation/screenIds';
 
 class SearchScreen extends Component {
@@ -26,20 +24,15 @@ class SearchScreen extends Component {
   };
 
   onNavigateToDetails = (item, title) => {
+    this.props.saveViewedProduct(item);
     this.props.navigation.navigate(ScreenIds.PRODUCT_DETAILS, { item, title });
   }
 
   render() {
-    const { pending } = this.props;
     return (
-      <View style={{ flex: 1 }}>
-        <Spinner
-          visible={pending}
-          textStyle={{ color: COLORS.white }}
-          cancelable={!pending}
-        />
-        <Search {...this.props} onNavigateToDetails={this.onNavigateToDetails}/>
-      </View>
+      <Search 
+        {...this.props} 
+        onNavigateToDetails={this.onNavigateToDetails}/>
     );
   }
 }
@@ -54,7 +47,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    search: (payload) => dispatch(search(payload))
+    search: (payload) => dispatch(search(payload)),
+    saveViewedProduct: (payload) => dispatch(saveViewedProduct(payload))
   };
 };
 

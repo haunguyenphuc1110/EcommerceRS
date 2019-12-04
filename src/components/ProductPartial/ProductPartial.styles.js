@@ -17,7 +17,8 @@ const styles = StyleSheet.create({
     color: COLORS.black,
     fontSize: 12,
     marginBottom: 7,
-    fontWeight: '600'
+    fontWeight: '600',
+    width: 200
   },
   productPrice: {
     color: COLORS.appColor,

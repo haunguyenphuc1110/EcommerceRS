@@ -10,7 +10,7 @@ const ProductPartial = ({ image, name, price }) => (
     <View style={styles.column}>
       <Image style={styles.image} source={ image ? {uri: image} : IMAGES.PRODUCT} />
       <View>
-        <Text style={styles.productName}>{name || 'Product'}</Text>
+        <Text style={styles.productName}  ellipsizeMode='tail' numberOfLines={2}>{name || 'Product'}</Text>
         <Text style={styles.productPrice}>{price ? formatMoney(price) : formatMoney(200000)}đ</Text>
       </View>
     </View>

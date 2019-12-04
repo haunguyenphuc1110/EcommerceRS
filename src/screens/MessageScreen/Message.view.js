@@ -13,7 +13,7 @@ const MessageView = () => (
       userAvatar={IMAGES.AVATAR}
       name='Shop trẻ thơ'
       timeAgo='24 phút trước'
-      preview='Chào bạn, bạn có thắc mắc về đơn hàng...'
+      preview='Chào bạn, bạn có thắc mắc về đơn hàng như thế nào ạ? Bạn có thể nói rõ hơn không'
       unread
       pendingRead={2}
     />
@@ -21,14 +21,14 @@ const MessageView = () => (
       userAvatar={IMAGES.AVATAR}
       name='Quần áo teen'
       timeAgo='5 phút trước'
-      preview='Hi, đơn hàng của bạn đang được chuyển ...'
+      preview='Hi, đơn hàng của bạn đang được vận chuyển đến địa chỉ giao hàng'
       delivered
     />
     <Message
       userAvatar={IMAGES.AVATAR}
       name='Gian hàng giá rẻ'
       timeAgo='30 phút trước'
-      preview='Xin lỗi bạn vì không trả lời tin nhắn của ...'
+      preview='Xin lỗi bạn vì không trả lời tin nhắn của bạn. Phiền bạn có thể'
       readReceipt
     />
   </View>

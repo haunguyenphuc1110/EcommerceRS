@@ -32,11 +32,11 @@ const ProductDetails = (props) => {
   const { navigation, search } = props;
   const item = navigation.getParam('item', {});
 
-  const [pending, setState] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!props.pending) {
-      setState(false);
+      setLoading(false);
     }
   }, [props.pending])
 
@@ -47,9 +47,9 @@ const ProductDetails = (props) => {
   return (
     <View style={styles.container}>
       <Spinner
-        visible={pending}
+        visible={loading}
         textStyle={{ color: COLORS.white }}
-        cancelable={!pending}
+        cancelable={!loading}
       />
       <ScrollView contentContainerStyle={styles.scroll} bounces={false}>
         <Image
