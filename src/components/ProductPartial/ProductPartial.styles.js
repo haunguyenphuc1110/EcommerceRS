@@ -1,6 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { COLORS } from '../../assets';
 
+const { width } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginBottom: 7,
     fontWeight: '600',
-    width: 200
+    width: width - 200
   },
   productPrice: {
     color: COLORS.appColor,
