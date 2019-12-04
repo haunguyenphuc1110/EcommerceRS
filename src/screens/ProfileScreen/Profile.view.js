@@ -139,7 +139,7 @@ class Profile extends Component {
     }
     return (
       <ProfileDetails
-        name={'Hau Nguyen Phuc'}
+        name={'Nguyễn Phúc Hậu'}
         email={'phuchau11101998@gmail.com'}
         avatar={IMAGES.AVATAR}
         phoneNumber={'0933537713'}

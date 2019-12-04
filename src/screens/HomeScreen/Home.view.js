@@ -11,6 +11,7 @@ import { COLORS, IMAGES } from '../../assets';
 import LinearGradient from 'react-native-linear-gradient';
 import styles from './Home.styles';
 import ScreenIds from '../../navigation/screenIds';
+import { shuffle } from '../../utils/randomArray';
 
 import Spinner from '../../components/Common/LoadingIndicator/Loading.conponent';
 import CountDown from '../../components/Common/Countdown/Countdown.component';
@@ -176,6 +177,7 @@ class Home extends Component {
   }
 
   renderProposal = () => {
+    const { recommendationData } = this.props;
     return (
       <View>
         <LinearGradient
@@ -189,7 +191,7 @@ class Home extends Component {
         </LinearGradient>
         <ProposeContainer
           loadMoreItems={this.loadMoreItems}
-          data={this.props.recommendationData}
+          data={shuffle(recommendationData)}
           onNavigateToDetails={this.onNavigateToDetails}
         />
       </View>
@@ -199,10 +201,12 @@ class Home extends Component {
   loadMoreItems = () => {
     const { pageNumber } = this.state;
     const { getListItem } = this.props;
-    this.setState({
-      pageNumber: pageNumber + 1
-    });
-    getListItem(pageNumber + 1);
+    if (pageNumber < 4) {
+      this.setState({
+        pageNumber: pageNumber + 1
+      });
+      getListItem(pageNumber + 1);
+    }
   }
 
   onNavigateToDetails = (item, title) => {

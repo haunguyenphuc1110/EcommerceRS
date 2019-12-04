@@ -41,7 +41,7 @@ export default class Form extends Component {
         <View style={styles.container}>
           <TextInput
             style={styles.inputBox}
-            placeholder='Email'
+            placeholder='Tên đăng nhập'
             placeholderTextColor={COLORS.black}
             selectionColor={COLORS.black}
             keyboardType='email-address'
@@ -52,7 +52,7 @@ export default class Form extends Component {
           />
           <TextInput
             style={styles.inputBox}
-            placeholder='Password'
+            placeholder='Mật khẩu'
             secureTextEntry={true}
             placeholderTextColor={COLORS.black}
             onChangeText={this.handlePassword}
