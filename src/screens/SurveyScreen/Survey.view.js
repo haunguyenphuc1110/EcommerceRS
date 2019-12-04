@@ -33,7 +33,7 @@ class Survey extends Component {
       <SurveyItem
         item={item}
         checkSelectedItem={this.checkSelectedItem}
-        isSelected={!!this.state.selected.get(item.belong_cate_lvl1_id)}
+        isSelected={!!this.state.selected.get(item.cate1_id)}
       />
     );
   }
