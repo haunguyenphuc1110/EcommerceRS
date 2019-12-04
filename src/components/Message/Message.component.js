@@ -24,7 +24,12 @@ const Message = ({
       <Avatar source={userAvatar} />
       <View>
         <Text style={styles.nameTime}>{`${name} • ${timeAgo}`}</Text>
-        <Text style={[styles.previewText, !unread ? { color: COLORS.darkGray, fontWeight: 'normal' } : {}]}>{preview}</Text>
+        <Text 
+          style={[styles.previewText, !unread ? { color: COLORS.darkGray, fontWeight: 'normal' } : {}]}
+          ellipsizeMode='tail'
+          numberOfLines={1}>
+          {preview}
+        </Text>
       </View>
       {(delivered || readReceipt) && (
         <Icon

@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
   previewText: {
     fontWeight: '600',
     marginRight: 10,
-    color: COLORS.black
+    color: COLORS.black,
+    width: 200
   }
 });
 

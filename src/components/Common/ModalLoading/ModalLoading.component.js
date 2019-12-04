@@ -1,15 +1,16 @@
 import React from 'react';
-import { View, Modal, ActivityIndicator } from 'react-native';
+import { View, Modal } from 'react-native';
 import styles from './ModalLoading.styles';
-const ModalLoading = () => (
+
+import NetConnection from '../NetConnection/NetConnection.component';
+
+const ModalLoading = (props) => (
   <Modal
-    transparent={true}
+    transparent={false}
     animationType={'none'}
-    visible={true}>
+    visible={props.visible}>
     <View style={styles.modalBackground}>
-      <View style={styles.activityIndicatorWrapper}>
-        <ActivityIndicator />
-      </View>
+      <NetConnection onPress={props.onRetry}/>
     </View>
   </Modal>
 );
