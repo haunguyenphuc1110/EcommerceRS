@@ -70,7 +70,7 @@ const renderUserInfo = (props) => {
 const renderDoSurvey = (props) => {
   return (
     <ListItem
-      title='Help us do survey'
+      title='Khảo sát người dùng'
       onPress={() => onPressDoSurvey(props)}
       titleStyle={{ color: COLORS.white }}
       containerStyle={[styles.listItemContainer, { backgroundColor: COLORS.appColor, borderWidth: 0 }]}

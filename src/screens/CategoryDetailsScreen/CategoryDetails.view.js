@@ -5,6 +5,7 @@ import styles from './CategoryDetails.styles';
 import ScreenIds from '../../navigation/screenIds';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { COLORS, IMAGES } from '../../assets';
+import { shuffle } from '../../utils/randomArray';
 
 import Spinner from '../../components/Common/LoadingIndicator/Loading.conponent';
 import Header from '../../components/Header/Header.component';
@@ -85,7 +86,10 @@ class CategoryDetails extends Component {
               || (isCateLvl2 && topProductCateLvl2.length) 
               || (isCateLvl3 && topProductCateLvl3.length))
               ? (<ProposeContainer
-                data={isCateLvl1 ? topProductCateLvl1 : isCateLvl2 ? topProductCateLvl2 : topProductCateLvl3}
+                data={isCateLvl1 
+                    ? shuffle(topProductCateLvl1).slice(0, 50) 
+                    : isCateLvl2 ? shuffle(topProductCateLvl2).slice(0, 50) 
+                    : shuffle(topProductCateLvl3).slice(0, 50)}
                 onNavigateToDetails={this.onNavigateToDetails}
               />)
               : (<View style={{ justifyContent: 'center', alignItems: 'center', marginTop: 100 }}>
