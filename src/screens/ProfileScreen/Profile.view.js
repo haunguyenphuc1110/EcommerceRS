@@ -139,10 +139,10 @@ class Profile extends Component {
     }
     return (
       <ProfileDetails
-        name={'Nguyễn Phúc Hậu'}
-        email={'phuchau11101998@gmail.com'}
-        avatar={IMAGES.AVATAR}
-        phoneNumber={'0933537713'}
+        name={'5SIN'}
+        email={'5SIN@gmail.com'}
+        avatar={IMAGES.ICON_APP}
+        phoneNumber={'123456789'}
         historyOrders={[{}, {}]}
         onLogout={this.logOut}
         navigation={navigation} />

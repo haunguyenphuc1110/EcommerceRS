@@ -17,7 +17,7 @@ class Item extends Component {
 		return (
 			<View style={styles.content}>
 				<Image style={styles.image} source={uri ? {uri: uri} : IMAGES.PRODUCT}/>
-				<Text style={styles.name}>{product_name}</Text>
+				<Text style={styles.name} ellipsizeMode={"tail"}>{product_name}</Text>
         <Icon
           name='times'
           size={20}
