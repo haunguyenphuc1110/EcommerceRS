@@ -1,6 +1,5 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { COLORS } from '../../../assets';
-const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   item: {
     borderRadius: 10,
@@ -8,12 +7,12 @@ const styles = StyleSheet.create({
     marginRight: 10
   },
   imgBackground: {
-    width: width / 2 - 25,
-    height: height / 2 - 200,
-    borderRadius: 10
+    width: 150,
+    height: 50,
+    borderRadius: 25
   },
   imageContainer: {
-    backgroundColor: 'rgba(37,55,64,0.5)',
+    backgroundColor: COLORS.lightBlue,
     position: 'absolute',
     top: 0,
     left: 0,
@@ -21,12 +20,13 @@ const styles = StyleSheet.create({
     bottom: 0,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 10,
-    borderRadius: 10
+    padding: 10,
+    borderRadius: 20
   },
   text: {
     color: COLORS.white,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    textAlign: 'center'
   }
 });
 
