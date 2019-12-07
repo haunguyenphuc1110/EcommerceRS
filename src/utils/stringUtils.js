@@ -15,3 +15,7 @@ export const removePunctuation = (str) => {
   str = str.replace(/Đ/g, "D");
   return str;
 }
+
+export const capitalizeFirstLetter = (str) => {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
