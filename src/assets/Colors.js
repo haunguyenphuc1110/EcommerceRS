@@ -15,7 +15,9 @@ const colors = {
   lightBlue: '#4897bd',
   red: '#db1212',
   button: '#1c313a',
-  facebook: '#3b5998'
+  facebook: '#3b5998',
+  teal: '#20c997',
+  cyan: '#17a2b8'
 }
 
 export default colors;

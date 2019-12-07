@@ -5,7 +5,8 @@ const width = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   container:{
     alignItems: 'center',
-    marginTop: 20
+    marginTop: 20,
+    marginRight: 10
   },
   icon: { 
     justifyContent: 'center', 
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
   title: { 
     marginTop: 10, 
     textAlign: 'center', 
-    width: width / 5 - 5, 
+    width: width / 5 - 10, 
     fontSize: 11, 
     color: COLORS.black 
   }
