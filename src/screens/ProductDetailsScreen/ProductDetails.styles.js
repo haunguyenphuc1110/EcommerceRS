@@ -15,8 +15,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: Layout.window.width,
-    height: 400,
-    position: 'relative',
+    height: 300,
     marginBottom: 20
   },
   timeLocation: {

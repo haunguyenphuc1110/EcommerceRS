@@ -31,7 +31,7 @@ const mapDispatchToProps = dispatch => {
 ProductDetailsScreen.navigationOptions = ({ navigation }) => {
   return {
     title: navigation.getParam('title', 'Chi tiết sản phẩm'),
-    headerTransparent: true,
+    headerTransparent: false,
     headerRight: (
       <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
         <TouchableOpacity>

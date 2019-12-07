@@ -6,13 +6,13 @@ const styles = StyleSheet.create({
     flex: 1
   },
   headerTitle: {
-    fontSize: 28, 
+    fontSize: 26, 
     color: COLORS.black
   },
   title: { 
     textAlign: 'center', 
     color: COLORS.white, 
-    fontSize: 30, 
+    fontSize: 26, 
     fontWeight: '500', 
     marginBottom: 20 
   },
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: COLORS.white,
-    width: 350,
+    width: 300,
     height: 300,
     paddingVertical: 10,
     borderRadius: 10,
