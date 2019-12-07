@@ -84,7 +84,7 @@ class ListCategory extends Component {
             <Icon
               name={'ios-medal'}
               color={COLORS.appColor}
-              size={22} />
+              size={16} />
             <Text style={styles.title}>DANH MỤC HIỆN CÓ</Text>
           </View>
           <View style={styles.flatlist}>

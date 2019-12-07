@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: COLORS.red,
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: '500',
     marginHorizontal: 10
   }
