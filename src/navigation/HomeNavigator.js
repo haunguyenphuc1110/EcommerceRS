@@ -9,7 +9,7 @@ import ScreenIds from './screenIds';
 import { COLORS } from '../assets';
 
 import HomeScreen from '../screens/HomeScreen';
-import OfferScreen from '../screens/OfferScreen';
+import LiveScreen from '../screens/LiveScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ProductDetailsScreen from '../screens/ProductDetailsScreen';
 import CategoryDetailsScreen from '../screens/CategoryDetailsScreen';
@@ -34,12 +34,12 @@ const AppNavigator = createBottomTabNavigator(
         ),
       }
     },
-    [ScreenIds.OFFER]: {
-      screen: OfferScreen,
+    [ScreenIds.LIVE]: {
+      screen: LiveScreen,
       navigationOptions: {
-        tabBarLabel: 'Ưu đãi',
+        tabBarLabel: 'Live',
         tabBarIcon: ({ tintColor }) => (
-          <Icon name='award' color={tintColor} size={18} />
+          <Icon name='video' color={tintColor} size={18} />
         )
       }
     },

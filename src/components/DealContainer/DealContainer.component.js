@@ -15,6 +15,8 @@ const DealContainer = (props) => {
     <View style={styles.container}>
       <FlatList
         horizontal
+        scrollEnabled={false}
+        showsHorizontalScrollIndicator={false}
         data={data.slice(0, centerDealData)}
         renderItem={({item}) => renderItem(item)}
         keyExtractor={item => item.id}
@@ -22,6 +24,8 @@ const DealContainer = (props) => {
 
       <FlatList
         horizontal
+        scrollEnabled={false}
+        showsHorizontalScrollIndicator={false}
         data={data.slice(centerDealData)}
         renderItem={({item}) => renderItem(item)}
         keyExtractor={item => item.id}

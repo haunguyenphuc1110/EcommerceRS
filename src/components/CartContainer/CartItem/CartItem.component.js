@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './CartItem.styles';
 import { COLORS, IMAGES } from '../../../assets';
 import { formatMoney } from '../../../utils/formatCurrency';
+import { capitalizeFirstLetter } from '../../../utils/stringUtils';
 
 class Item extends Component {
 
@@ -18,7 +19,7 @@ class Item extends Component {
 			<View style={styles.content}>
 				<View style={{ flexDirection: 'row' }}>
 					<Image style={styles.image} source={uri ? { uri: uri } : IMAGES.PRODUCT} />
-					<Text style={styles.name}>{product_name}</Text>
+					<Text style={styles.name}>{capitalizeFirstLetter(product_name)}</Text>
 				</View>
 				<Icon
 					name='times'
@@ -37,14 +38,14 @@ class Item extends Component {
 				<View style={styles.button}>
 					<Icon
 						name='minus'
-						size={20}
-						color={COLORS.white}
+						size={16}
+						color={COLORS.black}
 					/>
 					<Text style={styles.quantity}>{quantity}</Text>
 					<Icon
 						name='plus'
-						size={20}
-						color={COLORS.white}
+						size={16}
+						color={COLORS.black}
 					/>
 				</View>
 				<Text style={styles.price}>{price ? formatMoney(price) : formatMoney(200000)}đ</Text>

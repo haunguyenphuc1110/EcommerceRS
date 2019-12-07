@@ -19,6 +19,9 @@ const FlashSaleItem = (props) => {
         </Text>
       </View>
       <ProgressBar percentage={70}/>
+      <View style={styles.banner}>
+				<Text style={styles.hot}>45%</Text>
+			</View>
     </TouchableOpacity>
   )
 }

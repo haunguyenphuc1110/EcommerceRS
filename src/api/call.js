@@ -32,8 +32,8 @@ const getListCategory3ByCateId2 = async (id) => {
   });
 };
 
-const getListItem = async (pageNumber) => {
-  const task = new Service(`http://165.22.97.19:8000/api/v1/products/popularity/?page=${pageNumber}`);
+const getListItem = async ({pageNumber, userId}) => {
+  const task = new Service(`http://165.22.97.19:8000/api/v1/users/recommend?page=${pageNumber}&top_n=100&user_id=${userId}`);
 
   return task.get().then(data => {
     return data;

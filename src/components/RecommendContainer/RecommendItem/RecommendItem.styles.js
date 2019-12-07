@@ -3,30 +3,30 @@ import { COLORS } from '../../../assets';
 const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   item: {
-    borderRadius: 10,
+    width: 200,
+    borderRadius: 5,
     marginTop: 10,
-    marginRight: 10
+    marginRight: 10,
+    elevation: 5,
+    overflow: 'hidden'
   },
-  imgBackground: {
-    width: width / 2 - 25,
-    height: height / 2 - 200,
-    borderRadius: 10
+  imgContainer: {
+    width: 200,
+    height: 150
   },
-  imageContainer: {
-    backgroundColor: 'rgba(37,55,64,0.5)',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 10,
-    borderRadius: 10
+  textContainer: {
+    marginTop: 1,
+    padding: 10,
+    backgroundColor: COLORS.lightGray
   },
-  text: {
-    color: COLORS.white,
-    fontWeight: 'bold'
+  title: {
+    width: width / 2 - 30,
+    fontSize: 14,
+    color: COLORS.black
+  },
+  quantity: {
+    width: width / 2 - 30,
+    fontSize: 12,
   }
 });
 

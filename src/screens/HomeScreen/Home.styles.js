@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
     backgroundColor: COLORS.lightGray,
-    marginTop: 250
+    marginTop: 200
   },
   banner: { 
     width: width - 20, 
@@ -19,22 +19,21 @@ const styles = StyleSheet.create({
     marginTop: 10
   },
   rowBanner: {
-    width: 300, 
-    height: 150, 
+    width: 250, 
+    height: 100, 
     borderRadius: 5,
     marginHorizontal: 10,
     marginTop: 10
   },
   view: {
     backgroundColor: COLORS.appColor,
-    height: 250,
-    borderBottomLeftRadius: 40,
-    borderBottomRightRadius: 40
+    height: 200
   },
   absolute: {
+    top: 0,
     zIndex: 9999,
     position: 'absolute', 
-    width: width,
+    width: width
   },
   header: {
     alignItems: 'center',
@@ -48,7 +47,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: COLORS.red,
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: '500',
     marginHorizontal: 10
   }

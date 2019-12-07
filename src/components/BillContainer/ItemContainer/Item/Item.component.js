@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './Item.styles';
 import { COLORS, IMAGES } from '../../../../assets';
 import { formatMoney } from '../../../../utils/formatCurrency';
+import { capitalizeFirstLetter } from '../../../../utils/stringUtils';
 
 class Item extends Component {
 
@@ -17,7 +18,7 @@ class Item extends Component {
 		return (
 			<View style={styles.content}>
 				<Image style={styles.image} source={uri ? {uri: uri} : IMAGES.PRODUCT}/>
-				<Text style={styles.name}>{product_name}</Text>
+				<Text style={styles.name} ellipsizeMode={"tail"}>{capitalizeFirstLetter(product_name)}</Text>
         <Icon
           name='times'
           size={20}

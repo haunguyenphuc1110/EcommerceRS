@@ -3,6 +3,7 @@ import { View, ScrollView, Image, Text, TouchableOpacity } from 'react-native';
 import { COLORS, IMAGES } from '../../assets';
 import styles from './ProductDetails.styles';
 import { formatMoney } from '../../utils/formatCurrency';
+import { capitalizeFirstLetter } from '../../utils/stringUtils';
 
 import ScreenIds from '../../navigation/screenIds';
 
@@ -51,15 +52,16 @@ const ProductDetails = (props) => {
         textStyle={{ color: COLORS.white }}
         cancelable={!loading}
       />
-      <ScrollView contentContainerStyle={styles.scroll} bounces={false}>
+      <ScrollView contentContainerStyle={styles.scroll}>
         <Image
           source={item.uri ? { uri: item.uri } : IMAGES.PRODUCT}
           style={styles.image}
+          resizeMode="contain"
         />
         <View style={styles.dataContainer}>
           <Text style={styles.timeLocation}>Ho Chi Minh, VietNam • 2 tiếng trước</Text>
           <View style={styles.namePrice}>
-            <Text style={styles.nameText}>{item.product_name}</Text>
+            <Text style={styles.nameText}>{capitalizeFirstLetter(item.product_name)}</Text>
             <Text style={styles.priceText}>{item.price ? formatMoney(item.price) : formatMoney(200000)}đ</Text>
           </View>
           <View style={styles.divider} />
@@ -76,7 +78,7 @@ const ProductDetails = (props) => {
           <UserPartials
             name='Hau Nguyen'
             rating={4.6}
-            avatarUrl={IMAGES.AVATAR}
+            avatarUrl={IMAGES.ICON_APP}
             navigateToCart={() => navigateToCart(props, item)}
             navigateToMessage={() => navigateToMessage(navigation, item)}
           />

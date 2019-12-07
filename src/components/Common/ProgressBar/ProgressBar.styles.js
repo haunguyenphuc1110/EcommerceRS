@@ -10,9 +10,9 @@ const styles = StyleSheet.create({
   },
   wrapper: {
     flex: 1,
-    height: 20,
+    height: 10,
     borderRadius: 20,
-    marginVertical: 10,
+    marginVertical: 5,
     overflow: 'hidden',
     backgroundColor: COLORS.gray
   },
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     color: COLORS.white,
     textAlign: 'center',
     fontWeight: '400',
-    fontSize: 8
+    fontSize: 6
   }
 });
 export default styles;

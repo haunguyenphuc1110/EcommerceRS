@@ -23,12 +23,16 @@ class Profile extends Component {
   };
 
   componentWillReceiveProps(nextProps) {
-    const { pending, error } = nextProps;
-    const { pending: previousPending, error: previousError } = this.props;
+    const { pending, error, userId } = nextProps;
+    const { pending: previousPending, error: previousError, userId: previousUserId } = this.props;
     if (!pending && pending !== previousPending) {
       this.setState({
         isLoading: false
       });
+    }
+
+    if (userId && userId !== previousUserId) {
+      this.props.navigation.navigate(ScreenIds.HOME);
     }
 
     if (error && error !== previousError) {
@@ -111,7 +115,7 @@ class Profile extends Component {
           />
           <ParallaxHeader
             headerMinHeight={30}
-            headerMaxHeight={170}
+            headerMaxHeight={200}
             navbarColor={COLORS.appColor}
             headerTitleStyle={styles.headerTitleStyle}
             title="Đăng nhập / Đăng ký"
@@ -139,10 +143,10 @@ class Profile extends Component {
     }
     return (
       <ProfileDetails
-        name={'Nguyễn Phúc Hậu'}
-        email={'phuchau11101998@gmail.com'}
-        avatar={IMAGES.AVATAR}
-        phoneNumber={'0933537713'}
+        name={'5SIN'}
+        email={'5SIN@gmail.com'}
+        avatar={IMAGES.ICON_APP}
+        phoneNumber={'123456789'}
         historyOrders={[{}, {}]}
         onLogout={this.logOut}
         navigation={navigation} />

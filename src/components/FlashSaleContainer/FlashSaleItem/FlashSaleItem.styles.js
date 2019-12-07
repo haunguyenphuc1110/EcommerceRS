@@ -4,32 +4,47 @@ import { COLORS } from '../../../assets';
 const width= Dimensions.get('window').width;
 const styles = StyleSheet.create({
   main: { 
-    justifyContent: 'space-evenly', 
-    alignItems: 'center', 
-    margin: 10,
+    justifyContent: 'center', 
+    marginRight: 10,
     borderRadius: 5, 
-    padding: 10,
+    padding: 5,
+    marginVertical: 5,
     backgroundColor: COLORS.white,
-    elevation: 10
+    elevation: 5
   },
   image: {
-    width: 200, 
-    height: 200, 
+    width: 100, 
+    height: 100, 
     borderRadius: 5
   },
   titleContainer: {
-    width: 200,
-    marginTop: 5,
-    padding: 10,
+    width: 100,
+    padding: 5,
     justifyContent: 'center',
     alignItems: 'center'
   },
   title: {
-    fontSize: 16,
-    fontWeight: '500',
+    fontSize: 14,
     color: COLORS.appColor,
     textAlign: 'center',
-  }
+  },
+  banner: {
+    position: 'absolute',
+    top: 0,
+		right: 0,
+		width: 40,
+    height: 20,
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
+		backgroundColor: COLORS.red,
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	hot: {
+		color: COLORS.white, 
+		fontSize: 12, 
+		fontWeight: 'bold'
+	}
 });
 
 export default styles;

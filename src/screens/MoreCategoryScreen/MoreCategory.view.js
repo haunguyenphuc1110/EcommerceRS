@@ -75,14 +75,7 @@ class MoreCategory extends Component {
           onNavigateToSearch={this.onNavigateToSearch}
         />
 
-        <View style={[styles.popularContainer, { paddingLeft: 10 }]}>
-          <View style={styles.header}>
-            <Icon
-              name={'ios-medal'}
-              color={COLORS.appColor}
-              size={22} />
-            <Text style={styles.title}>CÓ THỂ BẠN QUAN TÂM</Text>
-          </View>
+        <View style={[styles.popularContainer, { paddingLeft: 10, paddingTop: 0 }]}>
           <CategoryListContainer
             data={listCategoryLvl2}
             onNavigationToListCate={this.onNavigationToListCate} />
@@ -93,7 +86,7 @@ class MoreCategory extends Component {
             <Icon
               name={'ios-medal'}
               color={COLORS.appColor}
-              size={22} />
+              size={16} />
             <Text style={styles.title}>PHỔ BIẾN</Text>
           </View>
           <ProposeContainer

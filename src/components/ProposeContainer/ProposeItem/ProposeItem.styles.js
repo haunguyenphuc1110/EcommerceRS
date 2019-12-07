@@ -4,14 +4,14 @@ import { COLORS } from '../../../assets';
 const width = Dimensions.get('window').width;
 const styles = StyleSheet.create({
   main: { 
-    justifyContent: 'space-evenly', 
     alignItems: 'flex-start', 
     marginRight: 10, 
     marginTop: 10, 
     borderRadius: 5, 
     paddingBottom: 10,
     backgroundColor: COLORS.white,
-    elevation: 2
+    elevation: 2,
+    overflow: 'hidden'
   },
   title: {
     fontSize: 16,
@@ -19,13 +19,13 @@ const styles = StyleSheet.create({
     color: COLORS.black,
     width: width/2 - 35,
     marginHorizontal: 10,
-    marginTop: 10
+    marginTop: 5
   },
   price: {
     fontSize: 11,
     color: COLORS.red,
     marginHorizontal: 10,
-    marginTop: 10
+    marginTop: 5
   },
   image: {
     width: width/2 - 15, 
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 5 
   },
   star: {
-    marginTop: 10, 
+    marginTop: 5, 
     marginLeft: 10
   }
 });

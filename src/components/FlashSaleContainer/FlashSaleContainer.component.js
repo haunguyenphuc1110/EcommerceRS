@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, ScrollView } from 'react-native';
 
 import FlashSaleItem from './FlashSaleItem/FlashSaleItem.component';
 
@@ -15,17 +15,29 @@ const renderItem = (item, onNavigateToDetails) => {
 
 const FlashSaleContainer = (props) => {
   const { data, onNavigateToDetails } = props;
+  const centerFlashSaleData = Math.floor(data.length / 2);
   return (
-    <View style={styles.main}>
-      <FlatList
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        numColumns={1}
-        data={data}
-        renderItem={({ item }) => renderItem(item, onNavigateToDetails)}
-        keyExtractor={item => item.product_id + item.product_name}
-      />
-    </View>
+    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+      <View>
+        <FlatList
+          horizontal
+          scrollEnabled={false}
+          style={styles.flatlist}
+          data={data.slice(0, centerFlashSaleData)}
+          renderItem={({ item }) => renderItem(item, onNavigateToDetails)}
+          keyExtractor={item => item.product_id + item.product_name}
+        />
+
+        <FlatList
+          horizontal
+          scrollEnabled={false}
+          style={styles.flatlist}
+          data={data.slice(centerFlashSaleData)}
+          renderItem={({ item }) => renderItem(item, onNavigateToDetails)}
+          keyExtractor={item => item.product_id + item.product_name}
+        />
+      </View>
+    </ScrollView>
   );
 }
 

@@ -5,18 +5,17 @@ const styles = StyleSheet.create({
   main: { 
     justifyContent: 'space-evenly', 
     alignItems: 'center', 
-    marginRight: 10, 
-    marginTop: 10, 
+    marginRight: 25, 
+    marginTop: 5, 
     borderRadius: 5, 
-    paddingVertical: 10
+    paddingVertical: 10,
   },
   image: {
     width: 80, 
-    height: 80, 
-    borderRadius: 40
+    height: 80
   },
   title: {
-    fontSize: 16,
+    fontSize: 14,
     color: COLORS.black,
     textAlign: 'center',
     width: 80

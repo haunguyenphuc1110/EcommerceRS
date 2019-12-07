@@ -1,7 +1,7 @@
 const ScreenIds = {
 	APP: 'App',
 	HOME: 'Home',
-	OFFER: 'Offer',
+	LIVE: 'Live',
 	NOTIFICATION: 'Notification',
 	PROFILE: 'Profile',
 	PRODUCT_DETAILS: 'ProductDetails',

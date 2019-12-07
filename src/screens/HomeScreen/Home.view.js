@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {
   Text,
   View,
-  ScrollView,
   Image
 } from 'react-native'
 import { swiperData, dealData } from '../../mocks/dataMock';
@@ -12,6 +11,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from './Home.styles';
 import ScreenIds from '../../navigation/screenIds';
 import { shuffle } from '../../utils/randomArray';
+import { ScrollView } from 'react-navigation';
 
 import Spinner from '../../components/Common/LoadingIndicator/Loading.conponent';
 import CountDown from '../../components/Common/Countdown/Countdown.component';
@@ -48,7 +48,10 @@ class Home extends Component {
   componentDidMount() {
     this.props.getListCategoryLvl1();
     this.props.getListCategoryLvl2();
-    this.props.getListItem(this.state.pageNumber);
+    this.props.getListItem({
+      pageNumber: this.state.pageNumber,
+      userId: this.props.userId
+    });
   }
 
   renderHeader = () => {
@@ -90,7 +93,7 @@ class Home extends Component {
             <Icon
               name={'ios-flash'}
               color={COLORS.white}
-              size={22} />
+              size={16} />
             <Text style={[styles.title, { color: COLORS.white }]}>FLASH SALE</Text>
             <CountDown
               until={7200}
@@ -103,7 +106,7 @@ class Home extends Component {
           </View>
         </LinearGradient>
         <FlashSaleContainer
-          data={recommendationData.slice(0, 10)}
+          data={recommendationData.slice(0, 20)}
           onNavigateToDetails={this.onNavigateToDetails} />
       </View>
     );
@@ -111,36 +114,38 @@ class Home extends Component {
 
   renderPopularity = () => {
     const { categoryDataLvl2 } = this.props;
+    const { pageNumber } = this.state;
     return (
       <View style={styles.popularContainer}>
         <View style={styles.header}>
           <Icon
             name={'ios-flame'}
             color={COLORS.appColor}
-            size={22} />
+            size={16} />
           <Text style={styles.title}>TÌM KIẾM PHỔ BIẾN</Text>
         </View>
         <PopulaContainer
           onNavigationToCateDetails={this.onNavigationToCateDetails}
-          data={categoryDataLvl2.slice(0, 10)} />
+          data={(pageNumber ==4) ? shuffle(categoryDataLvl2.slice(0, 10)) : categoryDataLvl2.slice(0, 10)} />
       </View>
     );
   }
 
   renderCategory = () => {
     const { categoryDataLvl1 } = this.props;
+    const { pageNumber } = this.state;
     return (
       <View style={styles.popularContainer}>
         <View style={styles.header}>
           <Icon
             name={'ios-bookmark'}
             color={COLORS.appColor}
-            size={22} />
+            size={16} />
           <Text style={styles.title}>DANH MỤC</Text>
         </View>
         <CategoryContainer
           onNavigationToMoreCate={this.onNavigationToMoreCate}
-          data={categoryDataLvl1}
+          data={(pageNumber === 4) ? shuffle(categoryDataLvl1) : categoryDataLvl1}
         />
       </View>
     );
@@ -148,17 +153,18 @@ class Home extends Component {
 
   renderRecommendation = () => {
     const { categoryDataLvl1 } = this.props;
+    const { pageNumber } = this.state;
     return (
       <View style={[styles.popularContainer, { paddingLeft: 10 }]}>
         <View style={styles.header}>
           <Icon
             name={'ios-heart'}
             color={COLORS.appColor}
-            size={22} />
+            size={16} />
           <Text style={styles.title}>BỘ SƯU TẬP YÊU THÍCH</Text>
         </View>
         <RecommendContainer
-          data={categoryDataLvl1}
+          data={(pageNumber === 4) ? shuffle(categoryDataLvl1) : categoryDataLvl1}
           onNavigationToCateDetails={this.onNavigationToCateDetails} />
       </View>
     );
@@ -166,6 +172,8 @@ class Home extends Component {
 
   renderViewedContainer = () => {
     const { viewedProducts } = this.props;
+
+    if (viewedProducts.length > 0) {
     return (
       <View style={styles.popularContainer}>
         <Text style={styles.title}>SẢN PHẨM VỪA XEM</Text>
@@ -175,9 +183,11 @@ class Home extends Component {
       </View>
     );
   }
+  }
 
   renderProposal = () => {
     const { recommendationData } = this.props;
+    const { pageNumber } = this.state;
     return (
       <View>
         <LinearGradient
@@ -186,12 +196,12 @@ class Home extends Component {
           <Icon
             name={'ios-star'}
             color={COLORS.yellow}
-            size={22} />
+            size={16} />
           <Text style={[styles.title, { color: COLORS.white }]}>GỢI Ý HÔM NAY</Text>
         </LinearGradient>
         <ProposeContainer
           loadMoreItems={this.loadMoreItems}
-          data={shuffle(recommendationData)}
+          data={ (pageNumber === 4) ? shuffle(recommendationData) : recommendationData}
           onNavigateToDetails={this.onNavigateToDetails}
         />
       </View>
@@ -200,12 +210,15 @@ class Home extends Component {
 
   loadMoreItems = () => {
     const { pageNumber } = this.state;
-    const { getListItem } = this.props;
+    const { getListItem, userId } = this.props;
     if (pageNumber < 4) {
       this.setState({
         pageNumber: pageNumber + 1
       });
-      getListItem(pageNumber + 1);
+      getListItem({
+        pageNumber: pageNumber + 1,
+        userId
+      });
     }
   }
 
@@ -234,13 +247,13 @@ class Home extends Component {
         {this.renderHeader()}
 
         <View style={styles.main}>
+
+          {/* <ScrollView horizontal style={{ flexDirection: 'row' }}>
           <Image
             source={IMAGES.EXAMPLE_1}
-            style={styles.banner}
+              style={styles.rowBanner}
             resizeMode='stretch'
           />
-
-          <ScrollView horizontal style={{ flexDirection: 'row' }}>
             <Image
               source={IMAGES.EXAMPLE_5}
               style={styles.rowBanner}
@@ -251,34 +264,17 @@ class Home extends Component {
               style={styles.rowBanner}
               resizeMode='stretch'
             />
-          </ScrollView>
+          </ScrollView> */}
 
           {this.renderFlashSale()}
+
           {this.renderPopularity()}
 
-          <Image
-            source={IMAGES.EXAMPLE_2}
-            style={styles.banner}
-            resizeMode='stretch'
-          />
-
           {this.renderCategory()}
-
-          <Image
-            source={IMAGES.EXAMPLE_3}
-            style={styles.banner}
-            resizeMode='stretch'
-          />
 
           {this.renderRecommendation()}
 
           {this.renderViewedContainer()}
-
-          <Image
-            source={IMAGES.EXAMPLE_4}
-            style={styles.banner}
-            resizeMode='stretch'
-          />
 
           {this.renderProposal()}
         </View>

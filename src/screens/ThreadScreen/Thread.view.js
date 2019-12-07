@@ -39,61 +39,61 @@ export default class extends React.Component {
               timeAgo='24m ago'
               text='Hi, cảm ơn đã quan tâm đến sản phẩm của shop. Bạn có cần giải đáp gì không?'
               incoming
-              avatar={IMAGES.AVATAR}
+              avatar={IMAGES.ICON_APP}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Rất vui được gặp bạn. Mình rất thích sản phẩm này vì màu sắc và chất liệu của nó quá tuyệt vời. Mình có thể biết thêm chi tiết thông tin sản phẩm được không?'
               readReceipt
-              avatar={IMAGES.AVATAR}
+              avatar={IMAGES.ICON_APP}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Dĩ nhiên rồi bạn. Sản phẩm bên mình 100% y hình, được bảo hành đầy đủ nên bạn yên tâm về chất lượng.'
               incoming
-              avatar={IMAGES.AVATAR}
+              avatar={IMAGES.ICON_APP}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
               readReceipt
-              avatar={IMAGES.AVATAR}
+              avatar={IMAGES.ICON_APP}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
               incoming
-              avatar={IMAGES.AVATAR}
+              avatar={IMAGES.ICON_APP}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
               readReceipt
-              avatar={IMAGES.AVATAR}
+              avatar={IMAGES.ICON_APP}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
               incoming
-              avatar={IMAGES.AVATAR}
+              avatar={IMAGES.ICON_APP}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
               readReceipt
-              avatar={IMAGES.AVATAR}
+              avatar={IMAGES.ICON_APP}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
               incoming
-              avatar={IMAGES.AVATAR}
+              avatar={IMAGES.ICON_APP}
             />
             <MessageBubble
               timeAgo='24m ago'
               text='Tuyệt. Okie mình sẽ thêm sản phẩm này vào giỏ hàng và thanh toán nó ngay ạ.'
               readReceipt
-              avatar={IMAGES.AVATAR}
+              avatar={IMAGES.ICON_APP}
             />
           </ScrollView>
           <ChatInput />

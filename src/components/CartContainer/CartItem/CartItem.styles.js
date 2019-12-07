@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
 	container: {
 		borderWidth: 1,
 		borderColor: COLORS.lightGray,
-		height: 200,
+		height: 180,
 		padding: 10,
 		marginVertical: 5,
     borderRadius: 10,
@@ -31,22 +31,21 @@ const styles = StyleSheet.create({
 	priceContainer: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-		alignItems: 'center',
-		marginBottom: 10
+		alignItems: 'center'
 	},
 	button: {
-		height: 40,
+		height: 30,
 		width: 100,
+		padding: 10,
 		flexDirection: 'row',
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: COLORS.darkGray,
-		borderRadius: 40
+		backgroundColor: COLORS.gray,
+		borderRadius: 15
 	},
 	quantity: {
-		marginHorizontal: 10,
-		color: COLORS.white,
-		fontWeight: 'bold',
+		marginHorizontal: 20,
+		color: COLORS.black,
 		fontSize: 16
 	},
 	price: {
