@@ -17,6 +17,7 @@ const mapStateToProps = state => {
     categoryDataLvl2: state.homeReducer.listCategoryLvl2,
     recommendationData: state.homeReducer.listProduct,
     viewedProducts: state.homeReducer.viewedProducts,
+    userId: state.userReducer.userId,
     pending: state.homeReducer.pending,
     error: state.homeReducer.error
   };
@@ -26,7 +27,7 @@ const mapDispatchToProps = dispatch => {
   return {
     getListCategoryLvl1: () => dispatch(getListCategoryLvl1()),
     getListCategoryLvl2: () => dispatch(getListCategoryLvl2()),
-    getListItem: (pageNumber) => dispatch(getListItem(pageNumber)),
+    getListItem: (payload) => dispatch(getListItem(payload)),
     saveViewedProduct: (payload) => dispatch(saveViewedProduct(payload))
   };
 };
