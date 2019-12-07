@@ -2,43 +2,43 @@ import { COLORS } from '../assets';
 export const swiperData = [
   {
     id: 1,
-    url: 'https://cf.shopee.vn/file/0393093dca3b2732bf8fcc5f003d5080_xxhdpi'
+    url: 'https://cf.shopee.vn/file/0393093dca3b2732bf8fcc5f003d5080_xhdpi'
   },
   {
     id: 2,
-    url: 'https://cf.shopee.vn/file/8eff4439308d4f517d8e05dc423c7c44_xxhdpi'
+    url: 'https://cf.shopee.vn/file/8eff4439308d4f517d8e05dc423c7c44_xhdpi'
   },
   {
     id: 3,
-    url: 'https://cf.shopee.vn/file/c63a90342f57ec4474f922331c482047_xxhdpi'
+    url: 'https://cf.shopee.vn/file/c63a90342f57ec4474f922331c482047_xhdpi'
   },
   {
     id: 4,
-    url: 'https://cf.shopee.vn/file/8aee774baf7ea8b2b1d8adab64852599_xxhdpi'
+    url: 'https://cf.shopee.vn/file/8aee774baf7ea8b2b1d8adab64852599_xhdpi'
   },
   {
     id: 5,
-    url: 'https://cf.shopee.vn/file/cad27a41fd78191c845489642fbd2a7f_xxhdpi'
+    url: 'https://cf.shopee.vn/file/cad27a41fd78191c845489642fbd2a7f_xhdpi'
   },
   {
     id: 6,
-    url: 'https://cf.shopee.vn/file/7d14a03fbf2190aac4773d47e80cf1e7_xxhdpi'
+    url: 'https://cf.shopee.vn/file/7d14a03fbf2190aac4773d47e80cf1e7_xhdpi'
   },
   {
     id: 7,
-    url: 'https://cf.shopee.vn/file/fb21e31353856923f21a4692b8a5f6a3_xxhdpi'
+    url: 'https://cf.shopee.vn/file/fb21e31353856923f21a4692b8a5f6a3_xhdpi'
   },
   {
     id: 8,
-    url: 'https://cf.shopee.vn/file/0393093dca3b2732bf8fcc5f003d5080_xxhdpi'
+    url: 'https://cf.shopee.vn/file/0393093dca3b2732bf8fcc5f003d5080_xhdpi'
   },
   {
     id: 9,
-    url: 'https://cf.shopee.vn/file/c40355ff983c90c9ed985708a05dcbf3_xxhdpi'
+    url: 'https://cf.shopee.vn/file/c40355ff983c90c9ed985708a05dcbf3_xhdpi'
   },
   {
     id: 10,
-    url: 'https://cf.shopee.vn/file/0eb5c31547cfe3a7334c3e9eac8618ee_xxhdpi'
+    url: 'https://cf.shopee.vn/file/0eb5c31547cfe3a7334c3e9eac8618ee_xhdpi'
   }
 ];
 
@@ -71,13 +71,13 @@ export const dealData = [
     id: 'Deal5',
     icon: 'shipping-fast',
     title: 'Giờ vàng freeship',
-    color: COLORS.lightBlue
+    color: COLORS.teal
   },
   {
     id: 'Deal6',
     icon: 'utensils',
     title: 'Ẩm thực và Du lịch',
-    color: COLORS.yellow
+    color: COLORS.cyan
   },
   {
     id: 'Deal7',
@@ -94,8 +94,8 @@ export const dealData = [
   {
     id: 'Deal9',
     icon: 'ticket-alt',
-    title: 'Vé Tết',
-    color: COLORS.yellow
+    title: 'Deal Sốc Từ 1k',
+    color: COLORS.totalColor
   },
   {
     id: 'Deal10',
@@ -251,45 +251,65 @@ export const surveyData = [
   }
 ];
 
-export const offerData = [
+export const liveData = [
   {
-    id: 'OFFER1',
-    image: 'https://media3.scdn.vn/img3/2019/11_16/FbpouJ.png'
+    id: 'LIVE1',
+    image: 'https://media3.scdn.vn/img3/2019/11_27/YisjPB_simg_ab1f47_350x350_maxb.jpg',
+    title: 'Tặng quà 0 đồng miễn ship toàn quốc',
+    view: 24
   },
   {
-    id: 'OFFER2',
-    image: 'https://media3.scdn.vn/img3/2019/11_16/pQQCHo.png'
+    id: 'LIVE2',
+    image: 'https://media3.scdn.vn/img3/2019/12_6/xNAdma_simg_b5529c_250x250_maxb.png',
+    title: 'Xả ốp 1k Freeship toàn quốc',
+    view: 16
   },
   {
-    id: 'OFFER3',
-    image: 'https://media3.scdn.vn/img3/2019/11_16/KsRKdT.png'
+    id: 'LIVE3',
+    image: 'https://media3.scdn.vn/img3/2019/11_11/nwEj4Y_simg_b5529c_250x250_maxb.jpg',
+    title: '50k/3 ốp tặng iring',
+    view: 17
   },
   {
-    id: 'OFFER4',
-    image: 'https://media3.scdn.vn/img3/2019/11_16/zOvCAu.png'
+    id: 'LIVE4',
+    image: 'https://media3.scdn.vn/img3/2019/12_4/cCaS6j_simg_b5529c_250x250_maxb.jpg',
+    title: 'Xả đồ bé giá rẻ, đồ Tết cho bé',
+    view: 14
   },
   {
-    id: 'OFFER5',
-    image: 'https://media3.scdn.vn/img3/2019/11_16/NpRQDB.png'
+    id: 'LIVE5',
+    image: 'https://media3.scdn.vn/img3/2019/12_5/WWxcok_simg_b5529c_250x250_maxb.jpg',
+    title: 'Xả gấu bông',
+    view: 32
   },
   {
-    id: 'OFFER6',
-    image: 'https://media3.scdn.vn/img3/2019/11_5/EUc68C.jpg'
+    id: 'LIVE6',
+    image: 'https://media3.scdn.vn/img3/2019/5_4/2b5SFk_simg_b5529c_250x250_maxb.jpg',
+    title: 'Tiếp tục xả kho',
+    view: 17
   },
   {
-    id: 'OFFER7',
-    image: 'https://media3.scdn.vn/img3/2019/12_2/Zuv77F.jpg'
+    id: 'LIVE7',
+    image: 'https://media3.scdn.vn/img3/2019/5_27/eqp30f_simg_b5529c_250x250_maxb.jpg',
+    title: 'Xả 30k',
+    view: 15
   },
   {
-    id: 'OFFER8',
-    image: 'https://media3.scdn.vn/img3/2019/12_3/iu7NMG.jpg'
+    id: 'LIVE8',
+    image: 'https://media3.scdn.vn/img3/2019/11_9/TDhVKT_simg_b5529c_250x250_maxb.jpg',
+    title: 'Xả kho 35-45',
+    view: 39
   },
   {
-    id: 'OFFER9',
-    image: 'https://media3.scdn.vn/img3/2019/12_2/ZkZg8I.jpg'
+    id: 'LIVE9',
+    image: 'https://media3.scdn.vn/img3/2019/5_18/Vxdkqo_simg_b5529c_250x250_maxb.jpg',
+    title: 'Shop xả bữa nữa hết hàng rồi',
+    view: 18
   },
   {
-    id: 'OFFER10',
-    image: 'https://media3.scdn.vn/img3/2019/11_16/3HSlJ2.png'
+    id: 'LIVE10',
+    image: 'https://media3.scdn.vn/img3/2019/10_2/eiyncD_simg_b5529c_250x250_maxb.jpg',
+    title: 'Bán quần áo 129k',
+    view: 14
   }
 ];

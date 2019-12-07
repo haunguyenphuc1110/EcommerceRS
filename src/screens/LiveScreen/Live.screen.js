@@ -1,8 +1,8 @@
 import React from 'react';
-import Offer from './Offer.view';
+import Live from './Live.view';
 import { connect } from 'react-redux';
 
-const OfferScreen = (props) => (<Offer {...props}/>);
+const LiveScreen = (props) => (<Live {...props}/>);
 
 const mapStateToProps = state => {
   return {
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(OfferScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(LiveScreen);
