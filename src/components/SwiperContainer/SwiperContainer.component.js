@@ -19,13 +19,13 @@ const SwiperContainer = props => {
     return (
       <Swiper
         style={styles.swiper}
-        height={150}
+        height={160}
         showsPagination={true}
         activeDotColor={COLORS.red}
         dotStyle={styles.dotStyle}
         activeDotStyle={styles.activeDotStyle}
         autoplay={true}
-        autoplayTimeout={10}
+        autoplayTimeout={5}
       >
         {renderItemSwiper(data)}
       </Swiper>

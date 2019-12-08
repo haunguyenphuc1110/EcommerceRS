@@ -241,7 +241,7 @@ class Home extends Component {
       <View>
         <LinearGradient
           colors={[COLORS.red, COLORS.lightOrange]}
-          style={[styles.popularContainer, { flexDirection: 'row' }]}>
+          style={[styles.popularContainer, { flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }]}>
           <Icon
             name={'ios-star'}
             color={COLORS.yellow}
