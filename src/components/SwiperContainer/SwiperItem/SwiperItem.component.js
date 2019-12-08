@@ -8,7 +8,7 @@ const Item = props => {
     <View style={styles.container}>
       <Image
         source={{ uri: item.url }}
-        resizeMode='contain'
+        resizeMode='stretch'
         style={styles.imgSwiper}
       />
     </View>

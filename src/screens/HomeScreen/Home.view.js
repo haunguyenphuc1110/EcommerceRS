@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {
   Text,
   View,
-  Image
+  RefreshControl
 } from 'react-native'
 import { swiperData, dealData } from '../../mocks/dataMock';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -11,7 +11,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import styles from './Home.styles';
 import ScreenIds from '../../navigation/screenIds';
 import { shuffle } from '../../utils/randomArray';
-import { ScrollView } from 'react-navigation';
+import { ScrollView, withNavigationFocus } from 'react-navigation';
 
 import Spinner from '../../components/Common/LoadingIndicator/Loading.conponent';
 import CountDown from '../../components/Common/Countdown/Countdown.component';
@@ -22,6 +22,7 @@ import FlashSaleContainer from '../../components/FlashSaleContainer/FlashSaleCon
 import CategoryContainer from '../../components/CategoryContainer/CategoryContainer.component';
 import ViewedContainer from '../../components/ViewedContainer/ViewedContainer.component';
 import RecommendContainer from '../../components/RecommendContainer/RecommendContainer.component';
+import RelatedContainer from '../../components/RelatedContainer/RelatedContainer.component';
 import ProposeContainer from '../../components/ProposeContainer/ProposeContainer.component';
 import HomeHeader from '../../components/HomeHeader/HomeHeader.component';
 
@@ -31,7 +32,8 @@ class Home extends Component {
     super(props);
     this.state = {
       isLoading: true,
-      pageNumber: 1
+      pageNumber: 1,
+      refreshing: false
     }
   }
 
@@ -40,7 +42,8 @@ class Home extends Component {
     const { pending: previousPending } = this.props;
     if (!pending && pending !== previousPending) {
       this.setState({
-        isLoading: false
+        isLoading: false,
+        refreshing: false
       })
     }
   }
@@ -50,8 +53,33 @@ class Home extends Component {
     this.props.getListCategoryLvl2();
     this.props.getListItem({
       pageNumber: this.state.pageNumber,
+      userId: this.props.userId,
+      shouldReload: false
+    });
+    this.props.getAbilityLikeProduct({
+      pageNumber: 1,
       userId: this.props.userId
     });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.isFocused && prevProps.isFocused !== this.props.isFocused) {
+      if (this.props.shouldReload) {
+        this.setState({
+          isLoading: true
+        });
+        this.props.getListItem({
+          pageNumber: 1,
+          userId: this.props.userId,
+          shouldReload: this.props.shouldReload
+        });
+        this.props.getAbilityLikeProduct({
+          pageNumber: 1,
+          userId: this.props.userId
+        });
+        this.props.setShouldReload(false);
+      }
+    }
   }
 
   renderHeader = () => {
@@ -106,7 +134,7 @@ class Home extends Component {
           </View>
         </LinearGradient>
         <FlashSaleContainer
-          data={recommendationData.slice(0, 20)}
+          data={recommendationData ? recommendationData.slice(0, 20) : []}
           onNavigateToDetails={this.onNavigateToDetails} />
       </View>
     );
@@ -126,7 +154,7 @@ class Home extends Component {
         </View>
         <PopulaContainer
           onNavigationToCateDetails={this.onNavigationToCateDetails}
-          data={(pageNumber ==4) ? shuffle(categoryDataLvl2.slice(0, 10)) : categoryDataLvl2.slice(0, 10)} />
+          data={categoryDataLvl2 ? (pageNumber == 2) ? shuffle(categoryDataLvl2.slice(0, 10)) : categoryDataLvl2.slice(0, 10) : []} />
       </View>
     );
   }
@@ -145,7 +173,7 @@ class Home extends Component {
         </View>
         <CategoryContainer
           onNavigationToMoreCate={this.onNavigationToMoreCate}
-          data={(pageNumber === 4) ? shuffle(categoryDataLvl1) : categoryDataLvl1}
+          data={categoryDataLvl1 ? (pageNumber === 2) ? shuffle(categoryDataLvl1) : categoryDataLvl1 : []}
         />
       </View>
     );
@@ -164,7 +192,7 @@ class Home extends Component {
           <Text style={styles.title}>BỘ SƯU TẬP YÊU THÍCH</Text>
         </View>
         <RecommendContainer
-          data={(pageNumber === 4) ? shuffle(categoryDataLvl1) : categoryDataLvl1}
+          data={categoryDataLvl1 ? (pageNumber === 2) ? shuffle(categoryDataLvl1) : categoryDataLvl1 : []}
           onNavigationToCateDetails={this.onNavigationToCateDetails} />
       </View>
     );
@@ -174,15 +202,36 @@ class Home extends Component {
     const { viewedProducts } = this.props;
 
     if (viewedProducts.length > 0) {
-    return (
-      <View style={styles.popularContainer}>
-        <Text style={styles.title}>SẢN PHẨM VỪA XEM</Text>
-        <ViewedContainer
-          data={viewedProducts}
-          onNavigateToDetails={this.onNavigateToDetails} />
-      </View>
-    );
+      return (
+        <View style={styles.popularContainer}>
+          <Text style={[styles.title, { marginLeft: 0 }]}>SẢN PHẨM VỪA XEM</Text>
+          <ViewedContainer
+            data={viewedProducts}
+            onNavigateToDetails={this.onNavigateToDetails} />
+        </View>
+      );
+    }
   }
+
+  renderAbilityLikeProduct = () => {
+    const { userId, listProductFullMode, navigation } = this.props;
+    if (userId) {
+      return (
+        <View style={[styles.popularContainer, { marginTop: 20 }]}>
+          <View style={styles.header}>
+            <Icon
+              name={'ios-gift'}
+              color={COLORS.appColor}
+              size={22} />
+            <Text style={styles.title}>CÓ THỂ BẠN THÍCH</Text>
+          </View>
+          <RelatedContainer
+            data={listProductFullMode.slice(0, 20)}
+            navigation={navigation}
+            onNavigateToDetails={this.onNavigateToDetails} />
+        </View>
+      );
+    }
   }
 
   renderProposal = () => {
@@ -192,7 +241,7 @@ class Home extends Component {
       <View>
         <LinearGradient
           colors={[COLORS.red, COLORS.lightOrange]}
-          style={[styles.popularContainer, { flexDirection: 'row' }]}>
+          style={[styles.popularContainer, { flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }]}>
           <Icon
             name={'ios-star'}
             color={COLORS.yellow}
@@ -201,7 +250,7 @@ class Home extends Component {
         </LinearGradient>
         <ProposeContainer
           loadMoreItems={this.loadMoreItems}
-          data={ (pageNumber === 4) ? shuffle(recommendationData) : recommendationData}
+          data={recommendationData ? (pageNumber === 2) ? shuffle(recommendationData) : recommendationData : []}
           onNavigateToDetails={this.onNavigateToDetails}
         />
       </View>
@@ -211,13 +260,14 @@ class Home extends Component {
   loadMoreItems = () => {
     const { pageNumber } = this.state;
     const { getListItem, userId } = this.props;
-    if (pageNumber < 4) {
+    if (pageNumber < 2) {
       this.setState({
         pageNumber: pageNumber + 1
       });
       getListItem({
         pageNumber: pageNumber + 1,
-        userId
+        userId,
+        shouldReload: false
       });
     }
   }
@@ -239,10 +289,25 @@ class Home extends Component {
     this.props.navigation.navigate(ScreenIds.MORE_CATEGORY, { id, title });
   }
 
+  onRefresh = () => {
+    const { userId, getAbilityLikeProduct } = this.props;
+    this.setState({
+      refreshing: true
+    });
+    getAbilityLikeProduct({
+      pageNumber: 1,
+      userId,
+    })
+  }
+
   render() {
 
     return (
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl refreshing={this.state.refreshing} onRefresh={this.onRefresh} />
+        }>
 
         {this.renderHeader()}
 
@@ -276,6 +341,8 @@ class Home extends Component {
 
           {this.renderViewedContainer()}
 
+          {this.renderAbilityLikeProduct()}
+
           {this.renderProposal()}
         </View>
       </ScrollView>
@@ -283,4 +350,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default withNavigationFocus(Home);

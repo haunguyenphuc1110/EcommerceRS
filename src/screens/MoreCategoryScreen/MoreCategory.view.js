@@ -90,7 +90,7 @@ class MoreCategory extends Component {
             <Text style={styles.title}>PHỔ BIẾN</Text>
           </View>
           <ProposeContainer
-            data={topProductCateLvl1}
+            data={topProductCateLvl1.slice(0, 50)}
             onNavigateToDetails={this.onNavigateToDetails}
           />
         </View>

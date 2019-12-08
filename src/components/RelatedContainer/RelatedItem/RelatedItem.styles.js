@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly', 
     alignItems: 'flex-start', 
     marginRight: 10, 
-    marginTop: 10, 
+    marginVertical: 10, 
     borderRadius: 5, 
     paddingBottom: 10,
     backgroundColor: COLORS.white,

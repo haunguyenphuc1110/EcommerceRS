@@ -33,7 +33,7 @@ export default class Form extends Component {
 
 
   render() {
-    const { isSignupForm, onPress } = this.props;
+    const { isSignupForm, onLoginNormal, onLoginFacebook } = this.props;
     const { email, password } = this.state;
     return (
       <KeyboardAvoidingView behavior="padding">
@@ -59,7 +59,7 @@ export default class Form extends Component {
             ref={input => this.password = input}
             autoCapitalize='none'
           />
-          <TouchableOpacity style={styles.button} onPress={() => onPress(email, password)}>
+          <TouchableOpacity style={styles.button} onPress={() => onLoginNormal(email, password)}>
             <Text style={styles.buttonText}>{this.props.type}</Text>
           </TouchableOpacity>
 
@@ -68,7 +68,7 @@ export default class Form extends Component {
           {!isSignupForm && <Text>Hoặc đăng nhập với</Text>}
 
           {!isSignupForm && 
-            (<TouchableOpacity style={[styles.button, { backgroundColor: COLORS.facebook }]} onPress={onPress}>
+            (<TouchableOpacity style={[styles.button, { backgroundColor: COLORS.facebook }]} onPress={onLoginFacebook}>
               <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                 <Image source={IMAGES.FACEBOOK} style={styles.image}/>
                 <Text style={styles.buttonText}>Facebook</Text>
@@ -76,7 +76,7 @@ export default class Form extends Component {
             </TouchableOpacity>)
           }
           {!isSignupForm && 
-            (<TouchableOpacity style={[styles.button, { backgroundColor: COLORS.white }]} onPress={onPress}>
+            (<TouchableOpacity style={[styles.button, { backgroundColor: COLORS.white }]}>
               <View style={styles.group}>
                 <Image source={IMAGES.GOOGLE} style={styles.image}/>
                 <Text style={[styles.buttonText, { color: COLORS.black }]}>Google</Text>

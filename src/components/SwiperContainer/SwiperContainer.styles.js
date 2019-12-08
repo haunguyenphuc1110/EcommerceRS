@@ -2,6 +2,7 @@ import { StyleSheet } from 'react-native';
 import { COLORS } from '../../assets';
 const styles = StyleSheet.create({
   swiper: {
+    marginTop: 10,
     marginHorizontal: 10,
     borderRadius: 5
   },

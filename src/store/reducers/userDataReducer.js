@@ -3,7 +3,8 @@ import CONSTANTS from '../constants';
 const initialState = {
   pending: false,
   error: false,
-  userId: ''
+  userId: '',
+  viewedProducts: [],
 };
 
 const userDataReducer = (state = initialState, action) => {
@@ -16,6 +17,7 @@ const userDataReducer = (state = initialState, action) => {
       };
 
     case CONSTANTS.LOGIN_SUCCEED:
+    case CONSTANTS.LOGIN_FACEBOOK:
       return {
         ...state,
         pending: false,
@@ -36,6 +38,12 @@ const userDataReducer = (state = initialState, action) => {
         pending: false,
         error: false
       }
+
+    case CONSTANTS.SAVE_VIEWED_PRODUCT:
+      return {
+        ...state,
+        viewedProducts: state.viewedProducts.concat(action.payload)
+      };
 
     default:
       return state;

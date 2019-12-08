@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   main: {
     flex: 1,
     backgroundColor: COLORS.lightGray,
-    marginTop: 200
+    marginTop: 250
   },
   banner: { 
     width: width - 20, 
@@ -27,7 +27,9 @@ const styles = StyleSheet.create({
   },
   view: {
     backgroundColor: COLORS.appColor,
-    height: 200
+    height: 170,
+    borderBottomLeftRadius: 20,
+    borderBottomRightRadius: 20
   },
   absolute: {
     top: 0,
