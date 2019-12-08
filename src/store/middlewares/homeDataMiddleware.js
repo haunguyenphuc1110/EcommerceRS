@@ -1,11 +1,11 @@
-import CONSTANT from '../constants';
-import { saveViewedProduct } from '../actions/homeDataActions';
+import CONSTANTS from '../constants';
+import { saveViewedProduct } from '../actions/userDataActions';
 
 const homeMiddleware = store => next => action => {
   switch (action.type) {
-    case CONSTANT.SAVE_VIEWED_PRODUCT:
-      let { homeReducer } = store.getState();
-      let product = homeReducer.viewedProducts.find(item => item.product_id === action.payload.product_id);
+    case CONSTANTS.SAVE_VIEWED_PRODUCT:
+      let { userReducer } = store.getState();
+      let product = userReducer.viewedProducts.find(item => item.product_id === action.payload.product_id);
       if (!product) {
         next(saveViewedProduct(action.payload));
       }

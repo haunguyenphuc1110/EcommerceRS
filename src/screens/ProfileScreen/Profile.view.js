@@ -32,7 +32,11 @@ class Profile extends Component {
     }
 
     if (userId && userId !== previousUserId) {
+      this.setState({
+        isLoading: false
+      });
       this.props.navigation.navigate(ScreenIds.HOME);
+      this.props.setShouldReload(true);
     }
 
     if (error && error !== previousError) {
@@ -41,58 +45,54 @@ class Profile extends Component {
   }
 
   FirstRoute = () => (
-    <Form type={'ĐĂNG NHẬP'} onPress={this.onLogin} />
+    <Form type={'ĐĂNG NHẬP'} onLoginNormal={this.onLoginNormal} onLoginFacebook={this.onLoginFacebook}/>
   );
 
   SecondRoute = () => (
-    <Form type={'ĐĂNG KÝ'} isSignupForm={true} onPress={this.onLogin} />
+    <Form type={'ĐĂNG KÝ'} isSignupForm={true} onLoginNormal={this.onLoginNormal} />
   );
 
-  onLogin = (userName, password) => {
-    // LoginManager.logInWithPermissions(["public_profile"]).then(
-    //   (result) => {
-    //     if (result.isCancelled) {
-    //       console.log("Login cancelled");
-    //     } else {
-    //       console.log(result);
-    //       // AccessToken.getCurrentAccessToken().then(
-    //       //   (data) => {
-    //       //     console.log(data.accessToken.toString())
-    //       //   }
-    //       // )
-    //       infoRequest = new GraphRequest(
-    //         '/me',
-    //         null,
-    //         this._responseInfoCallback,
-    //       );
-    //       new GraphRequestManager().addRequest(infoRequest).start();
-    //       this.setState({
-    //         isLoggedIn: true
-    //       })
-    //     }
-    //   },
-    //   (error) => {
-    //     console.log("Login fail with error: " + error);
-    //   }
-    // );
+  onLoginNormal = (userName, password) => {
+    this.setState({
+      isLoading: true
+    });
     this.props.login({ userName, password })
   };
 
-  //Create response callback.
-  _responseInfoCallback(error, result) {
-    if (error) {
-      console.log('Error fetching data: ' + error.toString());
-    } else {
-      console.log('Success fetching data: ' + JSON.stringify(result));
-    }
+  onLoginFacebook = () => {
+    LoginManager.logInWithPermissions(["public_profile"]).then(
+      (result) => {
+        if (result.isCancelled) {
+          console.log("Login cancelled");
+        } else {
+          const infoRequest = new GraphRequest(
+            '/me',
+            null,
+            (error, result) => {
+              if (error) {
+                console.log('Error fetching data: ' + error.toString());
+              } else {
+                this.setState({
+                  isLoading: true
+                });
+                this.props.loginFacebook(result.id);
+              }
+            }
+          );
+          new GraphRequestManager().addRequest(infoRequest).start();
+        }
+      },
+      (error) => {
+        console.log("Login fail with error: " + error);
+      }
+    );
   }
 
   logOut = () => {
-    // LoginManager.logOut();
-    // this.setState({
-    //   isLoggedIn: false
-    // })
+    LoginManager.logOut();
     this.props.logout();
+    this.props.setShouldReload(true);
+    this.props.navigation.navigate(ScreenIds.HOME);
   }
 
   renderTabBar = props => (

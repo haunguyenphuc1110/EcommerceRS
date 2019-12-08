@@ -13,7 +13,12 @@ export const getListItem = (payload) => ({
   payload
 });
 
-export const saveViewedProduct = (payload) => ({
-  type: CONSTANTS.SAVE_VIEWED_PRODUCT,
+export const getAbilityLikeProduct = (payload) => ({
+  type: CONSTANTS.GET_MAYBE_LIKE_PRODUCT,
+  payload
+});
+
+export const setShouldReload = (payload) => ({
+  type: CONSTANTS.SET_SHOULD_RELOAD,
   payload
 });

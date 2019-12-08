@@ -40,6 +40,14 @@ const getListItem = async ({pageNumber, userId}) => {
   });
 };
 
+const getListItemFullMode = async ({pageNumber, userId}) => {
+  const task = new Service(`http://165.22.97.19:8000/api/v1/users/recommend?page=${pageNumber}&top_n=100&user_id=${userId}&mode=cate_full`);
+
+  return task.get().then(data => {
+    return data;
+  });
+};
+
 const getTopProductCate1 = async (id) => {
   const task = new Service(`http://165.22.97.19:8000/category/prod/first/${id}`);
 
@@ -80,15 +88,25 @@ const search = async (queryString) => {
   });
 }
 
+const sendListChosenCategory = async (data) => {
+  const task = new Service('', data);
+
+  return task.post().then(data => {
+    return data;
+  });
+}
+
 export default {
   getListCategory1,
   getListCategory2,
   getListCategory2ByCateId1,
   getListCategory3ByCateId2,
   getListItem,
+  getListItemFullMode,
   getTopProductCate1,
   getTopProductCate2,
   getTopProductCate3,
   login,
-  search
+  search,
+  sendListChosenCategory
 }
