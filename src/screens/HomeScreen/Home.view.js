@@ -204,7 +204,7 @@ class Home extends Component {
     if (viewedProducts.length > 0) {
       return (
         <View style={styles.popularContainer}>
-          <Text style={styles.title}>SẢN PHẨM VỪA XEM</Text>
+          <Text style={[styles.title, { marginLeft: 0 }]}>SẢN PHẨM VỪA XEM</Text>
           <ViewedContainer
             data={viewedProducts}
             onNavigateToDetails={this.onNavigateToDetails} />

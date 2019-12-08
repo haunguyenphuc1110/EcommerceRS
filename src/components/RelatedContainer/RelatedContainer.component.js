@@ -17,6 +17,7 @@ const RelatedContainer = (props) => {
     <View style={{ flex: 1 }}>
       <FlatList
         horizontal
+        showsHorizontalScrollIndicator={false}
         numColumns={1}
         data={data}
         renderItem={({ item }) => renderItem(item, props)}

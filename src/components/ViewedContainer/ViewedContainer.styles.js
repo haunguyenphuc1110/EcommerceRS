@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
     width: 60, 
     height: 60, 
     borderRadius: 5,
-    margin: 20
+    marginRight: 10,
+    marginVertical: 10
   }
 });
 

@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
   item: {
     width: 200,
     borderRadius: 5,
-    marginTop: 10,
+    marginVertical: 10,
     marginRight: 10,
     elevation: 5,
     overflow: 'hidden'

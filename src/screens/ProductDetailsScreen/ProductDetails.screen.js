@@ -5,6 +5,7 @@ import ProductDetails from './ProductDetails.view';
 import CartHeader from '../../components/Common/CartHeader/CartHeader.component';
 import { connect } from 'react-redux';
 import { COLORS } from '../../assets';
+import { capitalizeFirstLetter } from '../../utils/stringUtils';
 
 import { addProductToCart } from '../../store/actions/cartDataActions';
 import { search } from '../../store/actions/searchDataActions';
@@ -30,7 +31,7 @@ const mapDispatchToProps = dispatch => {
 
 ProductDetailsScreen.navigationOptions = ({ navigation }) => {
   return {
-    title: navigation.getParam('title', 'Chi tiết sản phẩm'),
+    title: capitalizeFirstLetter(navigation.getParam('title', 'Chi tiết sản phẩm')),
     headerTransparent: false,
     headerRight: (
       <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
