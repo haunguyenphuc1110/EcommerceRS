@@ -5,6 +5,7 @@ const initialState = {
   listCategoryLvl2: [],
   listProduct: [],
   listProductFullMode: [],
+  listRelatedProduct: [],
   pending: false,
   error: false,
   numberOfRequests: 0,
@@ -22,6 +23,7 @@ const homeDataReducer = (state = initialState, action) => {
     case CONSTANTS.GET_LIST_CATEGORY_LVL2:
     case CONSTANTS.GET_RECOMMEND_PRODUCT:
     case CONSTANTS.GET_MAYBE_LIKE_PRODUCT:
+    case CONSTANTS.GET_LIST_RELATED_PRODUCT:
       return {
         ...state,
         numberOfRequests: increasedRequests,
@@ -73,10 +75,20 @@ const homeDataReducer = (state = initialState, action) => {
         error: false
       };
 
+    case CONSTANTS.GET_LIST_RELATED_PRODUCT_SUCCEED:
+      return {
+        ...state,
+        listRelatedProduct: action.payload,
+        numberOfRequests: decreasedRequests,
+        pending: decreasedRequests > 0,
+        error: false
+      };
+
     case CONSTANTS.GET_LIST_CATEGORY_LVL1_FAILED:
     case CONSTANTS.GET_LIST_CATEGORY_LVL2_FAILED:
     case CONSTANTS.GET_RECOMMEND_PRODUCT_FAILED:
     case CONSTANTS.GET_MAYBE_LIKE_PRODUCT_FAILED:
+    case CONSTANTS.GET_LIST_RELATED_PRODUCT_FAILED:
       return {
         ...state,
         numberOfRequests: decreasedRequests,

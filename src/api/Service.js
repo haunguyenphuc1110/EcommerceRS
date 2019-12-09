@@ -20,7 +20,6 @@ export default class Service {
       axios.post(this.url, this.config)
         .then(response => resolve(response.data))
         .catch(error => {
-          handleResponseError(error);
           reject(error);
         });
     });

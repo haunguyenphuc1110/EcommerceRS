@@ -98,11 +98,28 @@ function* getListRecommendedItemFullMode(action) {
   }
 }
 
+function* getListRelatedProduct(action) {
+  try {
+    const response = yield call(Api.getRelatedProduct, action.payload);
+
+    yield put({
+      type: CONSTANTS.GET_LIST_RELATED_PRODUCT_SUCCEED,
+      payload: response
+    });
+
+  } catch (e) {
+    yield put({
+      type: CONSTANTS.GET_LIST_RELATED_PRODUCT_FAILED
+    });
+  }
+}
+
 function* homeDataSaga() {
   yield takeLatest(CONSTANTS.GET_LIST_CATEGORY_LVL1, getListCategoryLvl1);
   yield takeLatest(CONSTANTS.GET_LIST_CATEGORY_LVL2, getListCategoryLvl2);
   yield takeLatest(CONSTANTS.GET_RECOMMEND_PRODUCT, getListRecommendedItem);
   yield takeLatest(CONSTANTS.GET_MAYBE_LIKE_PRODUCT, getListRecommendedItemFullMode);
+  yield takeLatest(CONSTANTS.GET_LIST_RELATED_PRODUCT, getListRelatedProduct);
 }
 
 export default homeDataSaga;

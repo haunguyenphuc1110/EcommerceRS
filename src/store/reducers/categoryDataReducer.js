@@ -23,6 +23,7 @@ const categoryDataReducer = (state = initialState, action) => {
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL1:
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL2:
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL3:
+    case CONSTANTS.SEND_LIST_CHOSEN_CATEGORY:
       return {
         ...state,
         numberOfRequests: increasedRequests,
@@ -72,11 +73,20 @@ const categoryDataReducer = (state = initialState, action) => {
         error: false
       };
 
+    case CONSTANTS.SEND_LIST_CHOSEN_CATEGORY_SUCCEED:
+      return {
+        ...state,
+        numberOfRequests: decreasedRequests,
+        pending: decreasedRequests > 0,
+        error: false
+      }
+
     case CONSTANTS.GET_LIST_CATEGORY_LVL2_BY_CATEGORY_LVL1_FAILED:
     case CONSTANTS.GET_LIST_CATEGORY_LVL3_BY_CATEGORY_LVL2_FAILED:
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL1_FAILED:
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL2_FAILED:
     case CONSTANTS.GET_TOP_PRODUCT_CATE_LVL3_FAILED:
+    case CONSTANTS.SEND_LIST_CHOSEN_CATEGORY_FAILED:
       return {
         ...state,
         numberOfRequests: decreasedRequests,

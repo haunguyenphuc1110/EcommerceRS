@@ -68,6 +68,7 @@ class Home extends Component {
         this.setState({
           isLoading: true
         });
+        this.refs._scrollView.scrollTo({x: 0, y: 0, animated: true});
         this.props.getListItem({
           pageNumber: 1,
           userId: this.props.userId,
@@ -173,7 +174,7 @@ class Home extends Component {
         </View>
         <CategoryContainer
           onNavigationToMoreCate={this.onNavigationToMoreCate}
-          data={categoryDataLvl1 ? (pageNumber === 2) ? shuffle(categoryDataLvl1) : categoryDataLvl1 : []}
+          data={categoryDataLvl1 || []}
         />
       </View>
     );
@@ -192,7 +193,7 @@ class Home extends Component {
           <Text style={styles.title}>BỘ SƯU TẬP YÊU THÍCH</Text>
         </View>
         <RecommendContainer
-          data={categoryDataLvl1 ? (pageNumber === 2) ? shuffle(categoryDataLvl1) : categoryDataLvl1 : []}
+          data={categoryDataLvl1 || []}
           onNavigationToCateDetails={this.onNavigationToCateDetails} />
       </View>
     );
@@ -307,7 +308,8 @@ class Home extends Component {
         showsVerticalScrollIndicator={false}
         refreshControl={
           <RefreshControl refreshing={this.state.refreshing} onRefresh={this.onRefresh} />
-        }>
+        }
+        ref='_scrollView'>
 
         {this.renderHeader()}
 

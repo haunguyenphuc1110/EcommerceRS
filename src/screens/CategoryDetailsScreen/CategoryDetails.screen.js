@@ -7,7 +7,7 @@ import {
   getTopProductCateLvl2,
   getTopProductCateLvl3
 } from '../../store/actions/categoryDataActions';
-import { saveViewedProduct } from '../../store/actions/homeDataActions';
+import { saveViewedProduct } from '../../store/actions/userDataActions';
 
 const CategoryDetailsScreen = (props) => (<CategoryDetails {...props}/>);
 
