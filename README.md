@@ -6,6 +6,12 @@
   <img alt="License: ISC" src="https://img.shields.io/github/license/DamQuangKhoa/Sendo E-Shopper Backend Recommendation System" />
 </p>
 
+<p align="center" >
+  <a>
+    <img alt="react-native-e-shopper" src="./screenshot" width="260" height="510" />
+  </a>
+</p>
+
 # E-Shopper App
 
 Final project for solving recommendation problem
