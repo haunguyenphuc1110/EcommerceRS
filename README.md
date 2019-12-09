@@ -1,6 +1,20 @@
+<h1 align="center">Welcome to E-Shopper Recommendation System 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+  <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
+  <img alt="License: ISC" src="https://img.shields.io/github/license/DamQuangKhoa/Sendo E-Shopper Backend Recommendation System" />
+</p>
+
 # E-Shopper App
 
 Final project for solving recommendation problem
+
+## Clone the repository
+
+```bash
+https://github.com/haunguyenphuc1110/EcommerceRS.git
+```
 
 ### Prerequisites
 
