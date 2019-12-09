@@ -89,7 +89,7 @@ const search = async (queryString) => {
 }
 
 const sendListChosenCategory = async (data) => {
-  const task = new Service('', data);
+  const task = new Service('http://165.22.97.19:8000/api/v1/users/survey', data);
 
   return task.post().then(data => {
     return data;

@@ -82,12 +82,27 @@ function* getListCategoryLvl3ByCategoryLvl2(action) {
   }
 }
 
+function* sendListChosenCategory(action) {
+  try {
+    const response = yield call(Api.sendListChosenCategory, action.payload);
+
+    yield put({
+      type: CONSTANTS.SEND_LIST_CHOSEN_CATEGORY_SUCCEED
+    });
+  } catch (e) {
+    yield put({
+      type: CONSTANTS.SEND_LIST_CHOSEN_CATEGORY_FAILED
+    });
+  }
+}
+
 function* categoryDataSaga() {
   yield takeLatest(CONSTANTS.GET_TOP_PRODUCT_CATE_LVL1, getTopProductCateLvl1);
   yield takeLatest(CONSTANTS.GET_TOP_PRODUCT_CATE_LVL2, getTopProductCateLvl2);
   yield takeLatest(CONSTANTS.GET_TOP_PRODUCT_CATE_LVL3, getTopProductCateLvl3);
   yield takeLatest(CONSTANTS.GET_LIST_CATEGORY_LVL2_BY_CATEGORY_LVL1, getListCategoryLvl2ByCategoryLvl1);
   yield takeLatest(CONSTANTS.GET_LIST_CATEGORY_LVL3_BY_CATEGORY_LVL2, getListCategoryLvl3ByCategoryLvl2);
+  yield takeLatest(CONSTANTS.SEND_LIST_CHOSEN_CATEGORY, sendListChosenCategory);
 }
 
 export default categoryDataSaga;

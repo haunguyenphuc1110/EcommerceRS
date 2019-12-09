@@ -5,15 +5,29 @@ import styles from './Survey.styles';
 
 import LinearGradient from 'react-native-linear-gradient';
 import SurveyItem from '../../components/SurveyItem/SurveyItem.component';
+import Spinner from '../../components/Common/LoadingIndicator/Loading.conponent';
 
 class Survey extends Component {
 
   state = {
     selected: new Map(),
-    visible: false
+    visible: false,
+    isLoading: false
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const { pending } = nextProps;
+    const { pending: previousPending } = this.props;
+    if (!pending && pending !== previousPending) {
+      this.setState({
+        isLoading: false,
+        visible: true
+      })
+    }
   }
 
   checkSelectedItem = (id) => {
+    const { sendListChosenCategory, userId } = this.props;
     this.setState((state) => {
       const selected = new Map(state.selected);
       let visible = state.visible;
@@ -22,7 +36,15 @@ class Survey extends Component {
         ? selected.delete(id, !selected.get(id))
         : selected.set(id, !selected.get(id));
       if (selected.size === 5){
-        visible = true
+        this.setState({
+          isLoading: true
+        })
+        sendListChosenCategory({
+          category1_list: [ ...selected.keys() ],
+          user_id: userId
+        })
+        console.log(JSON.stringify([...selected.keys()]));
+        console.log(userId);
       }
       return { selected, visible };
     });
@@ -39,11 +61,16 @@ class Survey extends Component {
   }
 
   render() {
-    const { visible } = this.state;
+    const { visible, isLoading } = this.state;
     const { navigation, categoryDataLvl1 } = this.props;
 
     return (
       <LinearGradient colors={[COLORS.gray, COLORS.lightGray]} style={styles.main}>
+        <Spinner
+          visible={isLoading}
+          textStyle={{ color: COLORS.white }}
+          cancelable={!isLoading}
+        />
         <Modal
           transparent={true}
           animationType={'none'}

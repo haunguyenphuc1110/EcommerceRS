@@ -68,6 +68,7 @@ class Home extends Component {
         this.setState({
           isLoading: true
         });
+        this.refs._scrollView.scrollTo({x: 0, y: 0, animated: true});
         this.props.getListItem({
           pageNumber: 1,
           userId: this.props.userId,
@@ -307,7 +308,8 @@ class Home extends Component {
         showsVerticalScrollIndicator={false}
         refreshControl={
           <RefreshControl refreshing={this.state.refreshing} onRefresh={this.onRefresh} />
-        }>
+        }
+        ref='_scrollView'>
 
         {this.renderHeader()}
 
