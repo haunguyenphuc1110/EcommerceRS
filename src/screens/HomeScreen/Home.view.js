@@ -174,7 +174,7 @@ class Home extends Component {
         </View>
         <CategoryContainer
           onNavigationToMoreCate={this.onNavigationToMoreCate}
-          data={categoryDataLvl1 ? (pageNumber === 2) ? shuffle(categoryDataLvl1) : categoryDataLvl1 : []}
+          data={categoryDataLvl1 || []}
         />
       </View>
     );
@@ -193,7 +193,7 @@ class Home extends Component {
           <Text style={styles.title}>BỘ SƯU TẬP YÊU THÍCH</Text>
         </View>
         <RecommendContainer
-          data={categoryDataLvl1 ? (pageNumber === 2) ? shuffle(categoryDataLvl1) : categoryDataLvl1 : []}
+          data={categoryDataLvl1 || []}
           onNavigationToCateDetails={this.onNavigationToCateDetails} />
       </View>
     );

@@ -96,6 +96,14 @@ const sendListChosenCategory = async (data) => {
   });
 }
 
+const getRelatedProduct = async (id) => {
+  const task = new Service(`http://165.22.97.19:8000/api/v1/products/related?product_id=${id}`);
+
+  return task.get().then(data => {
+    return data;
+  });
+}
+
 export default {
   getListCategory1,
   getListCategory2,
@@ -108,5 +116,6 @@ export default {
   getTopProductCate3,
   login,
   search,
-  sendListChosenCategory
+  sendListChosenCategory,
+  getRelatedProduct
 }

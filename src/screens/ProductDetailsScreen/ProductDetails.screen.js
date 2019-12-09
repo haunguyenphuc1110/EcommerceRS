@@ -8,7 +8,7 @@ import { COLORS } from '../../assets';
 import { capitalizeFirstLetter } from '../../utils/stringUtils';
 
 import { addProductToCart } from '../../store/actions/cartDataActions';
-import { search } from '../../store/actions/searchDataActions';
+import { getRelatedProduct } from '../../store/actions/productDataActions';
 
 const ProductDetailsScreen = (props) => (<ProductDetails {...props}/>);
 
@@ -17,15 +17,15 @@ const mapStateToProps = state => {
     categoryDataLvl1: state.homeReducer.listCategoryLvl1,
     recommendationData: state.homeReducer.listProduct,
     cartData: state.cartReducer.listProduct,
-    listProduct: state.searchReducer.listProduct,
-    pending: state.searchReducer.pending
+    listRelatedProduct: state.productReducer.listRelatedProduct,
+    pending: state.productReducer.pending
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     addProductToCart: (product) => dispatch(addProductToCart(product)),
-    search: (payload) => dispatch(search(payload))
+    getRelatedProduct: (payload) => dispatch(getRelatedProduct(payload))
   };
 };
 

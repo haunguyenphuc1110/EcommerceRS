@@ -6,7 +6,7 @@ import {
   getTopProductCateLvl1, 
   getListCategoryLvl2ByCategoryLvl1
 } from '../../store/actions/categoryDataActions';
-import { saveViewedProduct } from '../../store/actions/homeDataActions';
+import { saveViewedProduct } from '../../store/actions/userDataActions';
 
 const MoreCategoryScreen = (props) => (<MoreCategory {...props}/>);
 

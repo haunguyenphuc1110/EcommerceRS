@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { search } from '../../store/actions/searchDataActions';
-import { saveViewedProduct } from '../../store/actions/homeDataActions';
+import { saveViewedProduct } from '../../store/actions/userDataActions';
 
 import Search from './Search.view';
 import SearchBar from '../../components/SearchBar/SearchBar.component';
