@@ -8,7 +8,7 @@
 
 <p align="center" >
   <a>
-    <img alt="react-native-e-shopper" src="./screenshot" width="260" height="510" />
+    <img src="screenshot.png" width="260" height="510" />
   </a>
 </p>
 
