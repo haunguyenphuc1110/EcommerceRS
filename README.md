@@ -21,6 +21,19 @@ Final project for solving recommendation problem
 ```bash
 https://github.com/haunguyenphuc1110/EcommerceRS.git
 ```
+## Features
+- Have swiper block for advertisement
+- Have popular searching block
+- Have category block
+- Have recommended product block
+- Have "Maybe like" block
+- Add to cart
+- Login with normal account
+- Login with facebook
+- Recommend for specific user bases on interaction between user and product
+- Search product
+- Have related product block
+- "Do survey" case to user for calculating user's interest
 
 ### Prerequisites
 
